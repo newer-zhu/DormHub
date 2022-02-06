@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/pets.iml" filepath="$PROJECT_DIR$/pets.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pets-chat/pets-chat.iml" filepath="$PROJECT_DIR$/pets-chat/pets-chat.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pets-mail/pets-mail.iml" filepath="$PROJECT_DIR$/pets-mail/pets-mail.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pets-server/pets-server.iml" filepath="$PROJECT_DIR$/pets-server/pets-server.iml" />
+    </modules>
+  </component>
+</project>

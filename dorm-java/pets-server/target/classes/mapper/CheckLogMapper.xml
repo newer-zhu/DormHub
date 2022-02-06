@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhuhodor.server.mapper.CheckLogMapper">
+    <resultMap id="BaseResultMap" type="com.zhuhodor.server.model.pojo.CheckLog">
+        <id column="id" property="id"/>
+        <result column="total_score" property="totalScore"/>
+        <result column="check_time" property="checkTime"/>
+        <result column="target_dorm" property="targetDorm"/>
+        <result column="note" property="note"/>
+        <result column="check_username" property="checkUsername"/>
+    </resultMap>
+
+    <resultMap id="CheckLogVo" type="com.zhuhodor.server.model.vo.CheckLogVo" extends="BaseResultMap">
+        <collection property="itemScores" ofType="com.zhuhodor.server.model.vo.CheckItemLogVo">
+            <result column="score" property="score"/>
+            <result column="item_id" property="itemId"/>
+            <result column="item_score" property="itemScore"/>
+            <result column="item" property="item"/>
+            <result column="parent_item" property="parentItem"/>
+        </collection>
+    </resultMap>
+
+    <select id="getLogByDormId" resultMap="CheckLogVo">
+        SELECT
+        cl.id, cl.total_score, cl.check_time, cl.target_dorm, cl.note, cl.check_username,
+        cil.score, cil.parent_item,
+        ci.id item_id, ci.item, ci.score item_score
+        FROM p_check_log cl, p_checkitem_log cil, p_checkitem ci
+        WHERE
+        cil.check_log = cl.id AND cil.item_id = ci.id AND cl.target_dorm = #{id} AND cl.check_time = #{time}
+        ORDER BY cl.check_time DESC
+    </select>
+</mapper>

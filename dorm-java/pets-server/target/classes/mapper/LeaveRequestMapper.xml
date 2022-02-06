@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhuhodor.server.mapper.LeaveRequestMapper">
+    <select id="getAuditorsByUserId" resultType="com.zhuhodor.server.model.pojo.User">
+        SELECT
+        u.id, u.username, u.nick_name
+        FROM
+        p_user u, p_role r, user_role ur
+        WHERE
+        u.id= ur.u_id AND ur.r_id = r.id AND r.role_name = 'ROLE_INSTRUCTOR'
+    </select>
+
+<!--    根据Id，请假人或审批人获取结果集-->
+    <select id="getByCondition" resultMap="LeaveRequestDetail">
+        SELECT lr.*,
+        i.id i_id, i.url
+        FROM
+        p_leave_request lr LEFT JOIN p_image i
+        ON
+        i.request_id = lr.id AND i.status = 1
+        <if test="param1 != -1">
+            WHERE lr.id = #{param1}
+        </if>
+        <if test="param2 != -1">
+            WHERE lr.proposer = #{param2}
+        </if>
+        <if test="param3 != -1">
+            WHERE lr.auditor = #{param3} AND lr.status = 0
+        </if>
+        ORDER BY lr.create_time DESC
+    </select>
+
+<!--    LeaveRequest映射-->
+    <resultMap id="BaseMap" type="com.zhuhodor.server.model.pojo.LeaveRequest" >
+        <id column="id" property="id"></id>
+        <result column="start_time" property="startTime"></result>
+        <result column="end_time" property="endTime"></result>
+        <result column="reason" property="reason"></result>
+        <result column="status" property="status"></result>
+        <result column="proposer" property="proposer"></result>
+        <result column="auditor" property="auditor"></result>
+        <result column="approve_time" property="approveTime"></result>
+        <result column="destroy_time" property="destroyTime"></result>
+        <result column="create_time" property="createTime"></result>
+        <result column="advice" property="advice"></result>
+    </resultMap>
+
+<!--    LeaveRequest详细信息映射-->
+    <resultMap id="LeaveRequestDetail" type="com.zhuhodor.server.model.pojo.LeaveRequest" extends="BaseMap">
+        <association property="proposerUser" javaType="com.zhuhodor.server.model.pojo.User" column="proposer" select="getUserVoByProposer">
+        </association>
+        <association property="auditorUser" javaType="com.zhuhodor.server.model.pojo.User" column="auditor" select="getUserVoByAuditor">
+        </association>
+        <collection property="imageList" javaType="com.zhuhodor.server.model.pojo.Image">
+            <id column="i_id" property="id"></id>
+            <id column="url" property="url"></id>
+        </collection>
+    </resultMap>
+
+    <!--    UserVo映射-->
+    <resultMap id="UserVo" type="com.zhuhodor.server.model.pojo.User">
+        <id property="id" column="u_id"/>
+        <result property="username" column="username"></result>
+        <result property="nickname" column="nickname"></result>
+    </resultMap>
+
+    <select id="getUserVoByProposer" parameterType="long" resultMap="UserVo">
+        SELECT id u_id, nick_name, username FROM p_user WHERE id = #{proposer}
+    </select>
+    <select id="getUserVoByAuditor" parameterType="long" resultMap="UserVo">
+        SELECT id u_id, nick_name, username FROM p_user WHERE id = #{auditor}
+    </select>
+</mapper>

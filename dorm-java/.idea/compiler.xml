@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="pets-chat" />
+        <module name="pets-mail" />
+        <module name="pets-server" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="auto-generated" target="1.7" />
+      <module name="pets" target="11" />
+      <module name="pets-chat" target="11" />
+      <module name="pets-mail" target="11" />
+      <module name="pets-server" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="auto-generated" options="-parameters" />
+      <module name="pets" options="" />
+      <module name="pets-chat" options="-parameters" />
+      <module name="pets-mail" options="-parameters" />
+      <module name="pets-server" options="-parameters" />
+    </option>
+  </component>
+</project>

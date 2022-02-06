@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhuhodor.server.mapper.UserMapper">
+    <select id="getUserByUserName" resultMap="UserWithRole">
+        SELECT u.*, r.id rid, r.name, r.role_name
+        FROM `p_user` u LEFT JOIN `p_user_role` ur
+        ON ur.u_id = u.id
+        LEFT JOIN `p_role` r
+        ON ur.r_id = r.id
+        WHERE u.username = #{username}
+    </select>
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.zhuhodor.server.model.pojo.User">
+        <id column="id" property="id"/>
+        <result column="nick_name" property="nickName"/>
+        <result column="username" property="username"/>
+        <result column="phone" property="phone"/>
+        <result column="email" property="email"/>
+        <result column="password" property="password"/>
+        <result column="avatar" property="avatar"/>
+        <result column="status" property="status"/>
+        <result column="creat_date" property="createDate"/>
+        <result column="dorm_id" property="dormId"/>
+    </resultMap>
+
+    <resultMap id="UserWithRole" type="com.zhuhodor.server.model.pojo.User" extends="BaseResultMap">
+        <collection property="roles" ofType="com.zhuhodor.server.model.pojo.Role">
+            <id column="rid" property="id"/>
+            <result column="name" property="name"/>
+            <result column="role_name" property="roleName"/>
+        </collection>
+    </resultMap>
+
+</mapper>

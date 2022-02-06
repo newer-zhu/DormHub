@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhuhodor.server.mapper.BedMapper">
+<!--    用户的预定信息VO-->
+    <resultMap id="userBedInfo" type="com.zhuhodor.server.model.vo.BedInfo">
+        <result column="bid" property="bId"></result>
+        <result column="did" property="dId"></result>
+        <result column="bed_num" property="bedNum"></result>
+        <result column="status" property="status"></result>
+        <result column="building_id" property="buildingId"></result>
+        <result column="dorm_id" property="dormId"></result>
+        <result column="capacity" property="capacity"></result>
+        <result column="floor" property="floor"></result>
+    </resultMap>
+
+    <select id="getBedInfoByUserId" resultMap="userBedInfo" parameterType="Integer">
+        SELECT
+        b.id bid, b.bed_num, b.`status`,
+        d.id did, d.building_id, d.capacity, d.dorm_id, d.floor
+        FROM
+        p_dorm d, p_bed b
+        WHERE
+        b.dorm_id = d.id AND b.user_id = #{userId}
+    </select>
+</mapper>

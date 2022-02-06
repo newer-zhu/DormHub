@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhuhodor.server.mapper.PostMapper">
+    <resultMap id="post" type="com.zhuhodor.server.model.pojo.Post">
+        <id property="id" column="id"/>
+        <result property="title" column="title"></result>
+        <result property="content" column="content"></result>
+        <result property="time" column="time"></result>
+        <result property="userId" column="user_id"></result>
+        <result property="status" column="status"></result>
+        <result property="like" column="like"></result>
+        <result property="reason" column="reason"></result>
+    </resultMap>
+
+    <resultMap id="postVo" type="com.zhuhodor.server.model.vo.PostVo" extends="post">
+        <result property="nickName" column="nick_name"></result>
+        <result property="avatar" column="avatar"></result>
+        <result property="buildingId" column="building_id"></result>
+    </resultMap>
+
+<!--    获取postId比指定id小的post并指定结果集大小-->
+    <select id="getCheckedPosts" resultMap="postVo">
+        SELECT
+        pp.*, pu.nick_name, pu.avatar, pd.building_id
+        FROM
+        p_post pp
+        LEFT JOIN p_user pu ON pu.id = pp.user_id
+        LEFT JOIN p_dorm pd ON pd.id = pu.dorm_id
+        WHERE
+        <if test="id != -1">
+            pp.id <![CDATA[ < ]]> #{id} AND
+        </if>
+         pp.status = 1
+         ORDER BY id desc
+        LIMIT #{size}
+    </select>
+
+<!--    根据id获取postVo-->
+    <select id="getPostById" resultType="com.zhuhodor.server.model.vo.PostVo" parameterType="Integer">
+        SELECT
+        pp.*, pu.nick_name, pu.avatar, pd.building_id
+        FROM
+        p_post pp
+        LEFT JOIN p_user pu ON pu.id = pp.user_id
+        LEFT JOIN p_dorm pd ON pd.id = pu.dorm_id
+        WHERE
+        pp.id = #{id}
+    </select>
+
+    <update id="autoPassAt7Pm">
+        UPDATE `p_post`
+        SET `status` = 1
+        WHERE
+        NOW() > DATE_ADD(time,INTERVAL 1 DAY)
+    </update>
+</mapper>
