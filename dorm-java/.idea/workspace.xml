@@ -2,324 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3147259-398f-490b-a789-8d820e016f61" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../dorm-admin/vue-admin-template" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_extension_3_4_3_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_jayway_jsonpath_json_path_2_5_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_vaadin_external_google_android_json_0_0_20131108_vaadin1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_activation_jakarta_activation_api_1_2_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_xml_bind_jakarta_xml_bind_api_2_3_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_10_22.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_accessors_smart_2_4_7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_json_smart_2_4_7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_pool2_2_9_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_assertj_assertj_core_3_19_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_5_7_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_7_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_7_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_params_5_7_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_7_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_7_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_3_9_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_junit_jupiter_3_9_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_typehandlers_jsr310_1_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_objenesis_objenesis_3_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_9_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_skyscreamer_jsonassert_1_5_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_cache_2_5_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_2_5_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_2_5_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_autoconfigure_2_5_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_5_3_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_xmlunit_xmlunit_core_2_8_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__redis_clients_jedis_3_6_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/common/constant/CosConstant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/common/constant/RedisConstant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/common/utils/ImageUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/common/utils/RedisUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/common/utils/SpringUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/config/GlobalCorsConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/config/MybatisRedisCache.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/config/RabbitMqConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/controller/BedController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/controller/ChatController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/controller/FixCatController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/controller/FixController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/controller/ImageController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/controller/LeaveRequestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/controller/MenuController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/controller/PostCommentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/mapper/BedMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/mapper/CheckItemLogVoMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/mapper/FixCatMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/mapper/FixMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/mapper/ImageMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/mapper/LeaveRequestMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/mapper/MenuMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/model/pojo/Bed.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/model/pojo/Fix.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/model/pojo/FixCat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/model/pojo/Image.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/model/pojo/LeaveRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/model/pojo/Menu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/model/pojo/PostComment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/model/vo/BedInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/model/vo/CheckItemLogVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/model/vo/CheckLogAnalysisVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/model/vo/CheckLogVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/model/vo/DormVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/model/vo/GraphVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/model/vo/ImageVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/model/vo/PostCommentVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/model/vo/PostVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/model/vo/UserVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/schedule/ScheduleTask.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/security/filter/CustomFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/security/filter/CustomUrlDecisionManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/service/IBedService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/service/IFixCatService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/service/IFixService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/service/IImageService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/service/ILeaveRequestService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/service/IMenuService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/service/IPostCommentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/service/impl/BedServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/service/impl/FixCatServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/service/impl/FixServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/service/impl/ImageServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/service/impl/LeaveRequestServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/service/impl/MenuServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/resources/mapper/BedMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/resources/mapper/CheckItemLogVoMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/resources/mapper/FixCatMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/resources/mapper/FixMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/resources/mapper/ImageMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/resources/mapper/LeaveRequestMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/resources/mapper/MenuMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/resources/mapper/PostCommentMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/src/test/java/com/zhuhodor/TestApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/chat/controller/WebSocketController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/constant/RedisConstant.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/utils/ImageUtil.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/utils/RedisUtil$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/utils/RedisUtil.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/BedController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/FixCatController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/FixController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/ImageController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/LeaveRequestController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/PostCommentController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/PostController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/AnnouncementMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/BedMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/CheckItemLogVoMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/FixCatMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/FixMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/LeaveRequestMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/PostCommentMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/PostMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/Announcement.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/Bed.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/Fix.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/FixCat.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/Image.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/LeaveRequest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/Post.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/PostComment.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/vo/CheckItemLogVo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/vo/CheckLogAnalysisVo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/vo/PostCommentVo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/vo/PostVo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/schedule/ScheduleTask.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/IAnnouncementService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/IBedService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/IFixCatService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/IFixService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/IImageService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/ILeaveRequestService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/IPostCommentService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/IPostService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/AnnouncementServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/BedServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/FixCatServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/FixServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/ImageServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/LeaveRequestServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/PostCommentServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/PostServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/target/classes/mapper/FixMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/target/classes/mapper/PostMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pets-server/target/test-classes/com/zhuhodor/TestApplication.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/api/bed.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/api/file.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/api/fix.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/api/inspection.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/api/leave.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/api/post.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/assets/img/20上下铺.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/assets/img/fix/request.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/assets/img/index/announcement.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/assets/img/index/cover1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/assets/img/index/cover2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/assets/img/index/fix.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/assets/img/index/inspecton.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/assets/img/index/leave.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/assets/img/index/post.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/assets/img/index/reserve.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/assets/img/inspection/empty.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/assets/img/leave.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/assets/img/post/checking.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/assets/img/reserve/bed.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/assets/img/reserve/bunk_bed.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/assets/img/reserve/door.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/assets/img/reserve/window.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/assets/img/已赞.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/assets/img/床位预约.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/assets/img/点赞.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/assets/img/评论.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/assets/img/门牌.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/components/fix/FixList.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/components/leave/LeaveList.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/components/post/PostsList.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/plugins/chart/chart.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/plugins/chart/chart.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/store/modules/post.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/views/dorm/dormInfo/MyDorm.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/views/dorm/fix/DormFixReports.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/views/dorm/fix/FixDetail.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/views/dorm/fix/FixReport.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/views/dorm/fix/MyFixReports.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/views/dorm/inspection/Modify.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/views/dorm/inspection/ResGraph.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/views/dorm/inspection/Result.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/views/dorm/leave/Detail.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/views/dorm/leave/MyRequests.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/views/dorm/leave/Request.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/views/dorm/post/Edit.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/views/dorm/post/MyPosts.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/views/dorm/post/PostDetail.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/views/dorm/post/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/views/dorm/reserve/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/views/index/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dorm-admin/vue-admin-template" beforeDir="false" afterPath="$PROJECT_DIR$/../dorm-admin/vue-admin-template" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_3_3_1_tmp.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_3_4_3_4.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_annotation_3_3_1_tmp.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_boot_starter_3_3_1_tmp.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_boot_starter_3_4_3_4.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_core_3_3_1_tmp.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_core_3_4_3_4.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_extension_3_3_1_tmp.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_annotation_3_4_3_4.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_generator_3_3_1_tmp.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_generator_3_5_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_jsqlparser_jsqlparser_3_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_jsqlparser_jsqlparser_4_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_lettuce_lettuce_core_6_1_4_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_buffer_4_1_66_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_4_1_66_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_common_4_1_66_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_handler_4_1_66_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_4_1_66_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_4_1_66_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_projectreactor_reactor_core_3_4_8.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_11.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_5_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_5_7.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_2_0_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_2_0_6.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_reactivestreams_reactive_streams_1_0_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_activation_jakarta_activation_1_2_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_mail_jakarta_mail_1_6_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_attoparser_attoparser_2_0_5_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_mail_2_5_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_thymeleaf_2_5_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_extras_thymeleaf_extras_java8time_3_0_4_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_3_0_12_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_spring5_3_0_12_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_unbescape_unbescape_1_1_6_RELEASE.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/PetsServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/PetsServerApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/chat/controller/WenSocketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/chat/controller/WebSocketController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/common/domain/PageBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/common/domain/PageBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/common/utils/TencentCos.java" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/common/utils/TencentCos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/config/MybatisPlusConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/config/MybatisPlusConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/config/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/config/RedisConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/config/Swagger2Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/config/Swagger2Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/controller/CheckItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/controller/CheckItemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/controller/CheckLogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/controller/CheckLogController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/controller/DormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/controller/DormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/generator/MybatisPlusGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/generator/MybatisPlusGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/mapper/CheckItemMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/mapper/CheckItemMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/mapper/CheckLogMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/mapper/CheckLogMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/mapper/DormMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/mapper/DormMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/mapper/RoleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/mapper/RoleMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/model/pojo/CheckLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/model/pojo/CheckLog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/model/pojo/Dorm.java" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/model/pojo/Dorm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/model/pojo/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/model/pojo/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/model/pojo/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/model/pojo/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/security/component/RestAccessDeniedHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/security/component/RestAccessDeniedHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/security/component/RestAuthorizationEntryPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/security/component/RestAuthorizationEntryPoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/security/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/security/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/security/filter/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/security/filter/JwtAuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/service/ICheckLogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/service/ICheckLogService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/service/IDormService.java" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/service/IDormService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/service/impl/CheckLogServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/service/impl/CheckLogServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/service/impl/DormServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/service/impl/DormServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/src/main/resources/config/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/resources/config/application-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/src/main/resources/mapper/CheckLogMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/resources/mapper/CheckLogMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/src/main/resources/mapper/DormMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/resources/mapper/DormMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/PetsServerApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/PetsServerApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/chat/controller/WenSocketController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/domain/PageBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/domain/PageBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/utils/TencentCos.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/utils/TencentCos.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/config/MybatisPlusConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/config/MybatisPlusConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/config/RedisConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/config/RedisConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/config/Swagger2Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/config/Swagger2Config.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/CheckItemController.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/CheckItemController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/CheckLogController.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/CheckLogController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/DormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/DormController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/generator/MybatisPlusGenerator$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/generator/MybatisPlusGenerator$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/generator/MybatisPlusGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/generator/MybatisPlusGenerator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/CheckItemMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/CheckItemMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/CheckLogMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/CheckLogMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/DormMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/DormMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/ImageMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/ImageMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/RoleMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/RoleMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/UserMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/CheckLog.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/CheckLog.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/Dorm.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/Dorm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/Role.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/security/component/RestAuthorizationEntryPoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/security/component/RestAuthorizationEntryPoint.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/security/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/security/config/SecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/security/filter/JwtAuthenticationFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/security/filter/JwtAuthenticationFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/ICheckLogService.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/ICheckLogService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/IDormService.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/IDormService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/CheckLogServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/CheckLogServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/DormServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/DormServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/config/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/config/application-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/mapper/CheckLogMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/mapper/CheckLogMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/mapper/DormMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/mapper/DormMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/mapper/MenuMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/mapper/MenuMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dorm-web/pets-web/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../dorm-web/pets-web/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dorm-web/pets-web/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../dorm-web/pets-web/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dorm-web/pets-web/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../dorm-web/pets-web/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dorm-web/pets-web/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dorm-web/pets-web/src/api/chat.js" beforeDir="false" afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/api/chat.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dorm-web/pets-web/src/api/dorm.js" beforeDir="false" afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/api/dorm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dorm-web/pets-web/src/api/individual.js" beforeDir="false" afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/api/individual.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dorm-web/pets-web/src/assets/img/test.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dorm-web/pets-web/src/components/FooterGuide/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/components/FooterGuide/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dorm-web/pets-web/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dorm-web/pets-web/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dorm-web/pets-web/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/store/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dorm-web/pets-web/src/store/modules/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/store/modules/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dorm-web/pets-web/src/utils/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/utils/request.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dorm-web/pets-web/src/views/chat/chatDetails/components/MessageHeader.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/views/chat/chatDetails/components/MessageHeader.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dorm-web/pets-web/src/views/chat/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/views/chat/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dorm-web/pets-web/src/views/dorm/inspection/evaluate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/views/dorm/inspection/Evaluate.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dorm-web/pets-web/src/views/dorm/inspection/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/views/dorm/inspection/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dorm-web/pets-web/src/views/individual/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/views/individual/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dorm-web/pets-web/src/views/login/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/views/login/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dorm-web/pets-web/src/views/register/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../dorm-web/pets-web/src/views/register/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dorm-web/pets-web/vue.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/../dorm-web/pets-web/vue.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/META-INF/pets-server.kotlin_module" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -383,7 +78,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="E:/yeb-back/yeb-back-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pets-server/src/main/resources/config" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -500,7 +195,7 @@
     <option name="viewStates">
       <list>
         <serviceView>
-          <option name="contentProportion" value="0.100409836" />
+          <option name="contentProportion" value="0.13333334" />
           <treeState>
             <expand>
               <path>
@@ -510,7 +205,7 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
             <select />
@@ -588,6 +283,7 @@
       <workItem from="1642860684813" duration="11433000" />
       <workItem from="1643190136502" duration="17130000" />
       <workItem from="1643538082936" duration="6806000" />
+      <workItem from="1644144463307" duration="233000" />
     </task>
     <servers />
   </component>
@@ -598,10 +294,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="304" y="109" width="1164" height="689" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1644136431772">
+    <state x="304" y="109" width="1164" height="689" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1644144532494">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="304" y="109" width="1164" height="689" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1644136431772" />
+    <state x="304" y="109" width="1164" height="689" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1644144532494" />
     <state x="667" y="159" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1644136378409">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -634,53 +330,53 @@
     </state>
     <state x="141" y="160" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1643204831774" />
     <state x="2805" y="182" key="FileChooserDialogImpl/1920.0.1536.826/0.0.1920.1032@1920.0.1536.826" timestamp="1636274123662" />
-    <state width="1316" height="223" key="GridCell.Tab.0.bottom" timestamp="1644142818973">
+    <state width="831" height="409" key="GridCell.Tab.0.bottom" timestamp="1644144665997">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1316" height="253" key="GridCell.Tab.0.bottom/0.0.1536.816@0.0.1536.816" timestamp="1641990302102" />
-    <state width="1316" height="223" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1644142818973" />
+    <state width="831" height="409" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1644144665997" />
     <state width="1493" height="256" key="GridCell.Tab.0.bottom/1920.0.1536.826/0.0.1920.1032@1920.0.1536.826" timestamp="1641814119600" />
-    <state width="1316" height="223" key="GridCell.Tab.0.center" timestamp="1644142818973">
+    <state width="831" height="409" key="GridCell.Tab.0.center" timestamp="1644144665997">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1316" height="253" key="GridCell.Tab.0.center/0.0.1536.816@0.0.1536.816" timestamp="1641990302101" />
-    <state width="1316" height="223" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1644142818973" />
+    <state width="831" height="409" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1644144665997" />
     <state width="1493" height="256" key="GridCell.Tab.0.center/1920.0.1536.826/0.0.1920.1032@1920.0.1536.826" timestamp="1641814119600" />
-    <state width="1316" height="223" key="GridCell.Tab.0.left" timestamp="1644142818973">
+    <state width="831" height="409" key="GridCell.Tab.0.left" timestamp="1644144665997">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1316" height="253" key="GridCell.Tab.0.left/0.0.1536.816@0.0.1536.816" timestamp="1641990302101" />
-    <state width="1316" height="223" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1644142818973" />
+    <state width="831" height="409" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1644144665997" />
     <state width="1493" height="256" key="GridCell.Tab.0.left/1920.0.1536.826/0.0.1920.1032@1920.0.1536.826" timestamp="1641814119599" />
-    <state width="1316" height="223" key="GridCell.Tab.0.right" timestamp="1644142818973">
+    <state width="831" height="409" key="GridCell.Tab.0.right" timestamp="1644144665997">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1316" height="253" key="GridCell.Tab.0.right/0.0.1536.816@0.0.1536.816" timestamp="1641990302101" />
-    <state width="1316" height="223" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1644142818973" />
+    <state width="831" height="409" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1644144665997" />
     <state width="1493" height="256" key="GridCell.Tab.0.right/1920.0.1536.826/0.0.1920.1032@1920.0.1536.826" timestamp="1641814119600" />
-    <state width="1316" height="223" key="GridCell.Tab.1.bottom" timestamp="1644142818973">
+    <state width="831" height="409" key="GridCell.Tab.1.bottom" timestamp="1644144665998">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1316" height="253" key="GridCell.Tab.1.bottom/0.0.1536.816@0.0.1536.816" timestamp="1641990302102" />
-    <state width="1316" height="223" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1644142818973" />
+    <state width="831" height="409" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1644144665998" />
     <state width="1316" height="293" key="GridCell.Tab.1.bottom/1920.0.1536.826/0.0.1920.1032@1920.0.1536.826" timestamp="1641814119591" />
-    <state width="1316" height="223" key="GridCell.Tab.1.center" timestamp="1644142818973">
+    <state width="831" height="409" key="GridCell.Tab.1.center" timestamp="1644144665997">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1316" height="253" key="GridCell.Tab.1.center/0.0.1536.816@0.0.1536.816" timestamp="1641990302102" />
-    <state width="1316" height="223" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1644142818973" />
+    <state width="831" height="409" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1644144665997" />
     <state width="1316" height="293" key="GridCell.Tab.1.center/1920.0.1536.826/0.0.1920.1032@1920.0.1536.826" timestamp="1641814119591" />
-    <state width="1316" height="223" key="GridCell.Tab.1.left" timestamp="1644142818973">
+    <state width="831" height="409" key="GridCell.Tab.1.left" timestamp="1644144665997">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1316" height="253" key="GridCell.Tab.1.left/0.0.1536.816@0.0.1536.816" timestamp="1641990302102" />
-    <state width="1316" height="223" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1644142818973" />
+    <state width="831" height="409" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1644144665997" />
     <state width="1316" height="293" key="GridCell.Tab.1.left/1920.0.1536.826/0.0.1920.1032@1920.0.1536.826" timestamp="1641814119591" />
-    <state width="1316" height="223" key="GridCell.Tab.1.right" timestamp="1644142818973">
+    <state width="831" height="409" key="GridCell.Tab.1.right" timestamp="1644144665998">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1316" height="253" key="GridCell.Tab.1.right/0.0.1536.816@0.0.1536.816" timestamp="1641990302102" />
-    <state width="1316" height="223" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1644142818973" />
+    <state width="831" height="409" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1644144665998" />
     <state width="1316" height="293" key="GridCell.Tab.1.right/1920.0.1536.826/0.0.1920.1032@1920.0.1536.826" timestamp="1641814119591" />
     <state x="112" y="161" width="1108" height="632" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1643964048078">
       <screen x="0" y="0" width="1536" height="864" />
