@@ -11,4 +11,6 @@ public class CosConstant {
     public static final String REQUEST = "request/";
 
     public static final String FIX = "fix/";
+
+    public static final String ANNOUNCEMENT = "announcement/";
 }

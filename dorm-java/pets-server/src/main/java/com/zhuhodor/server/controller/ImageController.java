@@ -9,6 +9,7 @@ import com.zhuhodor.server.common.utils.TencentCos;
 import com.zhuhodor.server.model.pojo.Image;
 import com.zhuhodor.server.service.IImageService;
 import io.swagger.annotations.ApiOperation;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -25,6 +26,7 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping("/image")
+@Slf4j
 public class ImageController {
     @Autowired
     private TencentCos tencentCos;
@@ -76,6 +78,14 @@ public class ImageController {
     @PostMapping("/avatar")
     public Result uploadAvatar(@RequestParam("avatar") MultipartFile avatar){
         return Result.success("上传成功",tencentCos.uploadPic(avatar, CosConstant.AVATAR));
+    }
+
+    @ApiOperation(value = "公告图片上传")
+    @PostMapping("/announcement")
+    public Result uploadAnnouncementPic(@RequestParam("img") MultipartFile pic){
+        log.info("upload announcement image");
+        Map<String, String> map = tencentCos.uploadPic(pic, CosConstant.ANNOUNCEMENT);
+        return Result.success("上传成功",map.get("remoteAddr")+map.get("key"));
     }
 
     @ApiOperation(value = "删除图片")

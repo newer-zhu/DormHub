@@ -13,4 +13,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IAnnouncementService extends IService<Announcement> {
 
+    boolean softDel(Integer id);
+
+    boolean hardDel(Integer id);
 }
