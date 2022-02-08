@@ -1,8 +1,11 @@
 package com.zhuhodor.server.mapper;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.zhuhodor.server.model.pojo.Announcement;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
 
 /**
  * <p>
@@ -14,5 +17,5 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface AnnouncementMapper extends BaseMapper<Announcement> {
-
+    List<Announcement> getAnnouncements(IPage<Announcement> page);
 }

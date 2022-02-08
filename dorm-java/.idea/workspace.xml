@@ -3,16 +3,24 @@
   <component name="ChangeListManager">
     <list default="true" id="b3147259-398f-490b-a789-8d820e016f61" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/common/constant/CosConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/common/constant/CosConstant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/controller/AnnouncementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/controller/AnnouncementController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/controller/ImageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/controller/ImageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/mapper/AnnouncementMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/mapper/AnnouncementMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/model/pojo/Announcement.java" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/model/pojo/Announcement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/model/pojo/Image.java" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/model/pojo/Image.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/model/pojo/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/model/pojo/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/service/IAnnouncementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/service/IAnnouncementService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/service/impl/AnnouncementServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/service/impl/AnnouncementServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/constant/CosConstant.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/constant/CosConstant.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/src/main/resources/mapper/AnnouncementMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/resources/mapper/AnnouncementMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/src/main/resources/mapper/MenuMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/resources/mapper/MenuMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/AnnouncementController.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/AnnouncementController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/ImageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/ImageController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/AnnouncementMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/AnnouncementMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/Announcement.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/Announcement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/Image.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/Image.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/Menu.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/IAnnouncementService.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/IAnnouncementService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/AnnouncementServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/AnnouncementServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/mapper/AnnouncementMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/mapper/AnnouncementMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/mapper/MenuMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/mapper/MenuMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -287,8 +295,16 @@
       <workItem from="1644145429691" duration="169000" />
       <workItem from="1644149325197" duration="58000" />
       <workItem from="1644168671895" duration="14000" />
-      <workItem from="1644223139592" duration="5883000" />
+      <workItem from="1644223139592" duration="18235000" />
     </task>
+    <task id="LOCAL-00001" summary="daily completion">
+      <created>1644243578631</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1644243578631</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -296,6 +312,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="daily completion" />
+    <option name="LAST_COMMIT_MESSAGE" value="daily completion" />
   </component>
   <component name="WindowStateProjectService">
     <state x="304" y="109" width="1164" height="689" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1644144532494">
@@ -306,10 +324,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="667" y="159" key="#com.intellij.ide.macro.MacrosDialog/0.0.1536.864@0.0.1536.864" timestamp="1644136378409" />
-    <state x="680" y="118" key="#com.intellij.ide.util.MemberChooser" timestamp="1644227102402">
+    <state x="680" y="118" key="#com.intellij.ide.util.MemberChooser" timestamp="1644312907879">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="680" y="118" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864@0.0.1536.864" timestamp="1644227102402" />
+    <state x="680" y="118" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864@0.0.1536.864" timestamp="1644312907879" />
     <state x="2600" y="113" key="#com.intellij.ide.util.MemberChooser/1920.0.1536.826/0.0.1920.1032@1920.0.1536.826" timestamp="1641736077517" />
     <state x="247" y="412" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1644138653913">
       <screen x="0" y="0" width="1536" height="864" />
@@ -325,10 +343,10 @@
       <screen x="1920" y="0" width="1536" height="826" />
     </state>
     <state x="2419" y="155" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/1920.0.1536.826/0.0.1920.1032@1920.0.1536.826" timestamp="1640015299891" />
-    <state x="380" y="9" key="CommitChangelistDialog2" timestamp="1644243530272">
+    <state x="380" y="9" key="CommitChangelistDialog2" timestamp="1644243577643">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="380" y="9" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1644243530272" />
+    <state x="380" y="9" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1644243577643" />
     <state x="229" y="151" width="1108" height="632" key="DiffContextDialog" timestamp="1643962562990">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -338,58 +356,62 @@
     </state>
     <state x="141" y="160" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1643204831774" />
     <state x="2805" y="182" key="FileChooserDialogImpl/1920.0.1536.826/0.0.1920.1032@1920.0.1536.826" timestamp="1636274123662" />
-    <state width="1061" height="108" key="GridCell.Tab.0.bottom" timestamp="1644243294937">
+    <state width="1247" height="140" key="GridCell.Tab.0.bottom" timestamp="1644324934302">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1316" height="253" key="GridCell.Tab.0.bottom/0.0.1536.816@0.0.1536.816" timestamp="1641990302102" />
-    <state width="1061" height="108" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1644243294937" />
+    <state width="1247" height="140" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1644324934302" />
     <state width="1493" height="256" key="GridCell.Tab.0.bottom/1920.0.1536.826/0.0.1920.1032@1920.0.1536.826" timestamp="1641814119600" />
-    <state width="1061" height="108" key="GridCell.Tab.0.center" timestamp="1644243294937">
+    <state width="1247" height="140" key="GridCell.Tab.0.center" timestamp="1644324934301">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1316" height="253" key="GridCell.Tab.0.center/0.0.1536.816@0.0.1536.816" timestamp="1641990302101" />
-    <state width="1061" height="108" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1644243294937" />
+    <state width="1247" height="140" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1644324934301" />
     <state width="1493" height="256" key="GridCell.Tab.0.center/1920.0.1536.826/0.0.1920.1032@1920.0.1536.826" timestamp="1641814119600" />
-    <state width="1061" height="108" key="GridCell.Tab.0.left" timestamp="1644243294937">
+    <state width="1247" height="140" key="GridCell.Tab.0.left" timestamp="1644324934301">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1316" height="253" key="GridCell.Tab.0.left/0.0.1536.816@0.0.1536.816" timestamp="1641990302101" />
-    <state width="1061" height="108" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1644243294937" />
+    <state width="1247" height="140" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1644324934301" />
     <state width="1493" height="256" key="GridCell.Tab.0.left/1920.0.1536.826/0.0.1920.1032@1920.0.1536.826" timestamp="1641814119599" />
-    <state width="1061" height="108" key="GridCell.Tab.0.right" timestamp="1644243294937">
+    <state width="1247" height="140" key="GridCell.Tab.0.right" timestamp="1644324934302">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1316" height="253" key="GridCell.Tab.0.right/0.0.1536.816@0.0.1536.816" timestamp="1641990302101" />
-    <state width="1061" height="108" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1644243294937" />
+    <state width="1247" height="140" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1644324934301" />
     <state width="1493" height="256" key="GridCell.Tab.0.right/1920.0.1536.826/0.0.1920.1032@1920.0.1536.826" timestamp="1641814119600" />
-    <state width="1061" height="108" key="GridCell.Tab.1.bottom" timestamp="1644243294937">
+    <state width="1247" height="140" key="GridCell.Tab.1.bottom" timestamp="1644324934302">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1316" height="253" key="GridCell.Tab.1.bottom/0.0.1536.816@0.0.1536.816" timestamp="1641990302102" />
-    <state width="1061" height="108" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1644243294937" />
+    <state width="1247" height="140" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1644324934302" />
     <state width="1316" height="293" key="GridCell.Tab.1.bottom/1920.0.1536.826/0.0.1920.1032@1920.0.1536.826" timestamp="1641814119591" />
-    <state width="1061" height="108" key="GridCell.Tab.1.center" timestamp="1644243294937">
+    <state width="1247" height="140" key="GridCell.Tab.1.center" timestamp="1644324934302">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1316" height="253" key="GridCell.Tab.1.center/0.0.1536.816@0.0.1536.816" timestamp="1641990302102" />
-    <state width="1061" height="108" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1644243294937" />
+    <state width="1247" height="140" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1644324934302" />
     <state width="1316" height="293" key="GridCell.Tab.1.center/1920.0.1536.826/0.0.1920.1032@1920.0.1536.826" timestamp="1641814119591" />
-    <state width="1061" height="108" key="GridCell.Tab.1.left" timestamp="1644243294937">
+    <state width="1247" height="140" key="GridCell.Tab.1.left" timestamp="1644324934302">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1316" height="253" key="GridCell.Tab.1.left/0.0.1536.816@0.0.1536.816" timestamp="1641990302102" />
-    <state width="1061" height="108" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1644243294937" />
+    <state width="1247" height="140" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1644324934302" />
     <state width="1316" height="293" key="GridCell.Tab.1.left/1920.0.1536.826/0.0.1920.1032@1920.0.1536.826" timestamp="1641814119591" />
-    <state width="1061" height="108" key="GridCell.Tab.1.right" timestamp="1644243294937">
+    <state width="1247" height="140" key="GridCell.Tab.1.right" timestamp="1644324934302">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1316" height="253" key="GridCell.Tab.1.right/0.0.1536.816@0.0.1536.816" timestamp="1641990302102" />
-    <state width="1061" height="108" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1644243294937" />
+    <state width="1247" height="140" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1644324934302" />
     <state width="1316" height="293" key="GridCell.Tab.1.right/1920.0.1536.826/0.0.1920.1032@1920.0.1536.826" timestamp="1641814119591" />
     <state x="376" y="129" width="996" height="711" key="SettingsEditor" timestamp="1644145414156">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="376" y="129" width="996" height="711" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1644145414156" />
+    <state x="361" y="165" key="Vcs.Push.Dialog.v2" timestamp="1644243640998">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="361" y="165" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1644243640998" />
     <state x="112" y="161" width="1108" height="632" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1643964048078">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -398,9 +420,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="120" y="109" width="1235" height="746" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.864@0.0.1536.864" timestamp="1643964048078" />
-    <state x="2431" y="36" key="refactoring.ChangeSignatureDialog" timestamp="1641400887496">
-      <screen x="1920" y="0" width="1536" height="826" />
+    <state x="511" y="38" key="refactoring.ChangeSignatureDialog" timestamp="1644323672138">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
+    <state x="511" y="38" key="refactoring.ChangeSignatureDialog/0.0.1536.864@0.0.1536.864" timestamp="1644323672138" />
     <state x="2431" y="36" key="refactoring.ChangeSignatureDialog/1920.0.1536.826/0.0.1920.1032@1920.0.1536.826" timestamp="1641400887496" />
     <state x="518" y="201" key="run.anything.popup" timestamp="1644227591884">
       <screen x="0" y="0" width="1536" height="864" />

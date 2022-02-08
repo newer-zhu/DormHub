@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zhuhodor.server.mapper.AnnouncementMapper">
+    <resultMap id="Announcement" type="com.zhuhodor.server.model.pojo.Announcement">
+        <association property="user" column="user_id" select="getUser"></association>
+    </resultMap>
 
+    <select id="getAnnouncements" resultMap="Announcement">
+        SELECT pa.*
+        FROM `p_announcement` pa
+        ORDER BY pa.publish_time DESC
+    </select>
+
+    <select id="getUser" resultType="com.zhuhodor.server.model.vo.UserVo" parameterType="int">
+        select id, nick_name, username from p_user WHERE id = #{id}
+    </select>
 </mapper>

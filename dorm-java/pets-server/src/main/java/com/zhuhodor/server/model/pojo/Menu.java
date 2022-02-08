@@ -39,6 +39,9 @@ public class Menu implements Serializable {
     @TableField("path")
     private String path;
 
+    @TableField("hidden")
+    private boolean hidden;
+
     @TableField("component")
     private String component;
 

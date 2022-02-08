@@ -13,6 +13,7 @@
         <result column="requireAuth" property="requireAuth"/>
         <result column="parentId" property="parentId"/>
         <result column="enabled" property="enabled"/>
+        <result column="hidden" property="hidden"/>
     </resultMap>
 <!--    多级菜单-->
     <resultMap id="Menus" type="com.zhuhodor.server.model.pojo.Menu" extends="BaseResultMap">
@@ -27,6 +28,7 @@
             <result column="requireAuth2" property="requireAuth"/>
             <result column="parentId2" property="parentId"/>
             <result column="enabled2" property="enabled"/>
+            <result column="hidden2" property="hidden"/>
         </collection>
     </resultMap>
 <!--    菜单携带角色信息-->
@@ -69,8 +71,9 @@
             m2.name as name2,
             m2.parentId as parentId2,
             m2.requireAuth as requireAuth2,
-             m2.url as url2,
-            m2.path as path2
+            m2.url as url2,
+            m2.path as path2,
+            m2.hidden as hidden2
         from
             p_menu m1,
             p_menu m2,

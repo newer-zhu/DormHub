@@ -20,7 +20,7 @@ import java.time.LocalDateTime;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author zhuhodor
@@ -60,6 +60,10 @@ public class Image implements Serializable {
     @ApiModelProperty(value = "属于帖子附件")
     @TableField("post_id")
     private Integer postId;
+
+    @ApiModelProperty(value = "公告封面")
+    @TableField("cover_id")
+    private Integer coverId;
 
     @ApiModelProperty(value = "属于报修附件")
     @TableField("fix_id")

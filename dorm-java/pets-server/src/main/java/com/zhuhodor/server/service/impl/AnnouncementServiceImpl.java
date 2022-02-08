@@ -1,6 +1,7 @@
 package com.zhuhodor.server.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.zhuhodor.server.mapper.AnnouncementMapper;
 import com.zhuhodor.server.model.pojo.Announcement;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * <p>
@@ -39,5 +41,10 @@ public class AnnouncementServiceImpl extends ServiceImpl<AnnouncementMapper, Ann
     @Override
     public boolean hardDel(Integer id) {
         return 1 == announcementMapper.deleteById(id);
+    }
+
+    @Override
+    public List<Announcement> getAnnouncements(IPage<Announcement> page) {
+        return announcementMapper.getAnnouncements(page);
     }
 }
