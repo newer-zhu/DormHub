@@ -1,5 +1,6 @@
 package com.zhuhodor.server.service;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.zhuhodor.server.model.pojo.Fix;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -22,4 +23,6 @@ public interface IFixService extends IService<Fix> {
     List<Fix> getFixReportsByDormId(Integer dormId);
 
     Fix getFixReportById(Integer id);
+
+    List<Fix> getFixReportsByCondition(IPage<Fix> page);
 }

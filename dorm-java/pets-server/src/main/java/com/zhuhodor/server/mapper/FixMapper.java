@@ -1,5 +1,6 @@
 package com.zhuhodor.server.mapper;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.zhuhodor.server.model.pojo.Fix;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
@@ -23,4 +24,6 @@ public interface FixMapper extends BaseMapper<Fix> {
     Fix getFixReportById(@Param("id") Integer id);
 
     List<Fix> getFixReportsByDormId(@Param("dormId") Integer dormId);
+
+    List<Fix> getFixReportsByCondition(IPage<Fix> page);
 }

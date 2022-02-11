@@ -1,6 +1,7 @@
 package com.zhuhodor.server.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.zhuhodor.server.mapper.ImageMapper;
 import com.zhuhodor.server.model.pojo.Fix;
 import com.zhuhodor.server.mapper.FixMapper;
@@ -51,5 +52,10 @@ public class FixServiceImpl extends ServiceImpl<FixMapper, Fix> implements IFixS
     @Override
     public Fix getFixReportById(Integer id) {
         return fixMapper.getFixReportById(id);
+    }
+
+    @Override
+    public List<Fix> getFixReportsByCondition(IPage<Fix> page) {
+        return fixMapper.getFixReportsByCondition(page);
     }
 }

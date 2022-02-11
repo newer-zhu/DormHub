@@ -2,6 +2,8 @@ package com.zhuhodor.server.controller;
 
 
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.zhuhodor.server.common.domain.Result;
 import com.zhuhodor.server.model.pojo.Fix;
 import com.zhuhodor.server.service.IFixService;
@@ -10,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * <p>
@@ -37,6 +40,15 @@ public class FixController {
         }else {
             return Result.fail("提交出错了!");
         }
+    }
+
+    @ApiOperation("根据条件获取报修单")
+    @GetMapping("/table/{cur}")
+    public Result getFixReportsByCon(@PathVariable("cur") Integer cur){
+        IPage<Fix> page = new Page(cur, 7);
+        List<Fix> list = fixService.getFixReportsByCondition(page);
+        page.setRecords(list);
+        return Result.success(page);
     }
 
     @ApiOperation("软删除报修单")

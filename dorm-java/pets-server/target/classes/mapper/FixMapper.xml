@@ -17,7 +17,8 @@
         <association property="cat" column="cat_id" select="getCat"></association>
         <association property="user" select="getUser" column="user_id"></association>
         <association property="dorm" select="getDorm" column="dorm_id"></association>
-        <collection property="images" javaType="List" resultMap="imageVo"/>
+        <collection property="images" javaType="arraylist" ofType="com.zhuhodor.server.model.vo.ImageVo"
+                    column="id" select="getImages"/>
     </resultMap>
 
     <resultMap id="imageVo" type="com.zhuhodor.server.model.vo.ImageVo">
@@ -49,6 +50,9 @@
     <select id="getDorm" resultMap="dormVo">
         SELECT id d_id, building_id, dorm_id FROM p_dorm WHERE id = #{id}
     </select>
+    <select id="getImages" resultMap="imageVo">
+        SELECT id i_id, url FROM p_image WHERE fix_id = #{fixId}
+    </select>
 
     <select id="getFixReportsByUserId" resultMap="Fix">
         SELECT pf.`id`, pf.`create_time`, pf.`detail`, pf.`priority`, pf.`status`, pf.`thing`, pf.`num`,
@@ -79,6 +83,12 @@
         ON
         pi.fix_id = pf.id
         WHERE pf.id = #{id} AND pf.status != -1
+    </select>
+
+    <select id="getFixReportsByCondition" resultMap="Fix">
+        SELECT pf.*
+        FROM `p_fix` pf
+        WHERE pf.status != -1
     </select>
 
 </mapper>
