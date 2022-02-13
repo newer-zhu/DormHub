@@ -2,12 +2,14 @@ package com.zhuhodor.server.controller;
 
 
 import com.zhuhodor.server.common.domain.Result;
+import com.zhuhodor.server.model.pojo.FixCat;
+import com.zhuhodor.server.model.vo.FixCatPieVo;
 import com.zhuhodor.server.service.IFixCatService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * <p>
@@ -27,5 +29,29 @@ public class FixCatController {
     @GetMapping()
     public Result getAllCats(){
         return Result.success(fixCatService.list());
+    }
+
+    @ApiOperation("更新分类")
+    @PutMapping()
+    public Result updateCat(@RequestBody FixCat cat){
+        if (fixCatService.updateById(cat)){
+            return Result.success(null);
+        }
+        return Result.fail("服务器出错了");
+    }
+
+    @ApiOperation("新增分类")
+    @PostMapping()
+    public Result saveCat(@RequestBody FixCat cat){
+        if (fixCatService.save(cat)){
+            return Result.success("保存成功");
+        }
+        return Result.fail("服务器出错了");
+    }
+
+    @ApiOperation("获取饼图")
+    @GetMapping("/pie")
+    public Result<List<FixCatPieVo>> getPie(){
+        return Result.success(fixCatService.getPie());
     }
 }

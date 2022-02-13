@@ -9,6 +9,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
+import com.zhuhodor.server.model.vo.UserVo;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -22,7 +23,7 @@ import java.util.List;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author zhuhodor
@@ -96,9 +97,9 @@ public class LeaveRequest implements Serializable {
 
     @ApiModelProperty(value = "申请人")
     @TableField(exist = false)
-    private User proposerUser;
+    private UserVo proposerUser;
 
     @ApiModelProperty(value = "批准人")
     @TableField(exist = false)
-    private User auditorUser;
+    private UserVo auditorUser;
 }

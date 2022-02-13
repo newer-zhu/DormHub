@@ -18,13 +18,10 @@
         <association property="user" select="getUser" column="user_id"></association>
         <association property="dorm" select="getDorm" column="dorm_id"></association>
         <collection property="images" javaType="arraylist" ofType="com.zhuhodor.server.model.vo.ImageVo"
-                    column="id" select="getImages"/>
+                    column="id" select="com.zhuhodor.server.mapper.ImageMapper.getImageVOByFixId"/>
     </resultMap>
 
-    <resultMap id="imageVo" type="com.zhuhodor.server.model.vo.ImageVo">
-        <id property="id" column="i_id" />
-        <result property="url" column="url"/>
-    </resultMap>
+
     <resultMap id="fixCatVo" type="com.zhuhodor.server.model.pojo.FixCat">
         <id property="id" column="c_id"/>
         <result property="category" column="category"/>
@@ -50,38 +47,24 @@
     <select id="getDorm" resultMap="dormVo">
         SELECT id d_id, building_id, dorm_id FROM p_dorm WHERE id = #{id}
     </select>
-    <select id="getImages" resultMap="imageVo">
-        SELECT id i_id, url FROM p_image WHERE fix_id = #{fixId}
-    </select>
+
 
     <select id="getFixReportsByUserId" resultMap="Fix">
-        SELECT pf.`id`, pf.`create_time`, pf.`detail`, pf.`priority`, pf.`status`, pf.`thing`, pf.`num`,
-        pi.url
+        SELECT pf.`id`, pf.`create_time`, pf.`detail`, pf.`priority`, pf.`status`, pf.`thing`, pf.`num`
         FROM `p_fix` pf
-        LEFT JOIN `p_image` pi
-        ON
-        pi.fix_id = pf.id
         WHERE pf.user_id = #{userId} AND pf.status != -1
         ORDER BY pf.create_time DESC
     </select>
 
     <select id="getFixReportsByDormId" resultMap="Fix">
-        SELECT pf.`id`, pf.`create_time`, pf.`detail`, pf.`priority`, pf.`status`, pf.`thing`, pf.`num`,
-        pi.url
+        SELECT pf.`id`, pf.`create_time`, pf.`detail`, pf.`priority`, pf.`status`, pf.`thing`, pf.`num`
         FROM `p_fix` pf
-        LEFT JOIN `p_image` pi
-        ON
-        pi.fix_id = pf.id
         WHERE pf.dorm_id = #{dormId} AND pf.status != -1
         ORDER BY pf.create_time DESC
     </select>
 
     <select id="getFixReportById" resultMap="Fix">
-        SELECT pf.*, pi.url
-        FROM `p_fix` pf
-        LEFT JOIN p_image pi
-        ON
-        pi.fix_id = pf.id
+        SELECT pf.*
         WHERE pf.id = #{id} AND pf.status != -1
     </select>
 

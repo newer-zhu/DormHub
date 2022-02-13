@@ -51,6 +51,14 @@ public class FixController {
         return Result.success(page);
     }
 
+    @ApiOperation("完成报修单")
+    @GetMapping("/table/finish/{id}")
+    public Result finishFixReportsById(@PathVariable("id") Integer id){
+        fixService.update(new UpdateWrapper<Fix>()
+                .eq("id", id).set("status", 1));
+        return Result.success("维修成功");
+    }
+
     @ApiOperation("软删除报修单")
     @GetMapping("/softDel/{id}")
     public Result softDelFixReport(@PathVariable("id") Integer id){

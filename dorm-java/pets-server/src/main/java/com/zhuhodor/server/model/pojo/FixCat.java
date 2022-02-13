@@ -13,7 +13,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author zhuhodor
@@ -34,9 +34,7 @@ public class FixCat implements Serializable {
     @TableField("category")
     private String category;
 
-    @ApiModelProperty("优先级")
+    @ApiModelProperty("优先级,升序")
     @TableField("priority")
     private Integer priority;
-
-
 }

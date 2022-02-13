@@ -54,7 +54,7 @@ public class LeaveRequestController {
                         .eq("status", 0).or().eq("status", 1)) == 0);
     }
 
-    @ApiOperation(value = "获取未审核的请假条列表")
+    @ApiOperation(value = "申请人获取未审核的请假条列表")
     @GetMapping("/auditor/{id}")
     public Result getUncheckedRequestList(@PathVariable("id") Integer id){
         return Result.success(leaveRequestService.list(new QueryWrapper<LeaveRequest>()
@@ -63,7 +63,7 @@ public class LeaveRequestController {
     }
 
     @ApiOperation(value = "请假条通过")
-    @PostMapping("/pass")
+    @PostMapping("/proposer/pass")
     public Result pass(@RequestBody LeaveRequest leaveRequest){
         leaveRequest.setApproveTime(LocalDateTime.now());
         leaveRequest.setStatus(1);
@@ -74,7 +74,7 @@ public class LeaveRequestController {
     }
 
     @ApiOperation(value = "请假条不通过")
-    @PostMapping("/fail")
+    @PostMapping("/proposer/fail")
     public Result fail(@RequestBody LeaveRequest leaveRequest){
         leaveRequest.setApproveTime(LocalDateTime.now());
         leaveRequest.setStatus(-1);

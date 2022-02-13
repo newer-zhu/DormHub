@@ -32,4 +32,10 @@
         </collection>
     </resultMap>
 
+    <!--    UserVo映射-->
+    <resultMap id="UserVo" type="com.zhuhodor.server.model.vo.UserVo">
+        <id property="id" column="u_id"/>
+        <result property="username" column="username"></result>
+        <result property="nickName" column="nick_name"></result>
+    </resultMap>
 </mapper>

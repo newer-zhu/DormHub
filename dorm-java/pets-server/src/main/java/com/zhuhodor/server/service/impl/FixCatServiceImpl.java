@@ -2,9 +2,13 @@ package com.zhuhodor.server.service.impl;
 
 import com.zhuhodor.server.model.pojo.FixCat;
 import com.zhuhodor.server.mapper.FixCatMapper;
+import com.zhuhodor.server.model.vo.FixCatPieVo;
 import com.zhuhodor.server.service.IFixCatService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * <p>
@@ -16,5 +20,11 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class FixCatServiceImpl extends ServiceImpl<FixCatMapper, FixCat> implements IFixCatService {
+    @Autowired
+    private FixCatMapper fixCatMapper;
 
+    @Override
+    public List<FixCatPieVo> getPie() {
+        return fixCatMapper.getPie();
+    }
 }

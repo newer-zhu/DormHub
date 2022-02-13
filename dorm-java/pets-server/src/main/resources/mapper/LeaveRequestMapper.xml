@@ -57,17 +57,10 @@
         </collection>
     </resultMap>
 
-    <!--    UserVo映射-->
-    <resultMap id="UserVo" type="com.zhuhodor.server.model.pojo.User">
-        <id property="id" column="u_id"/>
-        <result property="username" column="username"></result>
-        <result property="nickname" column="nickname"></result>
-    </resultMap>
-
-    <select id="getUserVoByProposer" parameterType="long" resultMap="UserVo">
+    <select id="getUserVoByProposer" parameterType="long" resultMap="com.zhuhodor.server.mapper.UserMapper.UserVo">
         SELECT id u_id, nick_name, username FROM p_user WHERE id = #{proposer}
     </select>
-    <select id="getUserVoByAuditor" parameterType="long" resultMap="UserVo">
+    <select id="getUserVoByAuditor" parameterType="long" resultMap="com.zhuhodor.server.mapper.UserMapper.UserVo">
         SELECT id u_id, nick_name, username FROM p_user WHERE id = #{auditor}
     </select>
 </mapper>

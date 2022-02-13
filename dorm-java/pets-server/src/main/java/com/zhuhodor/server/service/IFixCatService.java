@@ -1,7 +1,10 @@
 package com.zhuhodor.server.service;
 
-import com.zhuhodor.server.model.pojo.FixCat;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.zhuhodor.server.model.pojo.FixCat;
+import com.zhuhodor.server.model.vo.FixCatPieVo;
+
+import java.util.List;
 
 /**
  * <p>
@@ -13,4 +16,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IFixCatService extends IService<FixCat> {
 
+    List<FixCatPieVo> getPie();
 }
