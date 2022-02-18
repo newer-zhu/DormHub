@@ -3,9 +3,7 @@ package com.zhuhodor.server.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.zhuhodor.server.common.domain.Result;
-import com.zhuhodor.server.common.utils.TencentCos;
 import com.zhuhodor.server.model.pojo.LeaveRequest;
-import com.zhuhodor.server.service.IImageService;
 import com.zhuhodor.server.service.ILeaveRequestService;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -28,10 +26,6 @@ import java.time.LocalDateTime;
 public class LeaveRequestController {
     @Autowired
     private ILeaveRequestService leaveRequestService;
-    @Autowired
-    private TencentCos tencentCos;
-    @Autowired
-    private IImageService imageService;
 
     @ApiOperation(value = "获取详细请假条信息")
     @ApiImplicitParams({
@@ -115,8 +109,8 @@ public class LeaveRequestController {
     }
 
     @ApiOperation(value = "删除假条")
-    @DeleteMapping("/{Id}")
-    public Result delete(@PathVariable("Id") Integer id){
+    @DeleteMapping("/{id}")
+    public Result delete(@PathVariable("id") Integer id){
         if (leaveRequestService.deleteById(id)){
             return Result.success("撤回成功");
         }

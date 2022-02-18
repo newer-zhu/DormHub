@@ -1,6 +1,7 @@
 package com.zhuhodor.server.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.zhuhodor.server.mapper.CheckItemLogVoMapper;
 import com.zhuhodor.server.mapper.CheckLogMapper;
@@ -8,6 +9,7 @@ import com.zhuhodor.server.model.pojo.CheckLog;
 import com.zhuhodor.server.model.vo.CheckLogAnalysisVo;
 import com.zhuhodor.server.model.vo.CheckLogVo;
 import com.zhuhodor.server.model.vo.GraphVo;
+import com.zhuhodor.server.model.vo.condition.LogSearchVo;
 import com.zhuhodor.server.service.ICheckLogService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -94,5 +96,10 @@ public class CheckLogServiceImpl extends ServiceImpl<CheckLogMapper, CheckLog> i
         analysisVo.setMaxScore(max);
         analysisVo.setMinScore(min);
         return analysisVo;
+    }
+
+    @Override
+    public List<CheckLogVo> getLogsByCondition(IPage<CheckLogVo> page, LogSearchVo logSearchVo) {
+        return checkLogMapper.getLogsByCondition(page, logSearchVo);
     }
 }

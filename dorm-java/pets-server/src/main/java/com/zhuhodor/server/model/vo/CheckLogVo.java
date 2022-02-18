@@ -45,6 +45,12 @@ public class CheckLogVo {
     @ApiModelProperty(value = "排名")
     private Integer rank;
 
+    @ApiModelProperty(value = "寝室楼")
+    private String buildingId;
+
+    @ApiModelProperty(value = "门牌号")
+    private String dormId;
+
     @ApiModelProperty(value = "同期总评分个数")
     private Integer total;
 

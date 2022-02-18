@@ -20,7 +20,7 @@ import java.time.LocalDateTime;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author zhuhodor
@@ -58,7 +58,8 @@ public class Post implements Serializable {
     private Integer status;
 
     @ApiModelProperty(value = "点赞数")
-    private Integer like;
+    @TableField("like_num")
+    private Integer likeNum;
 
     @ApiModelProperty(value = "审核不通过原因")
     private String reason;

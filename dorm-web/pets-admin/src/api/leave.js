@@ -8,6 +8,13 @@ export function getAllRequests() {
   })
 }
 
+export function deleteRequest(id) {
+  return request({
+    url: '/leave-request/'+id,
+    method: 'delete'
+  })
+}
+
 //获取指定申请人假条信息(返回列表)
 export function getRequests(param) {
   return request({

@@ -30,4 +30,20 @@
         cil.check_log = cl.id AND cil.item_id = ci.id AND cl.target_dorm = #{id} AND cl.check_time = #{time}
         ORDER BY cl.check_time DESC
     </select>
+
+    <select id="getLogsByCondition" resultMap="CheckLogVo" parameterType="com.zhuhodor.server.model.vo.condition.LogSearchVo">
+        SELECT pcl.*, pd.building_id, pd.dorm_id
+        FROM `p_check_log` pcl,  p_dorm pd
+        WHERE
+        pcl.target_dorm = pd.id
+        <if test="null != param2.checkTime">
+            AND pcl.check_time = #{param2.checkTime}
+        </if>
+        <if test="null != param2.buildingId and '' != param2.buildingId">
+            AND pd.building_id = #{param2.buildingId}
+        </if>
+        <if test="null != param2.dormId and '' != param2.dormId">
+            AND pd.dorm_id = #{param2.dormId}
+        </if>
+    </select>
 </mapper>

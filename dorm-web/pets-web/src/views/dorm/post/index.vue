@@ -60,7 +60,7 @@
                 <van-image v-show="isLiked(item.id)" width="35px" height="35px" @click.stop="dislikePost(item.id)" :src="require('@/assets/img/已赞.png')"/>
               </transition>
             </van-col>
-            <van-col :span="2"><div style="margin-top: 10px; font-size: 22px; ">{{'('+item.like+')'}}</div></van-col>
+            <van-col :span="2"><div style="margin-top: 10px; font-size: 22px; ">{{'('+item.likeNum+')'}}</div></van-col>
             <van-col :span="3" style="margin-left: 10px"><van-image width="35px" height="35px" :src="require('@/assets/img/评论.png')"></van-image></van-col>
           </van-row>
           <van-divider :style="{borderColor: '#DEDEE0'}" />
@@ -135,7 +135,7 @@
             this.liked.push(pid)
             this.data.forEach(d => {
               if (d.id == pid){
-                d.like += 1
+                d.likeNum += 1
               }
             })
           }
@@ -149,7 +149,7 @@
             this.liked.splice(this.liked.indexOf(pid), 1)
             this.data.forEach(d => {
               if (d.id == pid){
-                d.like -= 1
+                d.likeNum -= 1
               }
             })
           }

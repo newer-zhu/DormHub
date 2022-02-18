@@ -7,18 +7,23 @@ import { getToken } from '@/utils/auth' // get token from cookie
 import getPageTitle from '@/utils/get-page-title'
 import { constantRoutes } from '@/router';
 import { initMenu } from '@/utils/menus'
-
+import Vue from 'vue'
 NProgress.configure({ showSpinner: false }) // NProgress Configuration
 
 const whiteList = ['/login'] // no redirect whitelist
-// 根据角色判断是否有权限
-// export function hasPermission(roles, route) {
-  // if (route.meta && route.meta.role) {
-  //   return roles.some(role => route.meta.role.indexOf(role) >= 0)
-  // } else {
-  //   return true
-  // }
-// }
+
+//自定义指令,根据角色判断是否有权限
+Vue.directive('permission', {
+  inserted(el, binding, vnode){
+    const givenRoles = binding.value
+    let isShow = store.getters.userInfo.roles.some(r => {
+      return givenRoles.indexOf(r.roleName) >= 0
+    })
+    if (!isShow){
+      el.parentNode.removeChild(el)
+    }
+  }
+})
 
 router.beforeEach(async(to, from, next) => {
   // start progress bar

@@ -1,9 +1,13 @@
 package com.zhuhodor.server.service;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.zhuhodor.server.model.pojo.CheckLog;
 import com.zhuhodor.server.model.vo.CheckLogAnalysisVo;
 import com.zhuhodor.server.model.vo.CheckLogVo;
+import com.zhuhodor.server.model.vo.condition.LogSearchVo;
+
+import java.util.List;
 
 /**
  * <p>
@@ -19,4 +23,6 @@ public interface ICheckLogService extends IService<CheckLog> {
     CheckLogVo getLogByDormId(Integer id, String time);
 
     CheckLogAnalysisVo getAnalysisByDormId(Integer dormId);
+
+    List<CheckLogVo> getLogsByCondition(IPage<CheckLogVo> page, LogSearchVo logSearchVo);
 }

@@ -10,7 +10,7 @@
 
     <el-row type="flex" justify="center">
       <el-col :span="22">
-        <el-input disabled>
+        <el-input placeholder="下方编辑正文内容" disabled>
           <template slot="prepend">正文：</template>
         </el-input>
         <quill-editor

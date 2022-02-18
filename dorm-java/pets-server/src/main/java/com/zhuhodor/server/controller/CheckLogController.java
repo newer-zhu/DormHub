@@ -2,9 +2,12 @@ package com.zhuhodor.server.controller;
 
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.zhuhodor.server.common.domain.Result;
 import com.zhuhodor.server.model.pojo.CheckLog;
 import com.zhuhodor.server.model.vo.CheckLogVo;
+import com.zhuhodor.server.model.vo.condition.LogSearchVo;
 import com.zhuhodor.server.service.ICheckLogService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -63,8 +66,30 @@ public class CheckLogController {
         return Result.success(times);
     }
 
+    @GetMapping("/time")
+    @ApiOperation(value = "获取检查时间批次")
+    public Result getLogTime(){
+        List<CheckLog> list = checkLogService.list(new QueryWrapper<CheckLog>()
+                .select("check_time").orderByDesc("check_time"));
+        ArrayList<String> times = new ArrayList<>();
+        for (CheckLog c : list){
+            times.add(c.getCheckTime().toString());
+        }
+        return Result.success(times);
+    }
+
+    @PostMapping("/search/{cur}")
+    @ApiOperation(value = "根据条件查询记录")
+    public Result getLogsByCon(@RequestBody LogSearchVo logSearchVo, @PathVariable Integer cur){
+        IPage<CheckLogVo> page = new Page<>(cur,1);
+        List<CheckLogVo> list = checkLogService.getLogsByCondition(page, logSearchVo);
+        page.setRecords(list);
+        return Result.success(page);
+    }
+
+
     @GetMapping("/analysis/{dormId}")
-    @ApiOperation(value = "根据宿舍Id获取可视化数据分析结果")
+    @ApiOperation(value = "移动端根据宿舍Id获取折线图")
     public Result getAnalysisByDormId(@PathVariable Integer dormId){
         return Result.success(checkLogService.getAnalysisByDormId(dormId));
     }

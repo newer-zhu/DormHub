@@ -3,28 +3,23 @@
     <el-row style="margin-top: 20px">
       <el-col :span="22" :offset="1">
         <el-tabs type="border-card">
-          <el-tab-pane>
-            <span slot="label"><i class="el-icon-close"></i><span>{{'未处理('+unresolved.length+')'}}</span></span>
+          <el-tab-pane :label="'未处理('+unresolved.length+')'">
             <RequestTable :table-data="unresolved"/>
           </el-tab-pane>
-          <el-tab-pane>
-            <span slot="label"><i class="el-icon-check"></i><span>{{'未处理('+solved.length+')'}}</span></span>
+          <el-tab-pane :label="'已处理('+solved.length+')'">
             <RequestTable :table-data="solved"/>
           </el-tab-pane>
         </el-tabs>
       </el-col>
     </el-row>
-
   </div>
 </template>
 
 <script>
-  import {getRequests} from '../../api/leave'
-  import RequestTable from './component/RequestTable'
-
+  import { getAllRequests } from '../../api/leave'
+  import RequestTable  from './component/RequestTable'
   export default {
-    name: 'LeaveRequest',
-    components: { RequestTable },
+    name: 'AllRequests',
     data(){
       return{
         //已通过
@@ -39,9 +34,11 @@
         data: []
       }
     },
-    methods:{},
+    components:{
+      RequestTable
+    },
     mounted() {
-      getRequests(this.$store.getters.userInfo.id).then(res => {
+      getAllRequests().then(res => {
         res.data.forEach( f => {
           if (f.status === 0){
             this.unresolved.push(f)

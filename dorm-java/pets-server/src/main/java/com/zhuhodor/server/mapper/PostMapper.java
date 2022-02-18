@@ -22,4 +22,8 @@ public interface PostMapper extends BaseMapper<Post> {
     void autoPassAt7Pm();
 
     PostVo getPostById(@Param("id") Integer id);
+
+    List<PostVo> getUncheckedPosts();
+
+    Integer checkByBatchIds(@Param("ids") List<Integer> ids);
 }

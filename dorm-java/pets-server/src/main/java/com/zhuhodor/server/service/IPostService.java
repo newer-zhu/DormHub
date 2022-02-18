@@ -25,4 +25,8 @@ public interface IPostService extends IService<Post> {
     void autoPassAt7Pm();
 
     PostVo getPostById(Integer id);
+
+    List<PostVo> getUncheckedPosts();
+
+    Boolean checkByBatchIds(List<Integer> ids);
 }

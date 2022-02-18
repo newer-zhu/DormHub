@@ -1,5 +1,6 @@
 package com.zhuhodor.server.model.vo;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
@@ -51,7 +52,8 @@ public class PostVo {
     private Integer status;
 
     @ApiModelProperty(value = "点赞数")
-    private Integer like;
+    @TableField("like_num")
+    private Integer likeNum;
 
     @ApiModelProperty(value = "图片")
     private List<Image> images;

@@ -87,7 +87,7 @@
           content: "",
           id: -1,
           images: [],
-          like: 0,
+          likeNum: 0,
           nickName: '',
           status: 1,
           reason: '',

@@ -21,7 +21,6 @@ import java.util.List;
  *  服务实现类
  * </p>
  *
- * @author zhuhodor
  * @since 2021-09-14
  */
 @Service
@@ -66,5 +65,20 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements IP
                 .eq("post_id", postVo.getId()).eq("status", 1)));
         postVo.setComments(commentMapper.getCommentsByPostId(postVo.getId()));
         return postVo;
+    }
+
+    @Override
+    public List<PostVo> getUncheckedPosts() {
+        List<PostVo> list = postMapper.getUncheckedPosts();
+        list.forEach(p -> {
+            p.setImages(imageMapper.selectList(new QueryWrapper<Image>()
+                    .eq("post_id", p.getId()).eq("status", 1)));
+        });
+        return list;
+    }
+
+    @Override
+    public Boolean checkByBatchIds(List<Integer> ids) {
+        return postMapper.checkByBatchIds(ids) == ids.size();
     }
 }

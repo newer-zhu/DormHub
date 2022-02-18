@@ -7,20 +7,15 @@ import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.zhuhodor.server.common.constant.RedisConstant;
 import com.zhuhodor.server.common.domain.Result;
 import com.zhuhodor.server.common.utils.RedisUtil;
-import com.zhuhodor.server.common.utils.TencentCos;
 import com.zhuhodor.server.model.pojo.Post;
 import com.zhuhodor.server.model.vo.PostVo;
-import com.zhuhodor.server.service.IImageService;
 import com.zhuhodor.server.service.IPostService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * <p>
@@ -36,16 +31,18 @@ public class PostController {
     @Autowired
     private IPostService postService;
     @Autowired
-    private TencentCos tencentCos;
-    @Autowired
-    private IImageService imageService;
-    @Autowired
     private RedisUtil redisUtil;
 
     @ApiOperation(value = "获取帖子信息")
     @GetMapping("/{id}")
     public Result getPost(@PathVariable Integer id){
         return Result.success(postService.getPostById(id));
+    }
+
+    @ApiOperation(value = "根据条件获取所有帖子")
+    @GetMapping("/con")
+    public Result getPostsByCon(){
+        return Result.success(postService.list());
     }
 
     @ApiOperation(value = "保存帖子")
@@ -89,8 +86,10 @@ public class PostController {
     @ApiOperation(value = "获取未审核的帖子")
     @GetMapping("/unchecked")
     public Result getUncheckedPost(){
-        Set<String> set = redisUtil.sget(RedisConstant.unChecked.getValue());
-        List<Post> posts = postService.listByIds(set);
+//        Set<String> set = redisUtil.sget(RedisConstant.unChecked.getValue());
+//        HashSet<Integer> searchSet = new HashSet<>();
+//        set.forEach(id -> {searchSet.add(Integer.valueOf(id));});
+        List<PostVo> posts = postService.getUncheckedPosts();
         return Result.success(posts);
     }
 
@@ -109,7 +108,7 @@ public class PostController {
             }
             //设置点赞数
             long tempLikes = redisUtil.sSize(redisKey);
-            p.setLike(Math.toIntExact(tempLikes));
+            p.setLikeNum(Math.toIntExact(tempLikes));
         }
         if (posts.size() < size){
             map.put("isEnd", true);
@@ -124,22 +123,32 @@ public class PostController {
     @ApiOperation(value = "审核通过")
     @GetMapping("/check/{id}")
     public Result checkPost(@PathVariable("id") String id){
-        if (redisUtil.srem(RedisConstant.unChecked.getValue(), id) != 0){
-            postService.update(new UpdateWrapper<Post>()
-                    .eq("id", id)
-                    .set("status", 1));
+//        if (redisUtil.srem(RedisConstant.unChecked.getValue(), id) != 0){
+//
+//        }
+        if (postService.update(new UpdateWrapper<Post>()
+                .eq("id", id)
+                .set("status", 1))){
             return Result.success("已通过");
         }
         return Result.fail("操作失败");
     }
 
+    @ApiOperation(value = "审核批量通过")
+    @PostMapping("/check/batch")
+    public Result checkPosts(@RequestBody List<Integer> ids){
+        if (postService.checkByBatchIds(ids)){
+            return Result.success("操作成功");
+        }
+        return Result.fail("处理失败！");
+    }
+
     @ApiOperation(value = "审核不通过")
     @GetMapping("/fail/{id}")
     public Result failPost(@PathVariable("id") String id){
-        if (redisUtil.srem(RedisConstant.unChecked.getValue(), id) != 0){
-            postService.update(new UpdateWrapper<Post>()
-                    .eq("id", id)
-                    .set("status", -1));
+        if (postService.update(new UpdateWrapper<Post>()
+                .eq("id", id)
+                .set("status", -1))){
             return Result.success("已通过");
         }
         return Result.fail("操作失败");
@@ -168,4 +177,6 @@ public class PostController {
                 .put("unchecked", unchecked)
                 .put("failed", failed).map());
     }
+
+
 }

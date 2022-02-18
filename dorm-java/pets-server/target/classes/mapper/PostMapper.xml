@@ -8,7 +8,7 @@
         <result property="time" column="time"></result>
         <result property="userId" column="user_id"></result>
         <result property="status" column="status"></result>
-        <result property="like" column="like"></result>
+        <result property="like" column="like_num"></result>
         <result property="reason" column="reason"></result>
     </resultMap>
 
@@ -47,10 +47,29 @@
         pp.id = #{id}
     </select>
 
+    <select id="getUncheckedPosts" resultType="com.zhuhodor.server.model.vo.PostVo">
+        SELECT
+        pp.*, pu.nick_name, pu.avatar, pd.building_id
+        FROM
+        p_post pp
+        LEFT JOIN p_user pu ON pu.id = pp.user_id
+        LEFT JOIN p_dorm pd ON pd.id = pu.dorm_id
+        WHERE
+        pp.status = 0
+    </select>
+
     <update id="autoPassAt7Pm">
         UPDATE `p_post`
         SET `status` = 1
         WHERE
         NOW() > DATE_ADD(time,INTERVAL 1 DAY)
+    </update>
+    <update id="checkByBatchIds" parameterType="list">
+        UPDATE p_post
+        SET status = 1
+        WHERE id IN
+        <foreach collection="ids" item="item" index="index" open="(" close=")" separator=",">
+            #{item}
+        </foreach>
     </update>
 </mapper>

@@ -1,7 +1,7 @@
 <template>
   <div>
       <el-row style="margin-top: 20px">
-          <el-col :span="9">
+          <el-col :span="10">
             <el-table
               height="550px"
               :data="tableData"
@@ -46,7 +46,7 @@
               </el-table-column>
             </el-table>
           </el-col>
-          <el-col :span="11">
+          <el-col  :span="11">
             <el-card v-if="req" shadow="never">
               <el-descriptions border  title="假条信息" :column="2">
                 <el-descriptions-item label="申请人">{{req.auditorUser.nickName}}</el-descriptions-item>
@@ -71,14 +71,15 @@
                 </el-descriptions-item>
               </el-descriptions>
 
-              <el-row type="flex" v-if="req.status === 0" style="margin-top: 10px" justify="center">
-                <el-button type="primary" @click="pass">同意</el-button>
-                <el-button type="danger" @click="fail">驳回</el-button>
+              <el-row type="flex"  style="margin-top: 10px" justify="center">
+                <el-button type="primary" v-if="req.status === 0" @click="pass">同意</el-button>
+                <el-button type="danger" v-if="req.status === 0" @click="fail">驳回</el-button>
+                <el-button type="warning" v-permission="['ROLE_ADMIN']" @click="dialogVisible = true">删除</el-button>
               </el-row>
             </el-card>
             <el-result v-else icon="info" title="信息提示" subTitle="假条信息"/>
           </el-col>
-          <el-col :span="4" v-show="req">
+          <el-col :span="3" v-show="req">
             <el-card style="width: 130px" shadow="hover" v-for="(p,i) in urls" :key="i">
               <el-image
                 :src="p"
@@ -87,18 +88,31 @@
             </el-card>
           </el-col>
         </el-row>
+
+        <el-dialog
+          title="提示"
+          :visible.sync="dialogVisible"
+          width="30%">
+          <span>确认删除吗？此删除将不可恢复，请慎重点击！</span>
+          <span slot="footer" class="dialog-footer">
+        <el-button @click="dialogVisible = false">取 消</el-button>
+        <el-button type="primary" @click="del">确 定</el-button>
+      </span>
+        </el-dialog>
   </div>
 </template>
 
 <script>
   import { failRequest, passRequest } from '../../../api/leave'
+  import { deleteById } from '../../../api/anno'
 
   export default {
     name: 'RequestTable',
     data(){
       return{
         req: '',
-        urls: []
+        urls: [],
+        dialogVisible: false
       }
     },
     props:{
@@ -119,11 +133,7 @@
         await passRequest(this.req).then(res => {
           if (res.code === 200){
             this.$message({type: 'success', message: res.msg})
-            for (let i = 0; i < this.tableData.length; i++) {
-              if (this.tableData[i].id === this.req.id){
-                this.tableData.splice(i, 1)
-              }
-            }
+            this.removeData()
           }
         })
         this.req = ''
@@ -132,16 +142,27 @@
         await failRequest(this.req).then(res => {
           if (res.code === 200){
             this.$message({type: 'success', message: res.msg})
-            for (let i = 0; i < this.tableData.length; i++) {
-              if (this.tableData[i].id === this.req.id){
-                this.tableData.splice(i, 1)
-              }
-            }
+            this.removeData()
           }
         })
         this.req = ''
       },
-    }
+      async del(){
+        await deleteById(this.req.id).then(res => {
+          this.$message({type: 'success', message: res.msg})
+          this.removeData()
+          this.dialogVisible = false
+        })
+        this.req = ''
+      },
+      removeData(){
+        for (let i = 0; i < this.tableData.length; i++) {
+          if (this.tableData[i].id === this.req.id){
+            this.tableData.splice(i, 1)
+          }
+        }
+      }
+    },
   }
 </script>
 
