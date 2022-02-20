@@ -1,9 +1,10 @@
 import request from '@/utils/request'
 
-export function getPostsByCondition() {
+export function getPostsByCondition(cur, data) {
   return request({
-    url: '/post/con',
-    method: 'get'
+    url: '/post/con/'+cur,
+    method: 'post',
+    data: data
   })
 }
 

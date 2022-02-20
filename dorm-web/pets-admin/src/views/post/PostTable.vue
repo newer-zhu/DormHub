@@ -2,7 +2,7 @@
   <div>
     <el-row style="margin-top: 15px;margin-left: 35px">
       <el-col :span="12">
-        <el-input placeholder="请输入内容" v-model="input" class="input-with-select">
+        <el-input clearable placeholder="请输入内容" v-model="input" class="input-with-select">
           <el-select v-model="searchType" slot="prepend" placeholder="请选择">
             <el-option label="标题" value="1"></el-option>
             <el-option label="内容" value="2"></el-option>
@@ -12,7 +12,7 @@
         </el-input>
       </el-col>
       <el-col :span="2">
-        <el-button style="margin-left: 5px" type="primary" icon="el-icon-search">查找</el-button>
+        <el-button style="margin-left: 5px" type="primary" @click="search" icon="el-icon-search">查找</el-button>
       </el-col>
     </el-row>
 
@@ -39,8 +39,8 @@
               <el-tag size="small" v-if="p.status === 1">通过</el-tag>
               <el-tag type="danger" v-else size="small">未通过</el-tag>
             </el-descriptions-item>
-            <el-descriptions-item label="点赞数">{{p.like_num}}</el-descriptions-item>
-            <el-descriptions-item label="评论数">15</el-descriptions-item>
+            <el-descriptions-item label="点赞数">{{p.likeNum}}</el-descriptions-item>
+            <el-descriptions-item label="评论数">{{p.commentNum}}</el-descriptions-item>
             <el-descriptions-item label="内容">
               <div style="display: inline">{{contentStr(p.content)}}</div>
               <el-link type="success" v-show="p.content.length >= 15" style="margin-left: 5px">点击查看</el-link>
@@ -48,6 +48,16 @@
           </el-descriptions>
         </el-card>
       </el-col>
+    </el-row>
+<!--    分页-->
+    <el-row style="margin-top: 40px" type="flex" justify="center">
+      <el-pagination
+        :current-page="cur"
+        background
+        @current-change="change"
+        layout="prev, pager, next"
+        :page-count="pages">
+      </el-pagination>
     </el-row>
   </div>
 </template>
@@ -63,7 +73,15 @@
         select: [],
         isChoose: false,
         input: '',
-        searchType: ''
+        searchType: '1',
+        cur: 1,
+        pages: 1,
+        searchConfig:{
+          content: '',
+          title: '',
+          username: '',
+          nickName: '',
+        }
       }
     },
     methods:{
@@ -73,10 +91,32 @@
       contentStr(str){
         return str.length >= 15? str.substr(0,12)+'...' : str
       },
-      getData(){
-        getPostsByCondition().then(res => {
-          console.log(res.data)
-          this.list = res.data
+      change(cur){
+        this.getData(cur)
+      },
+      search(){
+        this.searchConfig = {}
+        switch (this.searchType) {
+          case '1':
+            this.searchConfig.title = this.input
+            break
+          case '2':
+            this.searchConfig.content = this.input
+            break
+          case '3':
+            this.searchConfig.nickName = this.input
+            break
+          case '4':
+            this.searchConfig.username = this.input
+            break
+        }
+        this.getData(1)
+      },
+      getData(cur){
+        getPostsByCondition(cur, this.searchConfig).then(res => {
+          console.log(res.data.records)
+          this.list = res.data.records
+          this.pages = res.data.pages
         })
       },
       deleteById(id){
@@ -87,7 +127,7 @@
       }
     },
     mounted() {
-      this.getData()
+      this.getData(1)
     }
   }
 </script>

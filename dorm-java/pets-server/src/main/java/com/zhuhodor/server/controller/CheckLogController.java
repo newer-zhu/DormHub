@@ -81,7 +81,7 @@ public class CheckLogController {
     @PostMapping("/search/{cur}")
     @ApiOperation(value = "根据条件查询记录")
     public Result getLogsByCon(@RequestBody LogSearchVo logSearchVo, @PathVariable Integer cur){
-        IPage<CheckLogVo> page = new Page<>(cur,1);
+        IPage<CheckLogVo> page = new Page<>(cur,7);
         List<CheckLogVo> list = checkLogService.getLogsByCondition(page, logSearchVo);
         page.setRecords(list);
         return Result.success(page);

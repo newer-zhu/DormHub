@@ -2,6 +2,7 @@ package com.zhuhodor.server.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.zhuhodor.server.mapper.ImageMapper;
 import com.zhuhodor.server.mapper.PostCommentMapper;
@@ -9,6 +10,7 @@ import com.zhuhodor.server.mapper.PostMapper;
 import com.zhuhodor.server.model.pojo.Image;
 import com.zhuhodor.server.model.pojo.Post;
 import com.zhuhodor.server.model.vo.PostVo;
+import com.zhuhodor.server.model.vo.condition.PostSearchVo;
 import com.zhuhodor.server.service.IPostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -80,5 +82,10 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements IP
     @Override
     public Boolean checkByBatchIds(List<Integer> ids) {
         return postMapper.checkByBatchIds(ids) == ids.size();
+    }
+
+    @Override
+    public List<PostVo> getPostsByCon(Page<PostVo> page, PostSearchVo postSearchVo) {
+        return postMapper.getPostsByCon(page, postSearchVo);
     }
 }

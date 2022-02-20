@@ -1,9 +1,11 @@
 package com.zhuhodor.server.service;
 
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.zhuhodor.server.model.pojo.Post;
 import com.zhuhodor.server.model.vo.PostVo;
+import com.zhuhodor.server.model.vo.condition.PostSearchVo;
 
 import java.util.List;
 
@@ -29,4 +31,6 @@ public interface IPostService extends IService<Post> {
     List<PostVo> getUncheckedPosts();
 
     Boolean checkByBatchIds(List<Integer> ids);
+
+    List<PostVo> getPostsByCon(Page<PostVo> page, PostSearchVo postSearchVo);
 }

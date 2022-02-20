@@ -50,6 +50,9 @@ public class CheckLogServiceImpl extends ServiceImpl<CheckLogMapper, CheckLog> i
     @Override
     public CheckLogVo getLogByDormId(Integer id, String time) {
         CheckLogVo checkLogVo = checkLogMapper.getLogByDormId(id, time);
+        if (null == checkLogVo){
+            return null;
+        }
         List<CheckLog> totalLogs = checkLogMapper.selectList(new QueryWrapper<CheckLog>()
                 .eq("check_time", time).select("target_dorm"));
         int size = totalLogs.size();

@@ -1,8 +1,10 @@
 package com.zhuhodor.server.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.zhuhodor.server.model.pojo.Post;
 import com.zhuhodor.server.model.vo.PostVo;
+import com.zhuhodor.server.model.vo.condition.PostSearchVo;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -26,4 +28,6 @@ public interface PostMapper extends BaseMapper<Post> {
     List<PostVo> getUncheckedPosts();
 
     Integer checkByBatchIds(@Param("ids") List<Integer> ids);
+
+    List<PostVo> getPostsByCon(Page<PostVo> page, PostSearchVo postSearchVo);
 }

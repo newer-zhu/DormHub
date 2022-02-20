@@ -66,4 +66,10 @@ public class PostVo {
 
     @ApiModelProperty(value = "评论")
     private List<PostCommentVo> comments;
+
+    @ApiModelProperty(value = "用户名")
+    private String username;
+
+    @ApiModelProperty(value = "评论数")
+    private Integer commentNum;
 }

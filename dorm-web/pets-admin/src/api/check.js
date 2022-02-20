@@ -14,3 +14,10 @@ export function search(cur, con) {
     data: con
   })
 }
+
+export function getCheckReport(id, time) {
+  return request({
+    url: '/checkLog/dorm/'+id+'/'+time,
+    method: 'get',
+  })
+}

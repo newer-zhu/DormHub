@@ -1,19 +1,20 @@
 import { getMenus } from '@/api/menu'
-import {setRouter, getRouter} from '@/utils/auth'
-import el from 'element-ui/src/locale/lang/el'
 
 export const initMenu = (router, store) => {
   if (store.getters.routes.length > 0) {
     return
   }
   getMenus().then(res => {
+    //double check
+    if (store.getters.routes.length > 0) {
+      return
+    }
     if (res.data) {
       // 格式化router
       const fmtRoutes = formatRoutes(res.data)
       // 404 page must be placed at the end !!!
       fmtRoutes.push({ path: '*', redirect: '/404', hidden: true })
       // 添加到router
-      console.log(fmtRoutes)
       console.log('添加进router')
       router.addRoutes(fmtRoutes)
       // 将数据存入vuex

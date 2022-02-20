@@ -4,11 +4,13 @@ package com.zhuhodor.server.controller;
 import cn.hutool.core.map.MapUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.zhuhodor.server.common.constant.RedisConstant;
 import com.zhuhodor.server.common.domain.Result;
 import com.zhuhodor.server.common.utils.RedisUtil;
 import com.zhuhodor.server.model.pojo.Post;
 import com.zhuhodor.server.model.vo.PostVo;
+import com.zhuhodor.server.model.vo.condition.PostSearchVo;
 import com.zhuhodor.server.service.IPostService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,9 +42,12 @@ public class PostController {
     }
 
     @ApiOperation(value = "根据条件获取所有帖子")
-    @GetMapping("/con")
-    public Result getPostsByCon(){
-        return Result.success(postService.list());
+    @PostMapping("/con/{cur}")
+    public Result getPostsByCon(@RequestBody PostSearchVo postSearchVo, @PathVariable("cur") Integer cur){
+        Page<PostVo> page = new Page<>(cur, 8);
+        List<PostVo> list = postService.getPostsByCon(page, postSearchVo);
+        page.setRecords(list);
+        return Result.success(page);
     }
 
     @ApiOperation(value = "保存帖子")
