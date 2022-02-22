@@ -21,3 +21,10 @@ export function getCheckReport(id, time) {
     method: 'get',
   })
 }
+
+export function getCheckItems() {
+  return request({
+    url: '/checkItem',
+    method: 'get',
+  })
+}

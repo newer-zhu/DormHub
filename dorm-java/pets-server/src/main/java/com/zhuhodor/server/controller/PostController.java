@@ -154,7 +154,7 @@ public class PostController {
         if (postService.update(new UpdateWrapper<Post>()
                 .eq("id", id)
                 .set("status", -1))){
-            return Result.success("已通过");
+            return Result.success("已审核");
         }
         return Result.fail("操作失败");
     }

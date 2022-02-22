@@ -43,7 +43,7 @@
             <el-descriptions-item label="评论数">{{p.commentNum}}</el-descriptions-item>
             <el-descriptions-item label="内容">
               <div style="display: inline">{{contentStr(p.content)}}</div>
-              <el-link type="success" v-show="p.content.length >= 15" style="margin-left: 5px">点击查看</el-link>
+              <el-link type="success" @click="showPanel(p)" style="margin-left: 5px">查看详情</el-link>
             </el-descriptions-item>
           </el-descriptions>
         </el-card>
@@ -59,14 +59,18 @@
         :page-count="pages">
       </el-pagination>
     </el-row>
+
+    <PostDetail ref="panel" :detail="this.detail" />
   </div>
 </template>
 
 <script>
   import { deletePost, getPostsByCondition } from '../../api/post'
+  import PostDetail from './component/PostDetail'
 
   export default {
     name: 'PostTable',
+    components: { PostDetail },
     data(){
       return{
         list: [],
@@ -81,7 +85,8 @@
           title: '',
           username: '',
           nickName: '',
-        }
+        },
+        detail: {post: '', checkable: false}
       }
     },
     methods:{
@@ -124,6 +129,10 @@
           this.getData()
           this.$message({type: 'success', message: res.msg})
         })
+      },
+      showPanel(post){
+        this.detail.post = post
+        this.$refs.panel.open()
       }
     },
     mounted() {

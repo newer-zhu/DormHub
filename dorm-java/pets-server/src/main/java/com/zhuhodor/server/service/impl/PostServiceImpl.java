@@ -69,6 +69,7 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements IP
         return postVo;
     }
 
+    @Transactional
     @Override
     public List<PostVo> getUncheckedPosts() {
         List<PostVo> list = postMapper.getUncheckedPosts();
@@ -84,8 +85,14 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements IP
         return postMapper.checkByBatchIds(ids) == ids.size();
     }
 
+    @Transactional
     @Override
     public List<PostVo> getPostsByCon(Page<PostVo> page, PostSearchVo postSearchVo) {
-        return postMapper.getPostsByCon(page, postSearchVo);
+        List<PostVo> list = postMapper.getPostsByCon(page, postSearchVo);
+        list.forEach(p -> {
+            p.setImages(imageMapper.selectList(new QueryWrapper<Image>()
+                    .eq("post_id", p.getId()).eq("status", 1)));
+        });
+        return list;
     }
 }

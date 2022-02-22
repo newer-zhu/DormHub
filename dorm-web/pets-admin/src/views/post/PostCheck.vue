@@ -43,7 +43,7 @@
       return{
         list: [],
         isChoose: false,
-        detail: {},
+        detail: {post: '', checkable: true},
         select: []
       }
     },
@@ -55,7 +55,7 @@
         return str.length >= 180? str.substr(0,180)+'...' : str
       },
       showPage(page){
-        this.detail = page
+        this.detail.post = page
         this.$refs.dialog.open()
       },
       pass(post){

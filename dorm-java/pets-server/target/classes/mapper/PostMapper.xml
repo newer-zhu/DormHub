@@ -63,7 +63,7 @@
     <select id="getPostsByCon" resultMap="postVo">
         SELECT pp.*,
         (SELECT COUNT(pc.id)  FROM p_post_comment pc WHERE pc.post_id = pp.id) AS comment_num,
-        pu.nick_name, pu.username
+        pu.nick_name, pu.username, pu.avatar
         FROM p_post pp, p_user pu
         WHERE pp.user_id = pu.id
         <if test="'' != param2.title and null != param2.title">

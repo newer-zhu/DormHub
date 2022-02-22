@@ -15,7 +15,7 @@ import java.util.List;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author zhuhodor
@@ -42,6 +42,9 @@ public class CheckItem implements Serializable {
     @ApiModelProperty(value = "父检查项")
     @TableField("parent_item")
     private Integer parentItem;
+
+    @ApiModelProperty(value = "是否启用")
+    private Boolean enabled;
 
     @ApiModelProperty(value = "子检查项")
     @TableField(exist = false)

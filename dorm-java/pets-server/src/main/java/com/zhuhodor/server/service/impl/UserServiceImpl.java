@@ -1,5 +1,6 @@
 package com.zhuhodor.server.service.impl;
 
+import cn.hutool.core.lang.Assert;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.zhuhodor.server.common.domain.Result;
 import com.zhuhodor.server.common.utils.JwtUtil;
@@ -109,6 +110,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
             String authToken = token.substring(tokenHead.length());
             String username = jwtUtil.getUsernameByToken(authToken);
             MyUserDetails userDetails = loadUserByUserName(username);
+            Assert.notNull(userDetails);
             User user = userDetails.getUser();
             user.setPassword(null);
             return Result.success(user);

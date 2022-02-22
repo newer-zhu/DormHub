@@ -6,6 +6,7 @@
         <result column="item" property="item"/>
         <result column="score" property="score"/>
         <result column="parent_item" property="parentItem"/>
+        <result column="enabled" property="enabled"/>
     </resultMap>
 
     <resultMap id="CheckItems" type="com.zhuhodor.server.model.pojo.CheckItem" extends="BaseResultMap">
@@ -14,6 +15,7 @@
             <result column="sub_item" property="item"/>
             <result column="sub_score" property="score"/>
             <result column="sub_parent_item" property="parentItem"/>
+            <result column="sub_enabled" property="enabled"/>
         </collection>
     </resultMap>
 
@@ -22,10 +24,23 @@
         c2.id AS sub_id,
         c2.item AS sub_item,
         c2.score AS sub_score,
-        c2.parent_item AS sub_parent_item
+        c2.parent_item AS sub_parent_item,
+        c2.enabled AS sub_enabled
         FROM
         p_checkitem c1 LEFT JOIN p_checkitem c2
         ON c1.id = c2.parent_item
         WHERE c1.parent_item = -1
+    </select>
+
+    <select id="getEnabledCheckItems" resultMap="CheckItems">
+        SELECT c1.*,
+        c2.id AS sub_id,
+        c2.item AS sub_item,
+        c2.score AS sub_score,
+        c2.parent_item AS sub_parent_item
+        FROM
+        p_checkitem c1 LEFT JOIN p_checkitem c2
+        ON c1.id = c2.parent_item
+        WHERE c1.parent_item = -1 AND c1.enabled = 1 AND c2.enabled = 1
     </select>
 </mapper>

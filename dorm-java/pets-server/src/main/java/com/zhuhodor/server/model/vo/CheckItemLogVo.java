@@ -22,6 +22,9 @@ public class CheckItemLogVo {
     @ApiModelProperty(value = "检查项内容")
     private String item;
 
+    @ApiModelProperty(value = "是否启用")
+    private Boolean enabled;
+
     @ApiModelProperty(value = "检查项满分")
     @TableField("item_score")
     private Integer itemScore;
