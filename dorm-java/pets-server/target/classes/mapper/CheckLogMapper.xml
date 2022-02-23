@@ -30,7 +30,7 @@
         ci.id item_id, ci.item, ci.score item_score
         FROM p_check_log cl, p_checkitem_log cil, p_checkitem ci
         WHERE
-        cil.check_log = cl.id AND cil.item_id = ci.id AND ci.id = 1 AND cl.target_dorm = #{id} AND cl.check_time = #{time}
+        cil.check_log = cl.id AND cil.item_id = ci.id AND cl.target_dorm = #{id} AND cl.check_time = #{time}
         ORDER BY cl.check_time DESC
     </select>
 

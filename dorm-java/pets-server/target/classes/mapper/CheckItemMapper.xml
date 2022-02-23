@@ -19,6 +19,13 @@
         </collection>
     </resultMap>
 
+    <insert id="saveItems" parameterType="list">
+        INSERT INTO p_checkitem(item, score, parent_item, enabled) VALUES
+        <foreach collection="newItems" item="it" separator="," >
+            (#{it.item}, #{it.score}, #{it.parentItem}, #{it.enabled})
+        </foreach>
+    </insert>
+
     <select id="getAllCheckItems" resultMap="CheckItems">
         SELECT c1.*,
         c2.id AS sub_id,
@@ -43,4 +50,11 @@
         ON c1.id = c2.parent_item
         WHERE c1.parent_item = -1 AND c1.enabled = 1 AND c2.enabled = 1
     </select>
+
+    <update id="updateDisabled" parameterType="list">
+        UPDATE p_checkitem SET enabled = 0 WHERE id IN
+        <foreach collection="disabledList" item="item" open="(" close=")" separator=",">
+            #{item}
+        </foreach>
+    </update>
 </mapper>

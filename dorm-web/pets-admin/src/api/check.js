@@ -28,3 +28,11 @@ export function getCheckItems() {
     method: 'get',
   })
 }
+
+export function updateCheckItems(data) {
+  return request({
+    url: '/checkItem/update',
+    method: 'post',
+    data: data
+  })
+}

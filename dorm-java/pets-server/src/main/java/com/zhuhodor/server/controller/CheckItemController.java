@@ -2,6 +2,7 @@ package com.zhuhodor.server.controller;
 
 
 import com.zhuhodor.server.common.domain.Result;
+import com.zhuhodor.server.model.dto.CheckItemUpdateDTO;
 import com.zhuhodor.server.model.pojo.CheckItem;
 import com.zhuhodor.server.service.ICheckItemService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,9 +29,19 @@ public class CheckItemController {
         return Result.success(checkItemService.getAllCheckItems());
     }
 
-    @PostMapping()
-    public Result updateCheckItem(@RequestBody List<CheckItem> newItems){
-        checkItemService.updateBatchById(newItems);
-        return Result.success("修改成功！");
+    @GetMapping("/enabled")
+    public Result getEnabledCheckItems(){
+        return Result.success(checkItemService.getEnabledCheckItems());
+    }
+
+//    @PostMapping()
+//    public Result updateCheckItem(@RequestBody List<CheckItem> newItems){
+//        checkItemService.updateBatchById(newItems);
+//        return Result.success("修改成功！");
+//    }
+
+    @PostMapping("/update")
+    public Result updateCheckItems(@RequestBody CheckItemUpdateDTO dto){
+        return checkItemService.updateCheckItems(dto);
     }
 }
