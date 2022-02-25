@@ -7,6 +7,7 @@ import com.zhuhodor.server.common.domain.Result;
 import com.zhuhodor.server.common.utils.ImageUtil;
 import com.zhuhodor.server.common.utils.TencentCos;
 import com.zhuhodor.server.model.pojo.Image;
+import com.zhuhodor.server.model.vo.ImageVo;
 import com.zhuhodor.server.service.IImageService;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
@@ -83,9 +84,12 @@ public class ImageController {
     @ApiOperation(value = "公告图片上传")
     @PostMapping("/announcement")
     public Result uploadAnnouncementPic(@RequestParam("img") MultipartFile pic){
-        log.info("upload announcement image");
         Map<String, String> map = tencentCos.uploadPic(pic, CosConstant.ANNOUNCEMENT);
-        return Result.success("上传成功",map.get("remoteAddr")+map.get("key"));
+        String url = map.get("remoteAddr") + map.get("key");
+        Image image = ImageUtil.newImage(CosConstant.ANNOUNCEMENT, -1, pic, map);
+        imageService.save(image);
+
+        return Result.success("上传成功", new ImageVo(image.getId(), url));
     }
 
     @ApiOperation(value = "删除图片")

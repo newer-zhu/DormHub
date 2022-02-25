@@ -51,4 +51,11 @@ export function getAnnouncements(cur) {
   })
 }
 
+export function uploadImg(data) {
+  return request({
+    url: '/image/announcement',
+    method: 'post',
+    data: data
+  })
+}
 

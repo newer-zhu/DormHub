@@ -37,8 +37,7 @@ public class AnnouncementController {
     @ApiOperation(value = "保存公告")
     @PostMapping("/save")
     public Result save(@RequestBody Announcement announcement){
-        announcement.setPublishTime(LocalDateTime.now());
-        if (announcementService.save(announcement)){
+        if (announcementService.saveAnnouncement(announcement)){
             return Result.success("发布成功！");
         }else {
             return Result.fail("发布失败！");

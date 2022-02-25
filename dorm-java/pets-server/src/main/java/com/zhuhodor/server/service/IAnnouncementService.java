@@ -21,4 +21,6 @@ public interface IAnnouncementService extends IService<Announcement> {
     boolean hardDel(Integer id);
 
     List<Announcement> getAnnouncements(IPage<Announcement> page);
+
+    boolean saveAnnouncement(Announcement announcement);
 }

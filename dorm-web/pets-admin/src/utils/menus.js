@@ -17,11 +17,12 @@ export const initMenu = (router, store) => {
       fmtRoutes.push({ path: '*', redirect: '/404', hidden: true })
       // 添加到router
       console.log('添加进router')
+      // console.log(fmtRoutes)
       router.addRoutes(fmtRoutes)
       // 将数据存入vuex
       store.commit('user/SET_ROUTES', fmtRoutes)
       // 连接websocket
-      // store.dispatch('connect')
+      store.dispatch('chat/connect')
     }
   })
 }
@@ -59,6 +60,8 @@ export const formatRoutes = (routes) => {
           require(['@/views/check/' + component + '.vue'], resolve)
         }else if (component.startsWith('User')){
           require(['@/views/user/' + component + '.vue'], resolve)
+        }else if (component.startsWith('Chat')){
+          require(['@/views/chat/' + component + '.vue'], resolve)
         }
       }
     }

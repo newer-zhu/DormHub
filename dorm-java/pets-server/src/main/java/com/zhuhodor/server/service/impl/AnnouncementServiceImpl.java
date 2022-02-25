@@ -4,7 +4,10 @@ import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.zhuhodor.server.mapper.AnnouncementMapper;
+import com.zhuhodor.server.mapper.ImageMapper;
 import com.zhuhodor.server.model.pojo.Announcement;
+import com.zhuhodor.server.model.pojo.Image;
+import com.zhuhodor.server.model.vo.ImageVo;
 import com.zhuhodor.server.service.IAnnouncementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,9 +28,9 @@ import java.util.List;
 public class AnnouncementServiceImpl extends ServiceImpl<AnnouncementMapper, Announcement> implements IAnnouncementService {
     @Autowired
     private AnnouncementMapper announcementMapper;
-//
-//    @Autowired
-//    private ImageMapper imageMapper;
+
+    @Autowired
+    private ImageMapper imageMapper;
 
     @Transactional
     @Override
@@ -46,5 +49,20 @@ public class AnnouncementServiceImpl extends ServiceImpl<AnnouncementMapper, Ann
     @Override
     public List<Announcement> getAnnouncements(IPage<Announcement> page) {
         return announcementMapper.getAnnouncements(page);
+    }
+
+    @Transactional
+    @Override
+    public boolean saveAnnouncement(Announcement announcement) {
+        announcement.setPublishTime(LocalDateTime.now());
+        if (announcementMapper.insert(announcement) == 1){
+            List<ImageVo> images = announcement.getImages();
+            images.forEach(f -> {
+                imageMapper.update(null, new UpdateWrapper<Image>()
+                        .eq("id", f.getId()).set("status", 1).set("announce_id", announcement.getId()));
+            });
+            return true;
+        }
+        return false;
     }
 }

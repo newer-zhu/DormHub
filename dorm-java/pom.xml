@@ -4,8 +4,6 @@
     <modelVersion>4.0.0</modelVersion>
     <modules>
         <module>pets-server</module>
-        <module>pets-mail</module>
-        <module>pets-chat</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

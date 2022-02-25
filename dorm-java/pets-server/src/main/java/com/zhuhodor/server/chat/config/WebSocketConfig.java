@@ -1,6 +1,7 @@
 package com.zhuhodor.server.chat.config;
 
 import com.zhuhodor.server.common.utils.JwtUtil;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
@@ -24,6 +25,7 @@ import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerCo
 /**
  * WebSocket配置类
  */
+@Slf4j
 @Configuration
 @EnableWebSocketMessageBroker
 public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
@@ -92,7 +94,7 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
     public void configureMessageBroker(MessageBrokerRegistry registry) {
         //配置代理域，可以配置多个，配置代理目的地前缀,可以在配置域上向客户端推送消息
         registry.enableSimpleBroker("/message");
-//        //设置可以服务端接收消息的前缀，只有下面注册的前缀的消息才会接收
+//        //设置服务端接收消息的前缀，只有下面注册的前缀的消息才会接收
 //        registry.setApplicationDestinationPrefixes("/app");
     }
 

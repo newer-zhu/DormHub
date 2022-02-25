@@ -1,6 +1,7 @@
 package com.zhuhodor.server.controller;
 
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.zhuhodor.server.common.domain.Result;
 import com.zhuhodor.server.common.dto.LoginDto;
 import com.zhuhodor.server.common.utils.JwtUtil;
@@ -77,6 +78,7 @@ public class UserController {
     @ApiOperation(value = "获取所有用户")
     @GetMapping()
     public Result getAllUsers(){
-        return Result.success(userService.list());
+        return Result.success(userService.list(new QueryWrapper<User>()
+                .select("username", "id", "nick_name", "avatar")));
     }
 }

@@ -4,6 +4,9 @@
 
     <breadcrumb class="breadcrumb-container" />
 
+    <el-badge style="margin: 5px 0px 0px 75% " :value="newMsg" class="item">
+      <el-button type="primary" @click="openChat"  icon="el-icon-bell" circle></el-button>
+    </el-badge>
     <div class="right-menu">
       <el-dropdown class="avatar-container" trigger="click">
         <div class="avatar-wrapper">
@@ -45,9 +48,23 @@ export default {
     ...mapGetters([
       'sidebar',
       'avatar'
-    ])
+    ]),
+    //是否有新消息
+    newMsg(){
+      let map = this.$store.state.chat.isDot
+      console.log(map)
+      for (let i in map) {
+        if (map[i]){
+          return 'new'
+        }
+      }
+      return ''
+    }
   },
   methods: {
+    openChat(){
+      this.$router.push({name: 'ChatPanel'})
+    },
     toggleSideBar() {
       this.$store.dispatch('app/toggleSideBar')
     },
@@ -58,6 +75,13 @@ export default {
   }
 }
 </script>
+
+<style>
+  .item {
+    margin-top: 10px;
+    margin-right: 40px;
+  }
+</style>
 
 <style lang="scss" scoped>
 .navbar {

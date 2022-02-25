@@ -73,7 +73,7 @@ const chat = {
     },
     //发送消息
     sendMessage({ commit, state}, msgObj){
-      state.stomp.send('/sendMessage', {}, JSON.stringify(msgObj));
+      state.stomp.send('/sendMsg', {}, JSON.stringify(msgObj));
       commit('addMessage',msgObj);
     },
     initData(context) {

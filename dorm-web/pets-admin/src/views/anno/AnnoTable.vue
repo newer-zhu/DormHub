@@ -5,6 +5,7 @@
         <el-table
           :data="tableData"
           style="margin-top: 40px"
+          :default-sort = "{prop: 'datetime', order: 'descending'}"
           :row-class-name="tableRowClassName">
           <el-table-column
             prop="title"
@@ -18,6 +19,7 @@
           </el-table-column>
           <el-table-column
             prop="publishTime"
+            sortable
             label="发布日期"
             width="200">
           </el-table-column>

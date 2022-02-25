@@ -52,19 +52,24 @@ export const constantRoutes = [
   },
 
   {
+    path: '/chat',
+    component: Layout,
+    name: 'Chat',
+    meta: { title: '用户交流' },
+    children: [{
+      name: 'ChatPanel',
+      path: 'panel',
+      component: () => import('@/views/chat/ChatPanel')
+    }
+    ]
+  },
+
+  {
     path: '/example',
     component: Layout,
     redirect: '/example/table',
     name: 'Example',
     meta: { title: 'Example', icon: 'el-icon-s-help' },
-    children: [
-      {
-        path: 'tree',
-        name: 'Tree',
-        component: () => import('@/views/tree/index'),
-        meta: { title: 'Tree', icon: 'tree' }
-      }
-    ]
   },
 
   {

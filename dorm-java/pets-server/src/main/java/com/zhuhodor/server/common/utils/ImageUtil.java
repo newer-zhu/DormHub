@@ -11,7 +11,7 @@ import java.util.Map;
 @Slf4j
 public class ImageUtil {
 
-    public static Image newImage(String type, Integer id, MultipartFile file, Map<String, String> map){
+    public static final Image newImage(String type, Integer id, MultipartFile file, Map<String, String> map){
         Image image = new Image();
         image.setCreateTime(LocalDateTime.now());
         image.setSize((double) (file.getSize() /( 1024 * 1024)));
@@ -33,6 +33,9 @@ public class ImageUtil {
                 break;
             case "fix/":
                 image.setFixId(id);
+                break;
+            case "announcement/":
+                image.setStatus(0);
                 break;
         }
         return image;
