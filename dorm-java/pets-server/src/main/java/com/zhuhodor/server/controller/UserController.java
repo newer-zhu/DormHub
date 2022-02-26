@@ -1,12 +1,11 @@
 package com.zhuhodor.server.controller;
 
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.zhuhodor.server.common.domain.Result;
 import com.zhuhodor.server.common.dto.LoginDto;
-import com.zhuhodor.server.common.utils.JwtUtil;
 import com.zhuhodor.server.common.utils.TencentCos;
 import com.zhuhodor.server.model.pojo.User;
+import com.zhuhodor.server.model.vo.condition.UserSearchVo;
 import com.zhuhodor.server.security.component.MyUserDetails;
 import com.zhuhodor.server.service.IUserService;
 import io.swagger.annotations.ApiOperation;
@@ -34,8 +33,11 @@ public class UserController {
     @Autowired
     private TencentCos tencentCos;
 
-    @Autowired
-    private JwtUtil jwtUtil;
+    @ApiOperation(value = "根据条件返回所有用户信息详情")
+    @PostMapping("/filter")
+    public Result getAllUsersByCon(@RequestBody UserSearchVo searchVo){
+        return Result.success(userService.getAllUsersByCon(searchVo));
+    }
 
     @ApiOperation(value = "登录以后返回token")
     @PostMapping(value = "/login")
@@ -55,7 +57,7 @@ public class UserController {
         return Result.success(user);
     }
 
-    @ApiOperation(value = "获取当前用户信息")
+    @ApiOperation(value = "根据token获取当前用户信息")
     @PostMapping("/info")
     public Result getUserInfo(@RequestBody String token){
         return userService.getUserInfoByToken(token);
@@ -67,7 +69,6 @@ public class UserController {
 //        return userService.register(user);
 //    }
 
-
     @ApiOperation(value = "用户头像删除")
     @GetMapping(value = "/avatarDelete")
     public Result uploadAvatar(@RequestParam("key") String key){
@@ -75,10 +76,6 @@ public class UserController {
         return Result.success(null);
     }
 
-    @ApiOperation(value = "获取所有用户")
-    @GetMapping()
-    public Result getAllUsers(){
-        return Result.success(userService.list(new QueryWrapper<User>()
-                .select("username", "id", "nick_name", "avatar")));
-    }
+
+
 }

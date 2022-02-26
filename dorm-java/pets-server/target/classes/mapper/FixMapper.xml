@@ -21,7 +21,6 @@
                     column="id" select="com.zhuhodor.server.mapper.ImageMapper.getImageVOByFixId"/>
     </resultMap>
 
-
     <resultMap id="fixCatVo" type="com.zhuhodor.server.model.pojo.FixCat">
         <id property="id" column="c_id"/>
         <result property="category" column="category"/>

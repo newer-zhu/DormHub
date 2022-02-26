@@ -1,4 +1,4 @@
-import { getAllUsers } from '@/api/user'
+import { getAllUsers } from '@/api/chat'
 import { getToken, getUserInfo, setUserInfo, removeUserInfo } from '@/utils/auth'
 import Stomp from 'stompjs'
 import SockJS from 'sockjs-client'
@@ -11,13 +11,12 @@ const state = {
     userInfo: getUserInfo(),
     chatUsers: [],//可聊天对象列表
     currentSession: null,//当前聊天对象
-    filterKey: '',
     stomp: null,
     isDot: {}
 }
 
 const mutations = {
-  INIT_USERS(state, users) {
+  SET_USERS(state, users) {
     state.chatUsers = users;
   },
   addMessage(state, msg) {
@@ -72,7 +71,7 @@ const actions = {
   initChatUsers(context) {
     getAllUsers().then(res => {
       if (res.data){
-        context.commit('INIT_USERS', res.data);
+        context.commit('SET_USERS', res.data);
       }
     })
   }

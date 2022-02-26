@@ -21,7 +21,7 @@ import java.util.List;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author zhuhodor
@@ -65,8 +65,8 @@ public class User implements Serializable {
     @ApiModelProperty(value = "头像")
     private String avatar;
 
-    @ApiModelProperty(value = "状态")
-    private Integer status;
+    @ApiModelProperty(value = "状态 停用/启用")
+    private Boolean status;
 
     @TableField("dorm_id")
     @ApiModelProperty(value = "所属寝室")

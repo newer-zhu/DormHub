@@ -8,6 +8,7 @@
         <img class="avatar" :src="item.avatar" :alt="item.name">
         <el-badge :is-dot="isDot[item.username+'#'+user.username]">
           <p class="name">{{item.nickName}}</p>
+          <span style="font-size: 12px; margin-left: 10px">{{item.username}}</span>
         </el-badge>
       </li>
     </ul>

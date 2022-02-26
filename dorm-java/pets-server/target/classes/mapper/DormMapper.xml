@@ -26,7 +26,13 @@
         <result column="occupation" property="occupation"/>
     </resultMap>
 
-<!--    宿舍及宿舍床位及宿舍成员结果集-->
+    <resultMap id="DormVo" type="com.zhuhodor.server.model.vo.DormVo">
+        <id column="d_id" property="id"/>
+        <result column="building_id" property="buildingId"/>
+        <result column="dorm_id" property="dormId"/>
+    </resultMap>
+
+    <!--    宿舍及宿舍床位及宿舍成员结果集-->
     <resultMap id="DormDetail" type="com.zhuhodor.server.model.pojo.Dorm" extends="BaseResultMap">
         <collection property="beds" ofType="com.zhuhodor.server.model.pojo.Bed">
             <id column="bid" property="id"></id>
@@ -42,7 +48,7 @@
         </collection>
     </resultMap>
 
-<!--    更改宿舍实住人数-->
+    <!--    更改宿舍实住人数-->
     <update id="occupationIncr" parameterType="Integer">
         UPDATE
         p_dorm

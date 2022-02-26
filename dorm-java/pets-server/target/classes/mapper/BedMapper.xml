@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zhuhodor.server.mapper.BedMapper">
-<!--    用户的预定信息VO-->
+<!--    用户的预定信息-->
     <resultMap id="userBedInfo" type="com.zhuhodor.server.model.vo.BedInfo">
         <result column="bid" property="bId"></result>
         <result column="did" property="dId"></result>

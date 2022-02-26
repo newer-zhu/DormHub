@@ -16,10 +16,11 @@ export function getInfo(token) {
   })
 }
 
-export function getAllUsers() {
+export function searchUsers(con) {
   return request({
-    url: '/user',
-    method: 'get'
+    url: '/user/filter',
+    method: 'post',
+    data: con
   })
 }
 

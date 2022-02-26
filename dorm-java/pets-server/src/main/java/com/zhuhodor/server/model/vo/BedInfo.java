@@ -6,10 +6,10 @@ import lombok.Data;
 @Data
 public class BedInfo {
 
-    @ApiModelProperty(value = "bedId")
+    @ApiModelProperty(value = "床位Id")
     private Integer bId;
 
-    @ApiModelProperty(value = "dormId")
+    @ApiModelProperty(value = "寝室Id")
     private Integer dId;
 
     @ApiModelProperty(value = "床号")

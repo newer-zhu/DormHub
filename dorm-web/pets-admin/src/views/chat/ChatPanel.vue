@@ -52,7 +52,7 @@
       float: left;
       color: #f4f4f4;
       background-color: #2e3238;
-      width: 200px;
+      width: 220px;
       overflow: hidden;
     }
     .main {
