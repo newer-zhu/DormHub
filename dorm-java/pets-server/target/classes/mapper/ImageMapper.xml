@@ -9,5 +9,9 @@
     <select id="getImageVOByFixId" resultMap="imageVo">
         SELECT id i_id, url FROM p_image WHERE fix_id = #{fixId}
     </select>
+
+    <select id="getImageVOByAnnounceId" resultMap="imageVo">
+        SELECT id i_id, url FROM p_image WHERE announce_id = #{announceId}
+    </select>
 </mapper>
 

@@ -21,4 +21,7 @@ public class UserVo {
 
     @ApiModelProperty(value = "头像")
     private String avatar;
+
+    @ApiModelProperty(value = "性别")
+    private Integer sex;
 }

@@ -24,3 +24,10 @@ export function searchUsers(con) {
   })
 }
 
+export function uploadExcel(param) {
+  return request({
+    url: '/user/excel/import',
+    method: 'post',
+    data: param
+  })
+}

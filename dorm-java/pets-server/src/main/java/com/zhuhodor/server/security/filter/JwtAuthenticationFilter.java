@@ -51,6 +51,8 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                     SecurityContextHolder.getContext().setAuthentication(authenticationToken);
                 }
             }
+        }else {
+            log.warn("此请求未携带token！");
         }
         chain.doFilter(request, response);
     }

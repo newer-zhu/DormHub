@@ -61,9 +61,9 @@ public class Image implements Serializable {
     @TableField("post_id")
     private Integer postId;
 
-    @ApiModelProperty(value = "公告封面")
-    @TableField("cover_id")
-    private Integer coverId;
+    @ApiModelProperty(value = "属于公告附件")
+    @TableField("announce_id")
+    private Integer announce_id;
 
     @ApiModelProperty(value = "属于报修附件")
     @TableField("fix_id")

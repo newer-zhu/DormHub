@@ -2,39 +2,64 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3147259-398f-490b-a789-8d820e016f61" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/model/vo/condition/UserSearchVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dorm-web/pets-admin/src/api/chat.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__cn_afterturn_easypoi_annotation_4_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__cn_afterturn_easypoi_base_4_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__cn_afterturn_easypoi_spring_boot_starter_4_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__cn_afterturn_easypoi_web_4_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_virtuald_curvesapi_1_06.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_16_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_validation_validation_api_2_0_1_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ognl_ognl_3_2_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_collections4_4_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_compress_1_18.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_12_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_math3_3_6_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_4_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_ooxml_4_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_ooxml_schemas_4_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_xmlbeans_xmlbeans_3_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/common/utils/ExcelUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dorm-web/pets-admin/src/utils/download.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dorm-web/pets-admin/src/views/user/component/Uploader.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_18_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_19_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okio_okio_1_12_0.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/chat/config/WebSocketConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/chat/config/WebSocketConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/controller/ChatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/controller/ChatController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/model/pojo/Image.java" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/model/pojo/Image.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/model/pojo/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/model/pojo/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/model/vo/BedInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/model/vo/BedInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/service/IUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/model/vo/UserVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/model/vo/UserVo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/security/component/MyUserDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/security/component/MyUserDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/security/filter/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/security/filter/JwtAuthenticationFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/java/com/zhuhodor/server/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/src/main/resources/mapper/BedMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/resources/mapper/BedMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/src/main/resources/mapper/DormMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/resources/mapper/DormMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/src/main/resources/mapper/FixMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/resources/mapper/FixMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/src/main/resources/config/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/resources/config/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/src/main/resources/mapper/AnnouncementMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/resources/mapper/AnnouncementMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/src/main/resources/mapper/ImageMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/resources/mapper/ImageMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pets-server/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/chat/ChatMsg.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/chat/ChatMsg.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/chat/config/WebSocketConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/chat/config/WebSocketConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/ChatController.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/ChatController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/UserMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/Image.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/Image.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/vo/BedInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/vo/BedInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/IUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/IUserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/mapper/BedMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/mapper/BedMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/mapper/DormMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/mapper/DormMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/mapper/FixMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/mapper/FixMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/vo/UserVo.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/vo/UserVo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/security/component/MyUserDetails.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/security/component/MyUserDetails.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/security/filter/JwtAuthenticationFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/security/filter/JwtAuthenticationFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/config/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/config/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/config/application-own.yml" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/config/application-own.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/mapper/AnnouncementMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/mapper/AnnouncementMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/mapper/ImageMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/mapper/ImageMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pets-server/target/classes/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dorm-web/pets-admin/.env.production" beforeDir="false" afterPath="$PROJECT_DIR$/../dorm-web/pets-admin/.env.production" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dorm-web/pets-admin/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../dorm-web/pets-admin/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../dorm-web/pets-admin/src/api/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/../dorm-web/pets-admin/src/api/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dorm-web/pets-admin/src/store/modules/chat.js" beforeDir="false" afterPath="$PROJECT_DIR$/../dorm-web/pets-admin/src/store/modules/chat.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dorm-web/pets-admin/src/views/chat/ChatPanel.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../dorm-web/pets-admin/src/views/chat/ChatPanel.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dorm-web/pets-admin/src/views/chat/component/card.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../dorm-web/pets-admin/src/views/chat/component/card.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dorm-web/pets-admin/src/views/chat/component/list.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../dorm-web/pets-admin/src/views/chat/component/list.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dorm-web/pets-admin/src/layout/components/Navbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../dorm-web/pets-admin/src/layout/components/Navbar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dorm-web/pets-admin/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../dorm-web/pets-admin/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dorm-web/pets-admin/src/views/anno/AnnoTable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../dorm-web/pets-admin/src/views/anno/AnnoTable.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dorm-web/pets-admin/src/views/nested/menu1/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dorm-web/pets-admin/src/views/nested/menu1/menu1-1/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dorm-web/pets-admin/src/views/nested/menu1/menu1-2/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dorm-web/pets-admin/src/views/nested/menu1/menu1-2/menu1-2-1/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dorm-web/pets-admin/src/views/nested/menu1/menu1-2/menu1-2-2/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dorm-web/pets-admin/src/views/nested/menu1/menu1-3/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dorm-web/pets-admin/src/views/nested/menu2/index.vue" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../dorm-web/pets-admin/src/views/user/UserTable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../dorm-web/pets-admin/src/views/user/UserTable.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -100,9 +125,9 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="E:/yeb/yeb-server" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15234375" />
+    <property name="project.structure.side.proportion" value="0.41954023" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
@@ -177,6 +202,7 @@
       <module name="pets-server" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.zhuhodor.server.PetsServerApplication" />
       <option name="ACTIVE_PROFILES" value="own" />
+      <option name="VM_PARAMETERS" value="--add-opens java.base/java.lang=ALL-UNNAMED  --add-opens java.base/java.util=ALL-UNNAMED  --add-opens java.desktop/java.awt.font=ALL-UNNAMED" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="UPDATE_ACTION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
@@ -318,7 +344,7 @@
       <workItem from="1644655109754" duration="22371000" />
       <workItem from="1645098940451" duration="13954000" />
       <workItem from="1645284488947" duration="9611000" />
-      <workItem from="1645451304387" duration="44351000" />
+      <workItem from="1645451304387" duration="65600000" />
     </task>
     <task id="LOCAL-00001" summary="daily completion">
       <created>1644243578631</created>
@@ -371,30 +397,33 @@
     <option name="LAST_COMMIT_MESSAGE" value="模糊查询更新" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="304" y="109" width="1164" height="689" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1644144532494">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state x="2224" y="109" width="1164" height="689" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1646022468142">
+      <screen x="1920" y="0" width="1536" height="864" />
     </state>
     <state x="304" y="109" width="1164" height="689" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1644144532494" />
+    <state x="2224" y="109" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1536.864/0.0.1920.1080@1920.0.1536.864" timestamp="1646022468142" />
     <state x="667" y="159" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1644136378409">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="667" y="159" key="#com.intellij.ide.macro.MacrosDialog/0.0.1536.864@0.0.1536.864" timestamp="1644136378409" />
-    <state x="2600" y="118" key="#com.intellij.ide.util.MemberChooser" timestamp="1645896064003">
+    <state x="2600" y="118" key="#com.intellij.ide.util.MemberChooser" timestamp="1646048980261">
       <screen x="1920" y="0" width="1536" height="864" />
     </state>
     <state x="680" y="118" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864@0.0.1536.864" timestamp="1645207137760" />
     <state x="2600" y="113" key="#com.intellij.ide.util.MemberChooser/1920.0.1536.826/0.0.1920.1032@1920.0.1536.826" timestamp="1641736077517" />
-    <state x="2600" y="118" key="#com.intellij.ide.util.MemberChooser/1920.0.1536.864/0.0.1920.1080@1920.0.1536.864" timestamp="1645896064003" />
-    <state x="247" y="412" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1644138653913">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state x="2600" y="118" key="#com.intellij.ide.util.MemberChooser/1920.0.1536.864/0.0.1920.1080@1920.0.1536.864" timestamp="1646048980261" />
+    <state x="2167" y="412" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1646049210563">
+      <screen x="1920" y="0" width="1536" height="864" />
     </state>
     <state x="247" y="412" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1536.864@0.0.1536.864" timestamp="1644138653913" />
-    <state x="548" y="280" width="453" height="291" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1642335091730">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state x="2167" y="412" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/1920.0.1536.864/0.0.1920.1080@1920.0.1536.864" timestamp="1646049210563" />
+    <state x="2468" y="280" width="453" height="291" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1646040626499">
+      <screen x="1920" y="0" width="1536" height="864" />
     </state>
     <state x="548" y="264" width="453" height="291" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.816@0.0.1536.816" timestamp="1641987699823" />
     <state x="548" y="280" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.864@0.0.1536.864" timestamp="1642335091730" />
     <state x="2468" y="267" width="453" height="291" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/1920.0.1536.826/0.0.1920.1032@1920.0.1536.826" timestamp="1641027489574" />
+    <state x="2468" y="280" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/1920.0.1536.864/0.0.1920.1080@1920.0.1536.864" timestamp="1646040626499" />
     <state x="2419" y="155" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1640015299891">
       <screen x="1920" y="0" width="1536" height="826" />
     </state>
@@ -408,71 +437,72 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="229" y="151" width="1108" height="632" key="DiffContextDialog/0.0.1536.864@0.0.1536.864" timestamp="1643962562990" />
-    <state x="2505" y="196" key="FileChooserDialogImpl" timestamp="1645456404243">
+    <state x="2505" y="196" key="FileChooserDialogImpl" timestamp="1646022414024">
       <screen x="1920" y="0" width="1536" height="864" />
     </state>
     <state x="585" y="196" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1645098998560" />
-    <state x="2505" y="196" key="FileChooserDialogImpl/1920.0.1536.864/0.0.1920.1080@1920.0.1536.864" timestamp="1645456404243" />
-    <state width="1285" height="221" key="GridCell.Tab.0.bottom" timestamp="1645900328292">
+    <state x="2505" y="196" key="FileChooserDialogImpl/1920.0.1536.864/0.0.1920.1080@1920.0.1536.864" timestamp="1646022414024" />
+    <state width="1285" height="521" key="GridCell.Tab.0.bottom" timestamp="1646049412426">
       <screen x="1920" y="0" width="1536" height="864" />
     </state>
     <state width="1316" height="253" key="GridCell.Tab.0.bottom/0.0.1536.816@0.0.1536.816" timestamp="1641990302102" />
     <state width="986" height="194" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1645209827626" />
     <state width="1493" height="256" key="GridCell.Tab.0.bottom/1920.0.1536.826/0.0.1920.1032@1920.0.1536.826" timestamp="1641814119600" />
-    <state width="1285" height="221" key="GridCell.Tab.0.bottom/1920.0.1536.864/0.0.1920.1080@1920.0.1536.864" timestamp="1645900328292" />
-    <state width="1285" height="221" key="GridCell.Tab.0.center" timestamp="1645900328292">
+    <state width="1285" height="521" key="GridCell.Tab.0.bottom/1920.0.1536.864/0.0.1920.1080@1920.0.1536.864" timestamp="1646049412426" />
+    <state width="1285" height="521" key="GridCell.Tab.0.center" timestamp="1646049412426">
       <screen x="1920" y="0" width="1536" height="864" />
     </state>
     <state width="1316" height="253" key="GridCell.Tab.0.center/0.0.1536.816@0.0.1536.816" timestamp="1641990302101" />
     <state width="986" height="194" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1645209827626" />
     <state width="1493" height="256" key="GridCell.Tab.0.center/1920.0.1536.826/0.0.1920.1032@1920.0.1536.826" timestamp="1641814119600" />
-    <state width="1285" height="221" key="GridCell.Tab.0.center/1920.0.1536.864/0.0.1920.1080@1920.0.1536.864" timestamp="1645900328292" />
-    <state width="1285" height="221" key="GridCell.Tab.0.left" timestamp="1645900328292">
+    <state width="1285" height="521" key="GridCell.Tab.0.center/1920.0.1536.864/0.0.1920.1080@1920.0.1536.864" timestamp="1646049412426" />
+    <state width="1285" height="521" key="GridCell.Tab.0.left" timestamp="1646049412425">
       <screen x="1920" y="0" width="1536" height="864" />
     </state>
     <state width="1316" height="253" key="GridCell.Tab.0.left/0.0.1536.816@0.0.1536.816" timestamp="1641990302101" />
     <state width="986" height="194" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1645209827626" />
     <state width="1493" height="256" key="GridCell.Tab.0.left/1920.0.1536.826/0.0.1920.1032@1920.0.1536.826" timestamp="1641814119599" />
-    <state width="1285" height="221" key="GridCell.Tab.0.left/1920.0.1536.864/0.0.1920.1080@1920.0.1536.864" timestamp="1645900328292" />
-    <state width="1285" height="221" key="GridCell.Tab.0.right" timestamp="1645900328292">
+    <state width="1285" height="521" key="GridCell.Tab.0.left/1920.0.1536.864/0.0.1920.1080@1920.0.1536.864" timestamp="1646049412425" />
+    <state width="1285" height="521" key="GridCell.Tab.0.right" timestamp="1646049412426">
       <screen x="1920" y="0" width="1536" height="864" />
     </state>
     <state width="1316" height="253" key="GridCell.Tab.0.right/0.0.1536.816@0.0.1536.816" timestamp="1641990302101" />
     <state width="986" height="194" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1645209827626" />
     <state width="1493" height="256" key="GridCell.Tab.0.right/1920.0.1536.826/0.0.1920.1032@1920.0.1536.826" timestamp="1641814119600" />
-    <state width="1285" height="221" key="GridCell.Tab.0.right/1920.0.1536.864/0.0.1920.1080@1920.0.1536.864" timestamp="1645900328292" />
-    <state width="1285" height="221" key="GridCell.Tab.1.bottom" timestamp="1645900328293">
+    <state width="1285" height="521" key="GridCell.Tab.0.right/1920.0.1536.864/0.0.1920.1080@1920.0.1536.864" timestamp="1646049412426" />
+    <state width="1285" height="521" key="GridCell.Tab.1.bottom" timestamp="1646049412426">
       <screen x="1920" y="0" width="1536" height="864" />
     </state>
     <state width="1316" height="253" key="GridCell.Tab.1.bottom/0.0.1536.816@0.0.1536.816" timestamp="1641990302102" />
     <state width="986" height="194" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1645209827627" />
     <state width="1316" height="293" key="GridCell.Tab.1.bottom/1920.0.1536.826/0.0.1920.1032@1920.0.1536.826" timestamp="1641814119591" />
-    <state width="1285" height="221" key="GridCell.Tab.1.bottom/1920.0.1536.864/0.0.1920.1080@1920.0.1536.864" timestamp="1645900328293" />
-    <state width="1285" height="221" key="GridCell.Tab.1.center" timestamp="1645900328293">
+    <state width="1285" height="521" key="GridCell.Tab.1.bottom/1920.0.1536.864/0.0.1920.1080@1920.0.1536.864" timestamp="1646049412426" />
+    <state width="1285" height="521" key="GridCell.Tab.1.center" timestamp="1646049412426">
       <screen x="1920" y="0" width="1536" height="864" />
     </state>
     <state width="1316" height="253" key="GridCell.Tab.1.center/0.0.1536.816@0.0.1536.816" timestamp="1641990302102" />
     <state width="986" height="194" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1645209827626" />
     <state width="1316" height="293" key="GridCell.Tab.1.center/1920.0.1536.826/0.0.1920.1032@1920.0.1536.826" timestamp="1641814119591" />
-    <state width="1285" height="221" key="GridCell.Tab.1.center/1920.0.1536.864/0.0.1920.1080@1920.0.1536.864" timestamp="1645900328293" />
-    <state width="1285" height="221" key="GridCell.Tab.1.left" timestamp="1645900328292">
+    <state width="1285" height="521" key="GridCell.Tab.1.center/1920.0.1536.864/0.0.1920.1080@1920.0.1536.864" timestamp="1646049412426" />
+    <state width="1285" height="521" key="GridCell.Tab.1.left" timestamp="1646049412426">
       <screen x="1920" y="0" width="1536" height="864" />
     </state>
     <state width="1316" height="253" key="GridCell.Tab.1.left/0.0.1536.816@0.0.1536.816" timestamp="1641990302102" />
     <state width="986" height="194" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1645209827626" />
     <state width="1316" height="293" key="GridCell.Tab.1.left/1920.0.1536.826/0.0.1920.1032@1920.0.1536.826" timestamp="1641814119591" />
-    <state width="1285" height="221" key="GridCell.Tab.1.left/1920.0.1536.864/0.0.1920.1080@1920.0.1536.864" timestamp="1645900328292" />
-    <state width="1285" height="221" key="GridCell.Tab.1.right" timestamp="1645900328293">
+    <state width="1285" height="521" key="GridCell.Tab.1.left/1920.0.1536.864/0.0.1920.1080@1920.0.1536.864" timestamp="1646049412426" />
+    <state width="1285" height="521" key="GridCell.Tab.1.right" timestamp="1646049412426">
       <screen x="1920" y="0" width="1536" height="864" />
     </state>
     <state width="1316" height="253" key="GridCell.Tab.1.right/0.0.1536.816@0.0.1536.816" timestamp="1641990302102" />
     <state width="986" height="194" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1645209827626" />
     <state width="1316" height="293" key="GridCell.Tab.1.right/1920.0.1536.826/0.0.1920.1032@1920.0.1536.826" timestamp="1641814119591" />
-    <state width="1285" height="221" key="GridCell.Tab.1.right/1920.0.1536.864/0.0.1920.1080@1920.0.1536.864" timestamp="1645900328293" />
-    <state x="376" y="129" width="996" height="711" key="SettingsEditor" timestamp="1644145414156">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="1285" height="521" key="GridCell.Tab.1.right/1920.0.1536.864/0.0.1920.1080@1920.0.1536.864" timestamp="1646049412426" />
+    <state x="1962" y="14" width="996" height="711" key="SettingsEditor" timestamp="1646022421319">
+      <screen x="1920" y="0" width="1536" height="864" />
     </state>
     <state x="376" y="129" width="996" height="711" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1644145414156" />
+    <state x="1962" y="14" key="SettingsEditor/1920.0.1536.864/0.0.1920.1080@1920.0.1536.864" timestamp="1646022421319" />
     <state x="491" y="177" width="540" height="524" key="StructurePopup" timestamp="1644480552588">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -499,10 +529,11 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="518" y="201" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1644227591884" />
-    <state x="432" y="176" width="672" height="642" key="search.everywhere.popup" timestamp="1641989949832">
-      <screen x="0" y="0" width="1536" height="816" />
+    <state x="2352" y="186" width="672" height="680" key="search.everywhere.popup" timestamp="1646040656470">
+      <screen x="1920" y="0" width="1536" height="864" />
     </state>
     <state x="432" y="176" width="672" height="642" key="search.everywhere.popup/0.0.1536.816@0.0.1536.816" timestamp="1641989949832" />
     <state x="446" y="185" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1643962748845" />
+    <state x="2352" y="186" width="672" height="680" key="search.everywhere.popup/1920.0.1536.864/0.0.1920.1080@1920.0.1536.864" timestamp="1646040656470" />
   </component>
 </project>

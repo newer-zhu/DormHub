@@ -2,6 +2,9 @@ server:
   port: 8888
 
 spring:
+  # excel
+  main:
+    allow-bean-definition-overriding: true
   datasource:
     url: jdbc:mysql://localhost:3306/pets?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
     password: xxxx

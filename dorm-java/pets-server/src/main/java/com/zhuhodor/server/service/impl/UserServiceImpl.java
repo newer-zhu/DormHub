@@ -2,15 +2,15 @@ package com.zhuhodor.server.service.impl;
 
 import cn.hutool.core.lang.Assert;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.zhuhodor.server.common.domain.Result;
 import com.zhuhodor.server.common.utils.JwtUtil;
 import com.zhuhodor.server.mapper.DormMapper;
-import com.zhuhodor.server.model.pojo.User;
 import com.zhuhodor.server.mapper.UserMapper;
+import com.zhuhodor.server.model.pojo.User;
 import com.zhuhodor.server.model.vo.condition.UserSearchVo;
 import com.zhuhodor.server.security.component.MyUserDetails;
 import com.zhuhodor.server.service.IUserService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

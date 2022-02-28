@@ -28,11 +28,16 @@
         SELECT pd.id, pd.building_id, pd.dorm_id FROM p_dorm pd WHERE pd.id = #{dorm_id}
     </select>
 
+    <select id="getUserVoById" resultType="com.zhuhodor.server.model.vo.UserVo" parameterType="int">
+        select id, nick_name, username from p_user WHERE id = #{id}
+    </select>
+
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.zhuhodor.server.model.pojo.User">
         <id column="id" property="id"/>
         <result column="nick_name" property="nickName"/>
         <result column="username" property="username"/>
+        <result property="sex" column="sex"></result>
         <result column="phone" property="phone"/>
         <result column="email" property="email"/>
         <result column="password" property="password"/>
@@ -58,5 +63,6 @@
         <id property="id" column="u_id"/>
         <result property="username" column="username"></result>
         <result property="nickName" column="nick_name"></result>
+        <result property="sex" column="sex"></result>
     </resultMap>
 </mapper>

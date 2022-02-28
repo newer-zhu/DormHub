@@ -10,6 +10,12 @@
       <el-col :span="3">
         <el-button type="primary" style="margin-left: 20px" icon="el-icon-search" @click="search">搜索</el-button>
       </el-col>
+      <el-col :span="5">
+        <uploader @success="refresh" />
+      </el-col>
+      <el-col :span="3">
+        <el-button type="success" :loading="downloading" icon="el-icon-download" @click="downloadExcel">下载用户Excel表</el-button>
+      </el-col>
     </el-row>
     <el-row type="flex" justify="flex-start" style="margin-top: 20px;flex-wrap: wrap;">
       <el-col v-for="(u,i) in list" :key="u.id" :span="5" :offset="1">
@@ -54,12 +60,16 @@
 </template>
 
 <script>
-  import {searchUsers} from '../../api/user'
-
+  import { searchUsers } from '../../api/user'
+  import {downloadRequest} from '../../utils/download'
+  import Uploader from './component/Uploader'
+  import fileDownload from 'js-file-download'
   export default {
     name: 'UserTable',
+    components: { Uploader },
     data(){
       return{
+        downloading: false,
         list: [],
         condition:{
           username: '',
@@ -78,8 +88,6 @@
       }
     },
     methods:{
-      changeStatus(status){
-      },
       confirm(){
 
       },
@@ -87,13 +95,27 @@
         searchUsers(this.condition).then(res => {
           this.list = res.data
         })
+      },
+
+      downloadExcel(){
+        this.downloading = true
+        downloadRequest('/user/excel/export', {
+          title: '用户基本信息',
+          sheetName: '用户信息',
+          fileName: '用户信息表',
+        }).then(res => {
+          this.$message({type: 'secuess', message: res.data})
+          this.downloading = false
+        })
+      },
+
+      refresh(){
+        this.searchConfig = {}
+        this.search()
       }
     },
     mounted() {
-      searchUsers(this.condition).then(res => {
-        console.log(res.data)
-        this.list = res.data
-      })
+      this.refresh()
     }
   }
 </script>
