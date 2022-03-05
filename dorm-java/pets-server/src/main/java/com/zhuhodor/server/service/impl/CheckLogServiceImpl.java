@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.zhuhodor.server.mapper.CheckItemLogVoMapper;
 import com.zhuhodor.server.mapper.CheckLogMapper;
 import com.zhuhodor.server.model.pojo.CheckLog;
+import com.zhuhodor.server.model.vo.CheckItemLogVo;
 import com.zhuhodor.server.model.vo.CheckLogAnalysisVo;
 import com.zhuhodor.server.model.vo.CheckLogVo;
 import com.zhuhodor.server.model.vo.GraphVo;
@@ -36,14 +37,19 @@ public class CheckLogServiceImpl extends ServiceImpl<CheckLogMapper, CheckLog> i
 
     @Transactional
     @Override
-    public void saveLog(CheckLogVo checkLogVo) {
+    public boolean saveLog(CheckLogVo checkLogVo) {
         CheckLog checkLog = new CheckLog();
         BeanUtils.copyProperties(checkLogVo, checkLog);
-        checkLogMapper.insert(checkLog);
+        if (checkLogMapper.insert(checkLog) == 1){
+            checkLogVo.setId(checkLog.getId());
+        }else {
+            return false;
+        }
         checkLogVo.getItemScores().forEach(i -> {
             i.setCheckLog(checkLog.getId());
         });
-        checkItemLogVoMapper.saveCheckItemLogs(checkLogVo.getItemScores());
+        List<CheckItemLogVo> itemScores = checkLogVo.getItemScores();
+        return checkItemLogVoMapper.saveCheckItemLogs(itemScores) == itemScores.size() ;
     }
 
     @Transactional

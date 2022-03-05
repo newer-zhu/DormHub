@@ -4,6 +4,9 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.zhuhodor.server.config.MybatisRedisCache;
 import com.zhuhodor.server.model.pojo.Role;
 import org.apache.ibatis.annotations.CacheNamespace;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /**
  * <p>
@@ -16,4 +19,7 @@ import org.apache.ibatis.annotations.CacheNamespace;
 @CacheNamespace(implementation= MybatisRedisCache.class,eviction=MybatisRedisCache.class)
 public interface RoleMapper extends BaseMapper<Role> {
 
+    Integer releaseMenusByRoleId(@Param("roleId") Integer id);
+
+    Integer acquireMenusWithRoleId(List<Integer> menuList, Integer id);
 }

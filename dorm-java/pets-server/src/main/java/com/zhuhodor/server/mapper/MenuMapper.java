@@ -1,8 +1,9 @@
 package com.zhuhodor.server.mapper;
 
-import com.zhuhodor.server.model.pojo.Menu;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import org.apache.ibatis.annotations.Mapper;
+import com.zhuhodor.server.config.MybatisRedisCache;
+import com.zhuhodor.server.model.pojo.Menu;
+import org.apache.ibatis.annotations.CacheNamespace;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -15,7 +16,7 @@ import java.util.List;
  * @author zhuhodor
  * @since 2022-01-28
  */
-@Mapper
+@CacheNamespace(implementation= MybatisRedisCache.class,eviction=MybatisRedisCache.class)
 public interface MenuMapper extends BaseMapper<Menu> {
 
     List<Menu> getMenusWithRole();

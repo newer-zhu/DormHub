@@ -27,16 +27,3 @@ export function setUserInfo(info) {
 export function removeUserInfo() {
   return sessionStorage.removeItem(userInfo)
 }
-
-export function getRouter() {
-  const r = JSON.parse(sessionStorage.getItem(router))
-  return r? r : []
-}
-
-export function removeRouter() {
-  return sessionStorage.removeItem(router)
-}
-
-export function setRouter(data) {
-  return sessionStorage.setItem(router, JSON.stringify(data))
-}

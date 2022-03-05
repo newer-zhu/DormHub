@@ -24,7 +24,7 @@ export function getCheckReport(id, time) {
 
 export function getCheckItems() {
   return request({
-    url: '/checkItem',
+    url: '/checkItem/update',
     method: 'get',
   })
 }
@@ -34,5 +34,19 @@ export function updateCheckItems(data) {
     url: '/checkItem/update',
     method: 'post',
     data: data
+  })
+}
+
+export function getLastTenAvgScores() {
+  return request({
+    url: '/checklog-rank/avgScores',
+    method: 'get'
+  })
+}
+
+export function getTenMaxScores() {
+  return request({
+    url: '/checklog-rank/maxScores',
+    method: 'get'
   })
 }

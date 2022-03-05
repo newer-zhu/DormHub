@@ -3,7 +3,7 @@
     <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" auto-complete="on" label-position="left">
 
       <div class="title-container">
-        <h3 class="title">Login Form</h3>
+        <h3 class="title">DormHub后台登录</h3>
       </div>
 
       <el-form-item prop="username">
@@ -45,7 +45,7 @@
 
       <div class="tips">
         <span style="margin-right:20px;">username: admin</span>
-        <span> password: any</span>
+        <span> password: zhu123</span>
       </div>
 
     </el-form>
@@ -74,7 +74,7 @@ export default {
     }
     return {
       loginForm: {
-        username: '3190112108',
+        username: 'admin',
         password: 'zhu123'
       },
       loginRules: {

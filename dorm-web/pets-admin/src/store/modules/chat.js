@@ -15,7 +15,13 @@ const state = {
     isDot: {}
 }
 
+export const getChatState = () => {return this.state}
+
 const mutations = {
+  RESET_STATE: (state) => {
+    // Object.assign(state, getChatState())
+    state = {}
+  },
   SET_USERS(state, users) {
     state.chatUsers = users;
   },

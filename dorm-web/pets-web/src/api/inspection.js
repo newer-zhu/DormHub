@@ -3,7 +3,7 @@ import request from "../utils/request";
 //宿舍检查评分
 export function sendCheckLog(log) {
   return request({
-    url: '/checkLog/enabled',
+    url: '/checkLog',
     method: 'post',
     data: log
   })
@@ -12,7 +12,7 @@ export function sendCheckLog(log) {
 //获取宿舍检查项目
 export function getCheckItem() {
   return request({
-    url: '/checkItem',
+    url: '/checkItem/enabled',
     method: 'get',
   })
 }

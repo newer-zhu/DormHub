@@ -16,4 +16,7 @@ public class CheckItemUpdateDTO {
 
     @ApiModelProperty(value = "启用检查项Id集合（不包括新增检查项）")
     private List<Integer> enabledList;
+
+    @ApiModelProperty(value = "此次操作版本号")
+    private Long version;
 }

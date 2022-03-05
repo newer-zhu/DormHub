@@ -18,7 +18,7 @@ import java.util.List;
  * @since 2021-08-20
  */
 public interface ICheckLogService extends IService<CheckLog> {
-    void saveLog(CheckLogVo checkLogVo);
+    boolean saveLog(CheckLogVo checkLogVo);
 
     CheckLogVo getLogByDormId(Integer id, String time);
 

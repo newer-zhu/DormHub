@@ -3,7 +3,7 @@ package com.zhuhodor.server.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.zhuhodor.server.common.domain.Result;
-import com.zhuhodor.server.common.dto.LoginDto;
+import com.zhuhodor.server.model.dto.LoginDto;
 import com.zhuhodor.server.common.utils.ExcelUtils;
 import com.zhuhodor.server.common.utils.TencentCos;
 import com.zhuhodor.server.model.pojo.User;

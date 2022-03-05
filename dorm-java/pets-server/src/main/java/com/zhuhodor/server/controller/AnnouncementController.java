@@ -6,9 +6,11 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.zhuhodor.server.common.domain.Result;
 import com.zhuhodor.server.model.pojo.Announcement;
+import com.zhuhodor.server.security.component.MyUserDetails;
 import com.zhuhodor.server.service.IAnnouncementService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
@@ -36,7 +38,10 @@ public class AnnouncementController {
 
     @ApiOperation(value = "保存公告")
     @PostMapping("/save")
-    public Result save(@RequestBody Announcement announcement){
+    public Result save(@RequestBody Announcement announcement, Authentication authentication){
+        MyUserDetails userDetails = (MyUserDetails) authentication.getPrincipal();
+        announcement.setUserId(userDetails.getUser().getId());
+        announcement.setNickName(userDetails.getUser().getNickName());
         if (announcementService.saveAnnouncement(announcement)){
             return Result.success("发布成功！");
         }else {
@@ -91,6 +96,13 @@ public class AnnouncementController {
         List<Announcement> list = announcementService.getAnnouncements(page);
         page.setRecords(list);
         return Result.success(page);
+    }
+
+    @ApiOperation(value = "获取最新三条公告")
+    @GetMapping("/fresh")
+    public Result getFreshAnnouncements(){
+        List<Announcement> list = announcementService.getFreshAnnouncements();
+        return Result.success(list);
     }
 
 }

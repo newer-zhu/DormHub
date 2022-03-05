@@ -86,7 +86,8 @@
           label: 'item'
         },
         form: '',
-        newItems: []//新增items
+        newItems: [],//新增items
+        version: 0
       }
     },
     computed:{
@@ -106,22 +107,19 @@
       submit(){
         if (this.totalScore !== 100){
           this.$message({type: 'error', message: '请确保总分为100'})
-        }
-        let enabledList = []
-        this.data.forEach(f => {
-          if (!this.isDisabled(f.key)){
-            enabledList.push(f.key)
+        }else {
+          const updateBody = {
+            disabledList: this.disabledList,
+            newItems: this.newItems,
+            version: this.version
           }
-        })
-        const updateBody = {
-          disabledList: this.disabledList,
-          enabledList: enabledList,
-          newItems: this.newItems
+          updateCheckItems(updateBody).then(res => {
+            if (res.code === 200){
+              this.$message({type: 'success', message: res.msg})
+            }
+            this.prepareItems()
+          })
         }
-        updateCheckItems(updateBody).then(res => {
-          this.$message({type: 'success', message: res.msg})
-          this.prepareItems()
-        })
       },
       formatPer(per){
         return per
@@ -149,7 +147,8 @@
         Object.assign(this.$data, this.$options.data.call(this))
         getCheckItems().then(res => {
           console.log(res.data)
-          this.items = res.data
+          this.items = res.data.items
+          this.version = res.data.version
           this.items.forEach(f => {
             f.childrenItem.forEach(ff => {
               this.data.push({label: ff.item+'\t['+ff.score+'分]', key: ff.id, disabled: false})

@@ -54,6 +54,9 @@ public class Announcement implements Serializable {
     @TableField("user_id")
     private Integer userId;
 
+    @TableField("nick_name")
+    private String nickName;
+
     @ApiModelProperty("确认人数")
     @TableField("confirm")
     private Integer confirm;
@@ -70,5 +73,8 @@ public class Announcement implements Serializable {
 
     @TableField(exist = false)
     private List<ImageVo> images;
+
+    @TableField(exist = false)
+    private ImageVo cover;
 
 }

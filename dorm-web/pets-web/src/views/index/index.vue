@@ -43,14 +43,14 @@
     <van-divider/>
 
     <div style="background-color: #ffffff;padding: 10px 0px">
-      <van-row v-for="i in 3" style="padding: 5px 5px 5px 20px;border-bottom: 1px solid #EBEDF0">
+      <van-row @click="toAnnoDetail(a.id)" v-for="(a,i) in list" :key="i" style="padding: 5px 5px 5px 20px;border-bottom: 1px solid #EBEDF0">
         <van-col :span="8">
-          <van-image class="pre-img" src="https://t7.baidu.com/it/u=1951548898,3927145&fm=193&f=GIF" />
+          <van-image class="pre-img" :src="a.cover? a.cover.url:'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpy.66wz.com%2Fpic%2F003%2F007%2F268%2F00300726849_9f92aa0e.jpg&refer=http%3A%2F%2Fpy.66wz.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1648905923&t=75ab9618bcfe32713795c0dc87315c1b'" />
         </van-col>
         <van-col :span="15">
-          <div style="height: 50px">标题标题标题标题标题标题标题标题标题</div>
-          <div style="margin-top: 5px; font-size: 14px; color: #646566;display: inline">2020/12/12 12:12:20</div>
-          <div style="margin-top: 5px; font-size: 14px; color: #646566; display: inline; margin-left: 20px">宋老师</div>
+          <div style="height: 50px; font-size: 18px; line-height: 18px">{{a.title}}</div>
+          <div style="margin-top: 5px; font-size: 14px; color: #646566;display: inline">{{a.publishTime}}</div>
+          <div style="margin-top: 5px; font-size: 14px; color: #646566; display: inline; margin-left: 20px">{{a.nickName}}</div>
         </van-col>
       </van-row>
     </div>
@@ -59,6 +59,8 @@
 </template>
 
 <script>
+  import {getIndexList} from "../../api/anno";
+
   export default {
     name: "Index",
     data(){
@@ -68,13 +70,22 @@
         covers: [
           require('../../assets/img/index/cover1.jpg'),
           require('../../assets/img/index/cover2.jpg')
-        ]
+        ],
+        list: []
       }
     },
     methods:{
       onChange(index) {
         this.current = index;
       },
+      toAnnoDetail(id){
+        this.$router.push({name: 'AnnoDetail', params: {id: id}})
+      }
+    },
+    mounted() {
+      getIndexList().then(res => {
+        this.list = res.data
+      })
     }
   }
 </script>

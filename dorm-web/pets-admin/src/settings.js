@@ -1,6 +1,6 @@
 module.exports = {
 
-  title: 'Vue Admin Template',
+  title: 'Dorm Hub后台管理页面',
 
   /**
    * @type {boolean} true | false

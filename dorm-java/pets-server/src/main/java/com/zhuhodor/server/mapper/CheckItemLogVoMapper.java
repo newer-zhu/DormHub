@@ -11,5 +11,5 @@ import java.util.List;
 @CacheNamespace(implementation= MybatisRedisCache.class,eviction=MybatisRedisCache.class)
 public interface CheckItemLogVoMapper extends BaseMapper<CheckItemLogVo> {
 
-    void saveCheckItemLogs(@Param("checkItemLogs") List<CheckItemLogVo> itemScores);
+    Integer saveCheckItemLogs(@Param("checkItemLogs") List<CheckItemLogVo> itemScores);
 }

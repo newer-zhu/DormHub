@@ -26,8 +26,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private IUserService userService;
-//    @Autowired
-//    private IRoleService roleService;
+
     @Autowired
     private RestAuthorizationEntryPoint restAuthorizationEntryPoint;
     @Autowired
@@ -92,8 +91,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         //忽略路径
         web.ignoring().antMatchers(
                 "/user/login",
-                "/user/info",
-                "/user/avatar**",
                 "/css/**",
                 "/js/**",
                 "/index.html",

@@ -1,5 +1,5 @@
-import { login, logout, getInfo } from '@/api/user'
-import { getToken, setToken, removeToken, getUserInfo, setUserInfo, removeUserInfo, removeRouter, getRouter } from '@/utils/auth'
+import { login, getInfo } from '@/api/user'
+import { getToken, setToken, removeToken, getUserInfo, setUserInfo, removeUserInfo } from '@/utils/auth'
 import { resetRouter } from '@/router'
 
 const getDefaultState = () => {
@@ -16,7 +16,8 @@ const state = getDefaultState()
 
 const mutations = {
   RESET_STATE: (state) => {
-    Object.assign(state, getDefaultState())
+    // Object.assign(state, getDefaultState())
+    state = {}
   },
   SET_TOKEN: (state, token) => {
     state.token = token
@@ -73,15 +74,12 @@ const actions = {
   // user logout
   logout({ commit, state }) {
     return new Promise((resolve, reject) => {
-      logout(state.token).then(() => {
-        removeToken() // must remove  token  first
-        resetRouter()
-        removeUserInfo()
-        commit('RESET_STATE')
-        resolve()
-      }).catch(error => {
-        reject(error)
-      })
+      removeToken() // must remove  token  first
+      resetRouter()
+      removeUserInfo()
+      commit('RESET_STATE')
+      commit('chat/RESET_STATE', '', { root: true })
+      resolve()
     })
   },
 

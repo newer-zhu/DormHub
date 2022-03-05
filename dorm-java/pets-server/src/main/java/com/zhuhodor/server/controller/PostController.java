@@ -91,9 +91,6 @@ public class PostController {
     @ApiOperation(value = "获取未审核的帖子")
     @GetMapping("/unchecked")
     public Result getUncheckedPost(){
-//        Set<String> set = redisUtil.sget(RedisConstant.unChecked.getValue());
-//        HashSet<Integer> searchSet = new HashSet<>();
-//        set.forEach(id -> {searchSet.add(Integer.valueOf(id));});
         List<PostVo> posts = postService.getUncheckedPosts();
         return Result.success(posts);
     }
@@ -113,6 +110,7 @@ public class PostController {
             }
             //设置点赞数
             long tempLikes = redisUtil.sSize(redisKey);
+            //只要redis没挂，里面的数据一定是最新的
             p.setLikeNum(Math.toIntExact(tempLikes));
         }
         if (posts.size() < size){
@@ -128,9 +126,6 @@ public class PostController {
     @ApiOperation(value = "审核通过")
     @GetMapping("/check/{id}")
     public Result checkPost(@PathVariable("id") String id){
-//        if (redisUtil.srem(RedisConstant.unChecked.getValue(), id) != 0){
-//
-//        }
         if (postService.update(new UpdateWrapper<Post>()
                 .eq("id", id)
                 .set("status", 1))){
@@ -182,6 +177,5 @@ public class PostController {
                 .put("unchecked", unchecked)
                 .put("failed", failed).map());
     }
-
 
 }

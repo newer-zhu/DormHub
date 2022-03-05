@@ -4,7 +4,9 @@ package com.zhuhodor.server.controller;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.zhuhodor.server.common.constant.RedisConstant;
 import com.zhuhodor.server.common.domain.Result;
+import com.zhuhodor.server.common.utils.RedisUtil;
 import com.zhuhodor.server.model.pojo.CheckLog;
 import com.zhuhodor.server.model.vo.CheckLogVo;
 import com.zhuhodor.server.model.vo.condition.LogSearchVo;
@@ -15,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,18 +35,29 @@ public class CheckLogController {
     @Autowired
     private ICheckLogService checkLogService;
 
+    @Autowired
+    private RedisUtil redisUtil;
+
     @PostMapping()
     @ApiOperation(value = "保存检查表")
     public Result saveLog(@RequestBody CheckLogVo checkLogVo, Principal principal){
-        if (checkLogService.list(new QueryWrapper<CheckLog>()
+        checkLogVo.setCheckUsername(principal.getName());
+        checkLogVo.setCheckTime(LocalDate.now());
+        String key = RedisConstant.checkRank.getValue() + checkLogVo.getCheckTime().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        if (checkLogService.count(new QueryWrapper<CheckLog>()
                 .eq("check_time", LocalDate.now().toString())
-                .eq("target_dorm", checkLogVo.getTargetDorm())).size() > 0){
+                .eq("target_dorm", checkLogVo.getTargetDorm())) > 0){
             return Result.fail("不要重复评分！");
         }else {
-            checkLogVo.setCheckUsername(principal.getName());
-            checkLogVo.setCheckTime(LocalDate.now());
-            checkLogService.saveLog(checkLogVo);
-            return Result.success("保存成功");
+            if (checkLogService.saveLog(checkLogVo)){
+                if (!redisUtil.hasKey(key)){
+                    redisUtil.zadd(key, checkLogVo.getTargetDorm()+":"+checkLogVo.getId(), Double.valueOf(checkLogVo.getTotalScore()));
+                    redisUtil.expire(key, 60*60*24);
+                }
+                redisUtil.zadd(key, checkLogVo.getTargetDorm()+":"+checkLogVo.getId(), Double.valueOf(checkLogVo.getTotalScore()));
+                return Result.success("保存成功");
+            }
+            return Result.success("服务器出错了");
         }
     }
 

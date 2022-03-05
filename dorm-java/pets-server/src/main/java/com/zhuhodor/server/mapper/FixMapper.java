@@ -1,9 +1,10 @@
 package com.zhuhodor.server.mapper;
 
-import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.zhuhodor.server.model.pojo.Fix;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import org.apache.ibatis.annotations.Mapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.zhuhodor.server.config.MybatisRedisCache;
+import com.zhuhodor.server.model.pojo.Fix;
+import org.apache.ibatis.annotations.CacheNamespace;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -16,7 +17,7 @@ import java.util.List;
  * @author zhuhodor
  * @since 2022-01-01
  */
-@Mapper
+@CacheNamespace(implementation= MybatisRedisCache.class,eviction=MybatisRedisCache.class)
 public interface FixMapper extends BaseMapper<Fix> {
 
     List<Fix> getFixReportsByUserId(@Param("userId") Integer userId);

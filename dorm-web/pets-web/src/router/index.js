@@ -150,6 +150,11 @@ const routes = [
     path: '/reserve',
     name: 'ReserveIndex',
     component: () => import('../views/dorm/reserve/index'),
+  },
+  {
+    path: '/anno/detail/:id',
+    name: 'AnnoDetail',
+    component: () => import('../views/dorm/announcement/AnnoDetail'),
   }
 ]
 

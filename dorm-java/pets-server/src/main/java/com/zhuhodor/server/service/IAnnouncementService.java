@@ -23,4 +23,6 @@ public interface IAnnouncementService extends IService<Announcement> {
     List<Announcement> getAnnouncements(IPage<Announcement> page);
 
     boolean saveAnnouncement(Announcement announcement);
+
+    List<Announcement> getFreshAnnouncements();
 }

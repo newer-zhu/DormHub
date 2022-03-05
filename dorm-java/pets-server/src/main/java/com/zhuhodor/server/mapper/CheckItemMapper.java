@@ -17,4 +17,5 @@ public interface CheckItemMapper extends BaseMapper<CheckItem> {
     Integer updateDisabled(@Param("disabledList") List<Integer> disabledList);
 
     Integer saveItems(@Param("newItems") List<CheckItem> newItems);
+
 }

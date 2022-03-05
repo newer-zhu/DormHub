@@ -21,7 +21,7 @@ public class CheckLogVo {
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
-    @ApiModelProperty(value = "总分")
+    @ApiModelProperty(value = "取得的总分")
     @TableField("total_score")
     private Integer totalScore;
 
@@ -32,7 +32,7 @@ public class CheckLogVo {
     @JsonSerialize(using = LocalDateSerializer.class)
     private LocalDate checkTime;
 
-    @ApiModelProperty(value = "打分寝室")
+    @ApiModelProperty(value = "被打分寝室Id")
     @TableField("target_dorm")
     private Integer targetDorm;
 

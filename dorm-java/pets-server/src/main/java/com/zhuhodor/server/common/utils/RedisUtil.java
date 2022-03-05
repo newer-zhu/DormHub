@@ -19,6 +19,9 @@ public class RedisUtil {
     @Autowired
     private StringRedisTemplate redisTemplate;
 
+    /**
+     * 是否有此键
+     */
     public boolean hasKey(String key){
         return redisTemplate.hasKey(key);
     }
@@ -58,7 +61,7 @@ public class RedisUtil {
         redisTemplate.delete(key);
     }
 
-//    set 数据结构
+    //    set 数据结构
     public void sadd(String key, String val){
         redisTemplate.opsForSet().add(key, val);
     }
@@ -117,10 +120,9 @@ public class RedisUtil {
         return redisTemplate.opsForSet().size(key);
     }
 
-//zset数据结构
-
+    //zset数据结构
     /**
-     * 增加得分
+     * 增加score
      * @param key
      * @param val
      * @param score
@@ -130,14 +132,39 @@ public class RedisUtil {
     }
 
     /**
+     * 返回set中member的score值，没有返回null
+     */
+    public void zScore(String key, String val){
+        Double score = redisTemplate.opsForZSet().score(key, val);
+    }
+
+    /**
      * 倒序排序显示分数
      * @param key
      * @param start
      * @param end
      */
-    public Set revRangeWithScore(String key, Long start, Long end){
+    public Set zrevRangeWithScore(String key, Long start, Long end){
         Set<ZSetOperations.TypedTuple<String>> typedTuples = redisTemplate.opsForZSet().reverseRangeWithScores(key, start, end);
         return typedTuples;
+    }
+
+    /**
+     * 排序显示分数
+     * @param key
+     * @param start
+     * @param end
+     */
+    public Set<ZSetOperations.TypedTuple<String>> zrangeWithScore(String key, Long start, Long end){
+        Set<ZSetOperations.TypedTuple<String>> typedTuples = redisTemplate.opsForZSet().rangeWithScores(key, start, end);
+        return typedTuples;
+    }
+
+    /**
+     * zset添加
+     */
+    public Boolean zadd(String key, String value, Double score){
+        return redisTemplate.opsForZSet().add(key, value, score);
     }
 
     /**
@@ -149,7 +176,6 @@ public class RedisUtil {
     }
 
     // String（字符串）
-
     /**
      * 实现命令：SET key value，设置一个key-value（将字符串值 value关联到 key）
      *
@@ -165,8 +191,7 @@ public class RedisUtil {
      *
      * @param key
      * @param value
-     * @param timeout
-     *            （以秒为单位）
+     * @param timeout（以秒为单位）
      */
     public void set(String key, String value, long timeout) {
         redisTemplate.opsForValue().set(key, value, timeout, TimeUnit.SECONDS);

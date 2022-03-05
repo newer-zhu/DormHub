@@ -6,7 +6,7 @@ function resolve(dir) {
   return path.join(__dirname, dir)
 }
 
-const name = defaultSettings.title || 'vue Admin Template' // page title
+const name = defaultSettings.title || 'DormHub 后台管理界面' // page title
 
 // You can change the port by the following methods:
 // port = 9528 npm run dev OR npm run dev --port = 9528
@@ -51,7 +51,6 @@ module.exports = {
       errors: true
     },
     proxy: proxyObj
-    // before: require('./mock/mock-server.js')
   },
   configureWebpack: {
     // provide the app's title in webpack's name field, so that

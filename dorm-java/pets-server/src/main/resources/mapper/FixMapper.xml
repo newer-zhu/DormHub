@@ -63,7 +63,7 @@
     </select>
 
     <select id="getFixReportById" resultMap="Fix">
-        SELECT pf.*
+        SELECT pf.* FROM p_fix pf
         WHERE pf.id = #{id} AND pf.status != -1
     </select>
 

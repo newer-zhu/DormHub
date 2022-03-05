@@ -2,7 +2,7 @@ import request from '../utils/request'
 
 export function getUsers() {
   return request({
-    url: '/user',
+    url: '/chat/user',
     method: 'get',
   })
 }

@@ -26,37 +26,43 @@ public class CheckItemServiceImpl extends ServiceImpl<CheckItemMapper,CheckItem>
         return checkItemMapper.getEnabledCheckItems();
     }
 
-    /**
-     * 用版本号解决多人修改导致总分不为100的问题，暂未解决。留坑~
-     * @param dto
-     * @return
-     */
     @Transactional
     @Override
     public Result updateCheckItems(CheckItemUpdateDTO dto) {
         List<CheckItem> allCheckItems = checkItemMapper.getAllCheckItems();
+        //停用的检查项
         List<Integer> disabledList = dto.getDisabledList();
+        //新增的检查项
         List<CheckItem> newItems = dto.getNewItems();
         int total = 0;
+
         //新增的item分数累计和
         for (CheckItem item : newItems){
             total += item.getScore();
         }
-        //数据库里启用的的item分数累计和
+        //数据校验
         for (int i = 0; i < allCheckItems.size(); i++) {
-            CheckItem parentItems = allCheckItems.get(i);
-            for (CheckItem item : parentItems.getChildrenItem()){
-                if (!disabledList.contains(item.getId()) && item.getEnabled()){
+            CheckItem parentItem = allCheckItems.get(i);
+            int subTotal = 0;
+            for (CheckItem item : parentItem.getChildrenItem()){
+                if (!disabledList.contains(item.getId())){
+                    subTotal += item.getScore();
                     total += item.getScore();
                 }
             }
+            if (subTotal != parentItem.getScore()){
+                return Result.fail("请保证子检查项与父级分数相等！");
+            }
         }
-        if (total == 100
-                && checkItemMapper.updateDisabled(disabledList) == disabledList.size()
+        if (total != 100){
+            return Result.fail("请保证总分为100！");
+        }
+
+        if (checkItemMapper.updateDisabled(disabledList) == disabledList.size()
                 && checkItemMapper.saveItems(newItems) == newItems.size()){
             return Result.success("更新成功");
         }else {
-            return Result.fail("数据在此期间被他人改动，请重试");
+            return Result.fail("更新出错了哦");
         }
     }
 }

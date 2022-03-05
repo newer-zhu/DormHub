@@ -1,9 +1,10 @@
 package com.zhuhodor.server.mapper;
 
-import com.zhuhodor.server.model.pojo.PostComment;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.zhuhodor.server.config.MybatisRedisCache;
+import com.zhuhodor.server.model.pojo.PostComment;
 import com.zhuhodor.server.model.vo.PostCommentVo;
-import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.CacheNamespace;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -16,7 +17,7 @@ import java.util.List;
  * @author zhuhodor
  * @since 2022-01-01
  */
-@Mapper
+@CacheNamespace(implementation= MybatisRedisCache.class,eviction=MybatisRedisCache.class)
 public interface PostCommentMapper extends BaseMapper<PostComment> {
 
     List<PostCommentVo> getCommentsByPostId(@Param("postId") Integer id);

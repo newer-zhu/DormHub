@@ -1,4 +1,4 @@
-package com.zhuhodor.server.common.dto;
+package com.zhuhodor.server.model.dto;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
