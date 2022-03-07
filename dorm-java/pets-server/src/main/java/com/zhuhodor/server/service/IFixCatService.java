@@ -2,7 +2,7 @@ package com.zhuhodor.server.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.zhuhodor.server.model.pojo.FixCat;
-import com.zhuhodor.server.model.vo.FixCatPieVo;
+import com.zhuhodor.server.model.vo.echarts.FixCatPieVo;
 
 import java.util.List;
 

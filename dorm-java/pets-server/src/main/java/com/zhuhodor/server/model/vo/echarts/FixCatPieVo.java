@@ -1,4 +1,4 @@
-package com.zhuhodor.server.model.vo;
+package com.zhuhodor.server.model.vo.echarts;
 
 import lombok.Data;
 

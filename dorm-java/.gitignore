@@ -10,3 +10,4 @@ pets-server/target/generated-test-sources/
 pets-server/target/maven-archiver/
 pets-server/target/maven-status/
 pets-server/target/pets-server-0.0.1-SNAPSHOT.jar
+application-own.yml

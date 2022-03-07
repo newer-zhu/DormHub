@@ -40,8 +40,13 @@ export const constantRoutes = [
 
   {
     path: '/',
-    redirect: '/announcement/table',
-    component: () => import('@/views/anno/AnnoTable'),
+    component: Layout,
+    redirect: '/home',
+    children: [{
+      name: 'Home',
+      path: 'home',
+      component: () => import('@/views/home/Home')
+    }],
     hidden: true
   },
 
@@ -62,14 +67,6 @@ export const constantRoutes = [
       component: () => import('@/views/chat/ChatPanel')
     }
     ]
-  },
-
-  {
-    path: '/example',
-    component: Layout,
-    redirect: '/example/table',
-    name: 'Example',
-    meta: { title: 'Example', icon: 'el-icon-s-help' },
   },
 
   {

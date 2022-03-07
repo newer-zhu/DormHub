@@ -55,6 +55,10 @@ public class CheckLogVo {
     private Integer total;
 
     @TableField(exist = false)
+    @ApiModelProperty(value = "平均分")
+    private Double avgScore;
+
+    @TableField(exist = false)
     @ApiModelProperty(value = "子检查项详情")
     private List<CheckItemLogVo> itemScores;
 }

@@ -20,7 +20,7 @@ import java.time.LocalDate;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author zhuhodor
@@ -55,6 +55,12 @@ public class CheckLog implements Serializable {
 
     @ApiModelProperty(value = "检查人员")
     private String checkUsername;
+
+    @ApiModelProperty(value = "排名")
+    private Integer rank;
+
+    @ApiModelProperty(value = "同期总数")
+    private Integer total;
 
     @ApiModelProperty(value = "备注")
     private String note;

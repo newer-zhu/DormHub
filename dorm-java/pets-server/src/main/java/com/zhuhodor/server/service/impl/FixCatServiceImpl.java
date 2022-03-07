@@ -2,7 +2,7 @@ package com.zhuhodor.server.service.impl;
 
 import com.zhuhodor.server.model.pojo.FixCat;
 import com.zhuhodor.server.mapper.FixCatMapper;
-import com.zhuhodor.server.model.vo.FixCatPieVo;
+import com.zhuhodor.server.model.vo.echarts.FixCatPieVo;
 import com.zhuhodor.server.service.IFixCatService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;

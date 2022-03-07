@@ -1,5 +1,5 @@
 import { getAllUsers } from '@/api/chat'
-import { getToken, getUserInfo, setUserInfo, removeUserInfo } from '@/utils/auth'
+import { getToken, getUserInfo } from '@/utils/auth'
 import Stomp from 'stompjs'
 import SockJS from 'sockjs-client'
 import { Notification } from 'element-ui'

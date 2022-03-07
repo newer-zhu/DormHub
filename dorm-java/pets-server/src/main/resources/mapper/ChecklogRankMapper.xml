@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.zhuhodor.server.mapper.ChecklogRankMapper">
-    <select id="getLatestTimes" parameterType="int" resultType="String">
-        SELECT ANY_VALUE(check_date) AS check_date
-        FROM p_checklog_rank
-        GROUP BY check_date limit #{item}
-    </select>
-</mapper>

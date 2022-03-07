@@ -5,10 +5,8 @@ import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.zhuhodor.server.common.constant.RedisConstant;
 import com.zhuhodor.server.common.utils.RedisUtil;
 import com.zhuhodor.server.model.pojo.CheckLog;
-import com.zhuhodor.server.model.pojo.ChecklogRank;
 import com.zhuhodor.server.model.pojo.Post;
 import com.zhuhodor.server.service.ICheckLogService;
-import com.zhuhodor.server.service.IChecklogRankService;
 import com.zhuhodor.server.service.IPostService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,8 +29,6 @@ public class ScheduleTask {
     private IPostService postService;
     @Autowired
     private RedisUtil redisUtil;
-    @Autowired
-    private IChecklogRankService checklogRankService;
     @Autowired
     private ICheckLogService checkLogService;
 
@@ -58,17 +54,24 @@ public class ScheduleTask {
                 Iterator<ZSetOperations.TypedTuple<String>> iterator = set.iterator();
                 //排名
                 int rank = 0;
-                ArrayList<ChecklogRank> saveList = new ArrayList<>();
+                ArrayList<CheckLog> saveList = new ArrayList<>();
                 while (iterator.hasNext()){
                     rank++;
                     ZSetOperations.TypedTuple<String> entry = iterator.next();
                     String[] split = entry.getValue().split(":");
+                    //宿舍Id
                     int dormId = Integer.valueOf(split[0]);
+                    //CheckLogId
                     int checkLogId = Integer.valueOf(split[1]);
+                    //得分
                     Double score = entry.getScore();
-                    saveList.add(new ChecklogRank(null, dormId, checkLogId, rank, total, lastDay, score));
+                    CheckLog log = new CheckLog();
+                    log.setId(checkLogId);
+                    log.setTotal(total);
+                    log.setRank(rank);
+                    saveList.add(log);
                 }
-                checklogRankService.saveBatch(saveList);
+                checkLogService.updateBatchById(saveList);
                 return;
             }else {
                 log.error("数据库check_rank数据丢失");

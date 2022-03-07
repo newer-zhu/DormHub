@@ -3,7 +3,7 @@ package com.zhuhodor.server.controller;
 
 import com.zhuhodor.server.common.domain.Result;
 import com.zhuhodor.server.model.pojo.FixCat;
-import com.zhuhodor.server.model.vo.FixCatPieVo;
+import com.zhuhodor.server.model.vo.echarts.FixCatPieVo;
 import com.zhuhodor.server.service.IFixCatService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;

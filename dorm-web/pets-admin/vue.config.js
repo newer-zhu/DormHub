@@ -15,7 +15,11 @@ const port = process.env.port || process.env.npm_config_port || 9528 // dev port
 const proxyObj = {}
 proxyObj['/ws'] = {
   ws: true,
-  target: 'ws://localhost:8888'
+  target: 'ws://localhost:8888',
+  // changeOrigin: true,
+  // pathRewrite: {
+  //   '^/ws': ''
+  // }
 }
 proxyObj['/api'] = {
 // websocket

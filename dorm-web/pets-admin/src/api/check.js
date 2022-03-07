@@ -39,14 +39,28 @@ export function updateCheckItems(data) {
 
 export function getLastTenAvgScores() {
   return request({
-    url: '/checklog-rank/avgScores',
+    url: '/eCharts/avgScores',
     method: 'get'
   })
 }
 
 export function getTenMaxScores() {
   return request({
-    url: '/checklog-rank/maxScores',
+    url: '/eCharts/maxScores',
+    method: 'get'
+  })
+}
+
+export function getScoresAccount() {
+  return request({
+    url: '/eCharts/countScores',
+    method: 'get'
+  })
+}
+
+export function getRankedScores() {
+  return request({
+    url: '/eCharts/rankedAvgScores',
     method: 'get'
   })
 }

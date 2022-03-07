@@ -3,7 +3,7 @@ package com.zhuhodor.server.mapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.zhuhodor.server.config.MybatisRedisCache;
 import com.zhuhodor.server.model.pojo.FixCat;
-import com.zhuhodor.server.model.vo.FixCatPieVo;
+import com.zhuhodor.server.model.vo.echarts.FixCatPieVo;
 import org.apache.ibatis.annotations.CacheNamespace;
 
 import java.util.List;

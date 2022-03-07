@@ -2,26 +2,26 @@
   <div>
     <el-row>
       <el-col :span="12">
-        <div id="lineChart" style="width: 100%; height: 400px; margin: 20px 0px 0px 20px"></div>
+        <div id="lineChart" style="width: 100%; height: 400px; margin: 20px 0px 0px 50px"></div>
       </el-col>
       <el-col :span="12">
         <div id="columnChart" style="width: 100%; height: 400px; margin: 20px 0px 0px 20px"></div>
+      </el-col>
+    </el-row>
+    <el-row>
+      <el-col :span="12">
+        <div id="pieChart" style="width: 100%; height: 400px; margin: 20px 0px 0px 50px"></div>
+      </el-col>
+      <el-col :span="12">
+        <div id="rankCharts" style="width: 100%; height: 400px; margin: 20px 0px 0px 50px"></div>
       </el-col>
     </el-row>
   </div>
 </template>
 
 <script>
-  import { getLastTenAvgScores, getTenMaxScores } from '../../api/check'
-  // import {BarChart} from 'echarts/charts'
+  import { getLastTenAvgScores, getTenMaxScores, getScoresAccount, getRankedScores } from '../../api/check'
   import * as echarts from 'echarts';
-  // 引入基本模板
-  // let echarts = require('echarts/lib/echarts')
-  // require('echarts/lib/chart/line')
-  // require('echarts/lib/component/grid')
-  // require('echarts/lib/component/tooltip')
-  // require('echarts/lib/component/title')
-  // require('echarts/charts')
   export default {
     name: 'CheckDataPanel',
     data(){
@@ -90,11 +90,103 @@
             ]
           });
         })
+      },
+      drawRankedCol(){
+        var chartDom = echarts.init(document.getElementById('rankCharts'))
+        getRankedScores().then(res => {
+          chartDom.setOption({
+            title: {
+              text: '寝室平均分排名'
+            },
+            tooltip: {
+              trigger: 'axis',
+              axisPointer: {
+                type: 'shadow'
+              }
+            },
+            grid: {
+              left: '3%',
+              right: '4%',
+              bottom: '3%',
+              containLabel: true
+            },
+            xAxis: [
+              {
+                type: 'category',
+                data: res.data.xaxis,
+                axisTick: {
+                  alignWithLabel: true
+                }
+              }
+            ],
+            yAxis: [
+              {
+                type: 'value'
+              }
+            ],
+            series: [
+              {
+                name: 'Direct',
+                type: 'bar',
+                barWidth: '60%',
+                data: res.data.yaxis,
+                itemStyle: {
+                  normal: {
+                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                      offset: 0,
+                      color: '#ba7ef3'
+                    }, {
+                      offset: 1,
+                      color: '#965df2'
+                    }]),
+                  }
+                },
+              }
+            ],
+
+          });
+        })
+      },
+      drawPie(){
+        let columnChart = echarts.init(document.getElementById('pieChart'))
+        getScoresAccount().then(res => {
+          columnChart.setOption({
+            title: {
+              text: '检查结果分数占比',
+              subtext: '上期',
+              left: 'center'
+            },
+            tooltip: {
+              trigger: 'item'
+            },
+            legend: {
+              orient: 'vertical',
+              left: 'left'
+            },
+            series: [
+              {
+                name: '分数位段占比',
+                type: 'pie',
+                radius: '50%',
+                data: res.data,
+                emphasis: {
+                  itemStyle: {
+                    shadowBlur: 10,
+                    shadowOffsetX: 0,
+                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                  }
+                }
+              },
+            ]
+          });
+        })
       }
     },
     mounted() {
       this.drawLine()
       this.drawColumn()
+      this.drawPie()
+      this.drawRankedCol()
     }
   }
 </script>
