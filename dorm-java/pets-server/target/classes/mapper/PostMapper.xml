@@ -84,8 +84,11 @@
         UPDATE `p_post`
         SET `status` = 1
         WHERE
-        NOW() > DATE_ADD(time,INTERVAL 1 DAY)
+        statue = 0
+        AND
+        NOW() >= DATE_ADD(time,INTERVAL 1 DAY)
     </update>
+
     <update id="checkByBatchIds" parameterType="list">
         UPDATE p_post
         SET status = 1
