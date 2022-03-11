@@ -99,7 +99,7 @@
 
       downloadExcel(){
         this.downloading = true
-        downloadRequest('/user/excel/export', {
+        downloadRequest('/user/admin/excel/export', {
           title: '用户基本信息',
           sheetName: '用户信息',
           fileName: '用户信息表',

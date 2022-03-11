@@ -17,11 +17,15 @@ import java.util.List;
  */
 public interface IEChartsService extends IService<CheckLog> {
 
+    //前几期的平均分
     LineVo getLastTenTimesAvgScores();
 
+    //前几期的最高分
     LineVo getLastTenHighestScores();
 
+    //上一期得分区间占比
     List<PieVo> getLatestScoreAccount();
 
+    //平均分排名
     LineVo getRankedAvgScores();
 }

@@ -34,16 +34,18 @@ public class CustomFilter implements FilterInvocationSecurityMetadataSource {
     public Collection<ConfigAttribute> getAttributes(Object o) throws IllegalArgumentException {
         //获取请求的url
         String requestUrl = ((FilterInvocation)o).getRequestUrl();
-        log.info("当前访问的URL============={}", requestUrl);
+//        log.info("当前访问的URL============={}", requestUrl);
         //获取菜单
         List<Menu> menus = menuService.getMenusWithRole();
         for (Menu menu : menus) {
             //判断请求的url与菜单角色是否匹配
             if (antPathMatcher.match(menu.getUrl(),requestUrl)){
+                log.info("数据库查询的url===[{}]和当前访问的url===[{}]匹配成功", menu.getUrl(), requestUrl);
                 String[] str = menu.getRoles().stream().map(Role::getRoleName).toArray(String[]::new);
                 return SecurityConfig.createList(str);
             }
         }
+        log.info("当前访问的url===[{}]在数据库约定之外！默认登录状态就能访问", requestUrl);
         //没匹配的url默认为登录即可访问
         return SecurityConfig.createList("ROLE_LOGIN");
     }

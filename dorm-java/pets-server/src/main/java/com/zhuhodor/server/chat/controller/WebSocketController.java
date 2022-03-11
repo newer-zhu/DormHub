@@ -1,14 +1,18 @@
 package com.zhuhodor.server.chat.controller;
 
 import com.zhuhodor.server.chat.ChatMsg;
+import com.zhuhodor.server.chat.config.WebSocketCounter;
 import com.zhuhodor.server.model.pojo.User;
 import com.zhuhodor.server.security.component.MyUserDetails;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
+import org.springframework.messaging.simp.annotation.SubscribeMapping;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Map;
 
 /**
  * websocket控制器
@@ -18,6 +22,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class WebSocketController {
     @Autowired
     private SimpMessagingTemplate simpMessagingTemplate;
+
+    @Autowired
+    private WebSocketCounter connCounter;
 
     @MessageMapping("/sendMsg")
     public void handleMsg(Authentication authentication, ChatMsg chatMsg){
@@ -35,5 +42,17 @@ public class WebSocketController {
          */
         log.info("[{}]发送消息=========={}",user.getNickName(), chatMsg);
         simpMessagingTemplate.convertAndSendToUser(chatMsg.getTo(),"/message/chat",chatMsg);
+    }
+
+    /**
+     * 用于初始化数据
+     * 初次连接返回数据
+     * 只执行一次
+     **/
+    @SubscribeMapping("/welcome")
+    public Map<Object, Object> welcome(Authentication authentication) {
+        MyUserDetails userDetails = (MyUserDetails) authentication.getPrincipal();
+        log.info("用户登入=========>{}", userDetails.getUser().getUsername());
+        return connCounter.onlineUserMap();
     }
 }

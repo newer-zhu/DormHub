@@ -17,7 +17,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 /**
  * <p>
@@ -55,7 +57,6 @@ public class PostController {
     public Result savePost(@RequestBody Post post){
         post.setTime(LocalDateTime.now());
         if(post.getId() == null && postService.save(post)){
-            redisUtil.sadd(RedisConstant.unChecked.getValue(), String.valueOf(post.getId()));
             return Result.success("提交成功!",post);
         }else if (post.getId() != null && postService.updateById(post)){
             return Result.success("更新成功!", post);
@@ -67,6 +68,7 @@ public class PostController {
     @ApiOperation(value = "删除帖子")
     @DeleteMapping("/{id}")
     public Result delPost(@PathVariable("id") Integer id){
+        //TODO 删除前验证
         if(postService.deleteById(id)){
             redisUtil.srem(RedisConstant.unChecked.getValue(), id);
             redisUtil.del(RedisConstant.postLikePre.getValue() + id);
@@ -89,7 +91,7 @@ public class PostController {
     }
 
     @ApiOperation(value = "获取未审核的帖子")
-    @GetMapping("/unchecked")
+    @GetMapping("/audit/unchecked")
     public Result getUncheckedPost(){
         List<PostVo> posts = postService.getUncheckedPosts();
         return Result.success(posts);
@@ -124,7 +126,7 @@ public class PostController {
     }
 
     @ApiOperation(value = "审核通过")
-    @GetMapping("/check/{id}")
+    @GetMapping("/audit/check/{id}")
     public Result checkPost(@PathVariable("id") String id){
         if (postService.update(new UpdateWrapper<Post>()
                 .eq("id", id)
@@ -135,7 +137,7 @@ public class PostController {
     }
 
     @ApiOperation(value = "审核批量通过")
-    @PostMapping("/check/batch")
+    @PostMapping("/audit/check/batch")
     public Result checkPosts(@RequestBody List<Integer> ids){
         if (postService.checkByBatchIds(ids)){
             return Result.success("操作成功");
@@ -144,7 +146,7 @@ public class PostController {
     }
 
     @ApiOperation(value = "审核不通过")
-    @GetMapping("/fail/{id}")
+    @GetMapping("/audit/fail/{id}")
     public Result failPost(@PathVariable("id") String id){
         if (postService.update(new UpdateWrapper<Post>()
                 .eq("id", id)

@@ -7,6 +7,7 @@ export function sendPost(post) {
     data: post
   })
 }
+
 //获取帖子
 export function getPostById(postId) {
   return request({

@@ -38,7 +38,7 @@ public class CheckLogController {
     @Autowired
     private RedisUtil redisUtil;
 
-    @PostMapping()
+    @PostMapping("/checker")
     @ApiOperation(value = "保存检查表")
     public Result saveLog(@RequestBody CheckLogVo checkLogVo, Principal principal){
         checkLogVo.setCheckUsername(principal.getName());

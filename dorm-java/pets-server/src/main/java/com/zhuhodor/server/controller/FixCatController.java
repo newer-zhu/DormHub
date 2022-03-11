@@ -32,7 +32,7 @@ public class FixCatController {
     }
 
     @ApiOperation("更新分类")
-    @PutMapping()
+    @PutMapping("/admin/update")
     public Result updateCat(@RequestBody FixCat cat){
         if (fixCatService.updateById(cat)){
             return Result.success(null);
@@ -41,7 +41,7 @@ public class FixCatController {
     }
 
     @ApiOperation("新增分类")
-    @PostMapping()
+    @PostMapping("/admin/save")
     public Result saveCat(@RequestBody FixCat cat){
         if (fixCatService.save(cat)){
             return Result.success("保存成功");

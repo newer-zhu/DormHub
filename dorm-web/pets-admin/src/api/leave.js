@@ -25,7 +25,7 @@ export function getRequests(param) {
 
 export function passRequest(param) {
   return request({
-    url: '/leave-request/proposer/pass',
+    url: '/leave-request/admin/proposer/pass',
     method: 'post',
     data: param
   })
@@ -33,7 +33,7 @@ export function passRequest(param) {
 
 export function failRequest(param) {
   return request({
-    url: '/leave-request/proposer/fail',
+    url: '/leave-request/admin/proposer/fail',
     method: 'post',
     data: param
   })

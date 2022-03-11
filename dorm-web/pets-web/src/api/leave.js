@@ -27,7 +27,7 @@ export function getAuditors(id) {
 //通过
 export function passRequest(req) {
   return request({
-    url: '/leave-request/pass',
+    url: '/leave-request/admin/pass',
     method: 'post',
     data: req
   })
@@ -36,7 +36,7 @@ export function passRequest(req) {
 //不通过
 export function failRequest(req) {
   return request({
-    url: '/leave-request/fail',
+    url: '/leave-request/admin/fail',
     method: 'post',
     data: req
   })

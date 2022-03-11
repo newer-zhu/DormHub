@@ -1,6 +1,7 @@
 package com.zhuhodor.server.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.zhuhodor.server.chat.config.WebSocketCounter;
 import com.zhuhodor.server.common.domain.Result;
 import com.zhuhodor.server.model.pojo.User;
 import com.zhuhodor.server.service.IUserService;
@@ -12,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.security.Principal;
+import java.util.HashMap;
+import java.util.List;
 
 /**
  * <p>
@@ -27,17 +30,28 @@ public class ChatController {
     @Autowired
     private IUserService userService;
 
+    @Autowired
+    private WebSocketCounter webSocketCounter;
+
     @ApiOperation(value = "获取所有聊天用户")
     @GetMapping("/user")
     public Result getAllUsers(Principal principal){
-        return Result.success(userService.list(new QueryWrapper<User>()
-                .select("username", "id", "nick_name", "avatar").ne("nick_name", principal.getName())));
+        List<User> userList = userService.list(new QueryWrapper<User>()
+                .select("username", "id", "nick_name", "avatar").ne("nick_name", principal.getName()));
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("users", userList);
+        map.put("onlineUsers", webSocketCounter.onlineUserMap());
+        return Result.success(map);
     }
 
     @GetMapping("/search/{searchStr}")
     public Result search(@PathVariable("searchStr") String str){
-        return Result.success(userService.list(new QueryWrapper<User>()
+        List<User> userList = userService.list(new QueryWrapper<User>()
                 .like("nick_name", str).or().like("username", str)
-                .select("id", "nick_name", "username", "avatar")));
+                .select("id", "nick_name", "username", "avatar"));
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("users", userList);
+        map.put("onlineUsers", webSocketCounter.onlineUserMap());
+        return Result.success(map);
     }
 }

@@ -26,7 +26,7 @@ export function searchUsers(con) {
 
 export function uploadExcel(param) {
   return request({
-    url: '/user/excel/import',
+    url: '/user/admin/excel/import',
     method: 'post',
     data: param
   })

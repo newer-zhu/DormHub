@@ -11,6 +11,8 @@ const state = {
     userInfo: getUserInfo(),
     chatUsers: [],//可聊天对象列表
     currentSession: null,//当前聊天对象
+    onlineUserNum: '',//在线人数
+    onlineUserMap: {},//在线用户map
     stomp: null,
     isDot: {}
 }
@@ -22,8 +24,12 @@ const mutations = {
     // Object.assign(state, getChatState())
     state = {}
   },
-  SET_USERS(state, users) {
-    state.chatUsers = users;
+  SET_USERS(state, data) {
+    state.chatUsers = data.users;
+
+    state.onlineUserMap = data.onlineUsers
+    console.log(data)
+    state.onlineUserNum = state.onlineUserMap['size']
   },
   addMessage(state, msg) {
     const sessionKey = state.currentAdmin.username + '#' + msg.to
@@ -43,16 +49,22 @@ const mutations = {
     state.currentSession = currentSession;
     Vue.set(state.isDot, currentSession.username+'#'+state.currentAdmin.username, false);
   },
+  //参数是userMap
+  SET_OnlineUsers(state, users){
+    state.onlineUserMap = JSON.parse(users)
+    state.onlineUserNum = state.onlineUserMap['size']
+  },
 }
 
 const actions = {
   // connect websocket
   connect(context) {
     const { state } = context
-    state.stomp = Stomp.over(new SockJS('/ws/pets'));
+    let socket = new SockJS('/ws/pets')
+    state.stomp = Stomp.over(socket);
     const token = getToken();
     state.stomp.connect({'Auth-Token': token}, success => {
-      //订阅消息
+      //订阅聊天消息
       state.stomp.subscribe('/user/message/chat', msg => {
         let receiveMsg = JSON.parse(msg.body);
         //当前不在消息页面或者正在和另一个人聊天，消息提示
@@ -63,14 +75,27 @@ const actions = {
             position: 'bottom-right'
           })
           Vue.set(state.isDot, receiveMsg.from+'#'+receiveMsg.to, true);
-          console.log(state.isDot)
+          // console.log(state.isDot)
         }
         receiveMsg.notSelf = true;
         receiveMsg.to = receiveMsg.from;
         context.commit('addMessage', receiveMsg);
       })
+      //订阅在线用户
+      state.stomp.subscribe('/broadcast/onlineUsers', msg => {
+        context.commit('SET_OnlineUsers', msg.body);
+      });
+      //只执行一次
+      state.stomp.subscribe('/welcome', msg => {
+        context.commit('SET_OnlineUsers', msg.body);
+      });
     }, error => {
     })
+
+    //监听窗口关闭
+    window.onbeforeunload = function (event) {
+      socket.close()
+    }
   },
 
   //init users

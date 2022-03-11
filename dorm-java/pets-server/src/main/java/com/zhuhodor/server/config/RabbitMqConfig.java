@@ -56,7 +56,7 @@ public class RabbitMqConfig {
     @Bean
     public Queue TestDirectQueue() {
         // durable:是否持久化,默认是false,持久化队列：会被存储在磁盘上，当消息代理重启时仍然存在，暂存队列：当前连接有效
-        // exclusive:默认也是false，只ty能被当前创建的连接使用，而且当连接关闭后队列即被删除。此参考优先级高于durable
+        // exclusive:默认也是false，只能被当前创建的连接使用，而且当连接关闭后队列即被删除。此参考优先级高于durable
         // autoDelete:是否自动删除，当没有生产者或者消费者使用此队列，该队列会自动删除。
         //   return new Queue("TestDirectQueue",true,true,false);
 
@@ -67,7 +67,7 @@ public class RabbitMqConfig {
     //交换机
     @Bean
     DirectExchange TestDirectExchange() {
-        //  return new DirectExchange("TestDirectExchange",true,true);
+        //autoDelete 没有任何消费者就自动删除
         return new DirectExchange("TestDirectExchange",true,false);
     }
 
@@ -75,10 +75,5 @@ public class RabbitMqConfig {
     @Bean
     Binding bindingDirect() {
         return BindingBuilder.bind(TestDirectQueue()).to(TestDirectExchange()).with("TestDirectRouting");
-    }
-
-    @Bean
-    DirectExchange lonelyDirectExchange() {
-        return new DirectExchange("lonelyDirectExchange");
     }
 }

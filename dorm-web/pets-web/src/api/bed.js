@@ -2,14 +2,14 @@ import request from '../utils/request'
 
 export function reserve(userId, bedId) {
   return request({
-    url: '/bed/appointment?userId='+userId+'&bedId='+bedId,
+    url: '/bed/freshman/appointment?userId='+userId+'&bedId='+bedId,
     method: 'get',
   })
 }
 
 export function cancel(userId, bedId) {
   return request({
-    url: '/bed/appointment?userId='+userId+'&bedId='+bedId,
+    url: '/bed/freshman/appointment?userId='+userId+'&bedId='+bedId,
     method: 'delete',
   })
 }

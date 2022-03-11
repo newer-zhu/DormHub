@@ -1,5 +1,4 @@
 import { getMenus } from '@/api/menu'
-import el from 'element-ui/src/locale/lang/el'
 
 export const initMenu = (router, store) => {
   if (store.getters.routes.length > 0) {

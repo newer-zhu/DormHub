@@ -304,6 +304,12 @@ public class RedisUtil {
     public void hincrby(String key, String field, long step){
         redisTemplate.opsForHash().increment(key, field, step);
     }
+
+    public long hlen(String key){
+        return redisTemplate.opsForHash().size(key);
+    }
+
+
     // List（列表）
 
     /**

@@ -37,7 +37,7 @@ public class AnnouncementController {
     }
 
     @ApiOperation(value = "保存公告")
-    @PostMapping("/save")
+    @PostMapping("/admin/save")
     public Result save(@RequestBody Announcement announcement, Authentication authentication){
         MyUserDetails userDetails = (MyUserDetails) authentication.getPrincipal();
         announcement.setUserId(userDetails.getUser().getId());
@@ -50,7 +50,7 @@ public class AnnouncementController {
     }
 
     @ApiOperation(value = "修改公告")
-    @PostMapping("/update")
+    @PostMapping("/admin/update")
     public Result update(@RequestBody Announcement announcement){
         announcement.setPublishTime(LocalDateTime.now());
         if (announcementService.updateById(announcement)){
@@ -61,7 +61,7 @@ public class AnnouncementController {
     }
 
     @ApiOperation(value = "撤回公告")
-    @GetMapping("/withdrew/{id}")
+    @GetMapping("/admin/withdrew/{id}")
     public Result withdrew(@PathVariable("id") Integer id){
         if (announcementService.update(new UpdateWrapper<Announcement>()
                 .eq("id", id).set("del_flag", 1))){
@@ -71,7 +71,7 @@ public class AnnouncementController {
     }
 
     @ApiOperation( value = "取消撤回公告")
-    @GetMapping("/withdrew/dis/{id}")
+    @GetMapping("/admin/withdrew/dis/{id}")
     public Result disWithdrew(@PathVariable("id") Integer id){
         if (announcementService.update(new UpdateWrapper<Announcement>()
                 .eq("id", id).set("del_flag", 0))){
@@ -81,7 +81,7 @@ public class AnnouncementController {
     }
 
     @ApiOperation(value = "硬删除公告")
-    @GetMapping("/del/hard/{id}")
+    @GetMapping("/admin/del/hard/{id}")
     public Result hardDel(@PathVariable("id") Integer id){
         if (announcementService.hardDel(id)){
             return Result.success("删除成功！");

@@ -17,14 +17,14 @@ export function deletePost(id) {
 
 export function getUncheckedPosts() {
   return request({
-    url: '/post/unchecked',
+    url: '/post/audit/unchecked',
     method: 'get'
   })
 }
 
 export function passPosts(ids) {
   return request({
-    url: '/post/check/batch',
+    url: '/post/audit/check/batch',
     method: 'post',
     data: ids
   })
@@ -32,14 +32,14 @@ export function passPosts(ids) {
 
 export function passPost(id) {
   return request({
-    url: '/post/check/'+id,
+    url: '/post/audit/check/'+id,
     method: 'get'
   })
 }
 
 export function failPost(id) {
   return request({
-    url: '/post/fail/'+id,
+    url: '/post/audit/fail/'+id,
     method: 'get'
   })
 }

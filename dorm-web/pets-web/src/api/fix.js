@@ -20,7 +20,7 @@ export function softDelFixReport(id) {
 //硬删除报修单
 export function hardDelFixReport(id) {
   return request({
-    url: '/fix/'+id,
+    url: '/fix/admin'+id,
     method: 'delete'
   })
 }

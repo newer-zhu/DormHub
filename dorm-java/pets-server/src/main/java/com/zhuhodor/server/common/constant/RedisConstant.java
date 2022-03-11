@@ -13,6 +13,9 @@ public enum RedisConstant {
     //某期卫生检查排名，与检查日期构成key
     checkRank("check_rank:"),
 
+    //在线用户set
+    onlineUsers("online_users"),
+
     //帖子用户点赞池,与帖子id构成key
     postLikePre("post_like:");
 

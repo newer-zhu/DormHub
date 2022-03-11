@@ -88,7 +88,7 @@ public class UserController {
     }
 
     @ApiOperation(value = "解析excel新增用户")
-    @PostMapping(value = "/excel/import")
+    @PostMapping(value = "/admin/excel/import")
     public Result parseExcel(@RequestParam("excelFile") MultipartFile excelFile){
         String name = excelFile.getOriginalFilename();
         if (name.length() < 6 || !name.substring(name.length() - 5).equals(".xlsx")) {
@@ -124,7 +124,7 @@ public class UserController {
     }
 
     @ApiOperation(value = "导出用户excel")
-    @PostMapping(value = "/excel/export")
+    @PostMapping(value = "/admin/excel/export")
     public void exportExcel(@RequestBody Map<String, Object> map,
                             HttpServletResponse response){
         List<User> list = userService.list(new QueryWrapper<User>()

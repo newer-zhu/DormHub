@@ -1,33 +1,39 @@
 <template>
   <div class="navbar">
-    <hamburger :is-active="sidebar.opened" class="hamburger-container" @toggleClick="toggleSideBar" />
-
-    <breadcrumb class="breadcrumb-container" />
-
-    <el-badge style="margin: 5px 0px 0px 75% " :value="newMsg" class="item">
-      <el-button type="primary" @click="openChat"  icon="el-icon-bell" circle></el-button>
-    </el-badge>
-    <div class="right-menu">
-      <el-dropdown class="avatar-container" trigger="click">
-        <div class="avatar-wrapper">
-          <img :src="avatar+'?imageView2/1/w/80/h/80'" class="user-avatar">
-          <i class="el-icon-caret-bottom" />
-        </div>
-        <el-dropdown-menu slot="dropdown" class="user-dropdown">
-          <router-link to="/">
-            <el-dropdown-item>
-              Home
-            </el-dropdown-item>
-          </router-link>
-          <a target="_blank" href="https://github.com/newer-zhu/DormHub/">
-            <el-dropdown-item>Github</el-dropdown-item>
-          </a>
-          <el-dropdown-item divided @click.native="logout">
-            <span style="display:block;">Log Out</span>
-          </el-dropdown-item>
-        </el-dropdown-menu>
-      </el-dropdown>
-    </div>
+    <el-row>
+      <hamburger :is-active="sidebar.opened" class="hamburger-container" @toggleClick="toggleSideBar" />
+      <breadcrumb class="breadcrumb-container" />
+      <el-col :span="5" :offset="12">
+        <el-badge style="margin: 5px 0px 0px 75% " :value="newMsg" class="item">
+          <el-button type="primary" @click="openChat"  icon="el-icon-bell" circle></el-button>
+        </el-badge>
+      </el-col>
+      <el-col :span="2" :offset="1">
+        <el-tooltip effect="dark" :content="userInfo.nickName" placement="left">
+          <div class="right-menu">
+            <el-dropdown class="avatar-container" trigger="click">
+              <div class="avatar-wrapper">
+                <img :src="avatar+'?imageView2/1/w/80/h/80'" class="user-avatar">
+                <i class="el-icon-caret-bottom" />
+              </div>
+              <el-dropdown-menu slot="dropdown" class="user-dropdown">
+                <router-link to="/">
+                  <el-dropdown-item>
+                    Home
+                  </el-dropdown-item>
+                </router-link>
+                <a target="_blank" href="https://github.com/newer-zhu/DormHub/">
+                  <el-dropdown-item>Github</el-dropdown-item>
+                </a>
+                <el-dropdown-item divided @click.native="logout">
+                  <span style="display:block;">Log Out</span>
+                </el-dropdown-item>
+              </el-dropdown-menu>
+            </el-dropdown>
+          </div>
+        </el-tooltip>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
@@ -44,7 +50,8 @@ export default {
   computed: {
     ...mapGetters([
       'sidebar',
-      'avatar'
+      'avatar',
+      'userInfo'
     ]),
     //是否有新消息
     newMsg(){
@@ -108,7 +115,7 @@ export default {
   .right-menu {
     float: right;
     height: 100%;
-    line-height: 50px;
+    line-height: 25px;
 
     &:focus {
       outline: none;

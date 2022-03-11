@@ -6,11 +6,13 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.zhuhodor.server.common.domain.Result;
 import com.zhuhodor.server.model.pojo.Fix;
+import com.zhuhodor.server.security.component.MyUserDetails;
 import com.zhuhodor.server.service.IFixService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -52,7 +54,7 @@ public class FixController {
     }
 
     @ApiOperation("完成报修单")
-    @GetMapping("/table/finish/{id}")
+    @GetMapping("/admin/finish/{id}")
     public Result finishFixReportsById(@PathVariable("id") Integer id){
         fixService.update(new UpdateWrapper<Fix>()
                 .eq("id", id).set("status", 1));
@@ -61,13 +63,17 @@ public class FixController {
 
     @ApiOperation("软删除报修单")
     @GetMapping("/softDel/{id}")
-    public Result softDelFixReport(@PathVariable("id") Integer id){
+    public Result softDelFixReport(@PathVariable("id") Integer id,  Principal principal){
+        MyUserDetails details = (MyUserDetails) principal;
+        if (!fixService.getById(id).getUserId().equals(details.getUser().getId())){
+            return Result.fail("请删除自己的报修！");
+        }
         fixService.update(new UpdateWrapper<Fix>().eq("id", id).set("status", -1));
         return Result.success("删除成功！");
     }
 
-    @ApiOperation("删除报修单")
-    @DeleteMapping("/{id}")
+    @ApiOperation("硬删除报修单")
+    @DeleteMapping("/admin/{id}")
     public Result delFixReport(@PathVariable("id") Integer id){
         if (fixService.deleteById(id)){
             return Result.success("删除成功！");

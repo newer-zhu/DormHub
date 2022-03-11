@@ -5,7 +5,9 @@
           v-if="item.username !== user.username"
           :class="{ active: currentSession?item.username === currentSession.username :false }"
           v-on:click="changeCurrentSession(item)">
-        <img class="avatar" :src="item.avatar" :alt="item.name">
+        <el-badge value="on" :hidden="onlineUserMap[item.id] == null" type="warning">
+          <img class="avatar" :src="item.avatar" :alt="item.name">
+        </el-badge>
         <el-badge :is-dot="isDot[item.username+'#'+user.username]">
           <p class="name">{{item.nickName}}</p>
           <span style="font-size: 12px; margin-left: 10px">{{item.username}}</span>
@@ -27,12 +29,16 @@ export default {
   },
   computed: mapState('chat',[
   'chatUsers',
-  'currentSession', 'isDot'
+  'currentSession',
+    'isDot',
+    'onlineUserMap'
 	]),
   methods:{
   	changeCurrentSession(session) {
   		this.$store.commit('chat/changeCurrentSession',session)
   	},
+  },
+  mounted() {
   }
 }
 </script>

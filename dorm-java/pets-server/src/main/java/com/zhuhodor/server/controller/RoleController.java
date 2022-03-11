@@ -32,7 +32,7 @@ public class RoleController {
     }
 
     @ApiOperation(value = "新增角色")
-    @PostMapping("/add")
+    @PostMapping("/admin/add")
     public Result addRole(@RequestBody Role role){
         if (roleService.count(new QueryWrapper<Role>()
                 .eq("role_name", role.getRoleName())
@@ -45,7 +45,7 @@ public class RoleController {
     }
 
     @ApiOperation(value = "为角色分配菜单")
-    @PostMapping("/assignMenus/{roleId}")
+    @PostMapping("/admin/assignMenus/{roleId}")
     public Result assignMenus(@RequestBody List<Integer> menuList, @PathVariable("roleId") Integer roleId){
         if (roleService.assignMenus(menuList, roleId)){
             return Result.success("分配成功");

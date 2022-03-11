@@ -27,13 +27,13 @@ public class BedController {
     private IBedService bedService;
 
     @ApiOperation(value = "预约床位")
-    @GetMapping("/appointment")
+    @GetMapping("/freshman/appointment")
     public Result makeAppointment(@RequestParam("userId") Integer userId, @RequestParam("bedId") Integer bedId){
         return bedService.reserve(userId, bedId);
     }
 
     @ApiOperation(value = "取消预约床位")
-    @DeleteMapping("/appointment")
+    @DeleteMapping("/freshman/appointment")
     public Result cancelAppointment(@RequestParam("userId") Integer userId, @RequestParam("bedId") Integer bedId){
         if (bedService.cancel(userId, bedId)){
             return Result.success("取消预约成功!");

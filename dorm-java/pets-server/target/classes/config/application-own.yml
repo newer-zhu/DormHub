@@ -33,16 +33,16 @@ spring:
         min-idle: 0
         time-between-eviction-runs: 1000
 
-  #  rabbitmq:
-  #    host: 49.235.92.49
-  #    port: 5672
-  #    username: zhu
-  #    password: admin
-  #    virtual-host: /dorm
-  #    #    确认回调
-  #    publisher-confirm-type: correlated
-  #    #    失败回调
-  #    publisher-returns: true
+    rabbitmq:
+      host: 49.235.92.49
+      port: 5672
+      username: zhu
+      password: admin
+      virtual-host: /dorm
+      #    确认回调
+      publisher-confirm-type: correlated
+      #    失败回调
+      publisher-returns: true
 
   servlet:
     multipart:

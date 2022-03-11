@@ -52,7 +52,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                 }
             }
         }else {
-            log.warn("此请求未携带token！");
+            log.warn("此请求未携带token！==============>{}",request.getPathInfo());
         }
         chain.doFilter(request, response);
     }

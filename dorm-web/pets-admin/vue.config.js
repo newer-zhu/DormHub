@@ -16,10 +16,6 @@ const proxyObj = {}
 proxyObj['/ws'] = {
   ws: true,
   target: 'ws://localhost:8888',
-  // changeOrigin: true,
-  // pathRewrite: {
-  //   '^/ws': ''
-  // }
 }
 proxyObj['/api'] = {
 // websocket

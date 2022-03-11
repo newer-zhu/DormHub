@@ -11,7 +11,7 @@ export function getAllCategories() {
 //更新分类
 export function updateCategories(data) {
   return request({
-    url: '/fix-cat',
+    url: '/fix-cat/admin/update',
     method: 'put',
     data: data
   })
@@ -20,7 +20,7 @@ export function updateCategories(data) {
 //新增分类
 export function saveCategories(data) {
   return request({
-    url: '/fix-cat',
+    url: '/fix-cat/admin/save',
     method: 'post',
     data: data
   })
@@ -43,7 +43,7 @@ export function getFixReportsByCondition(cur) {
 
 export function finish(id) {
   return request({
-    url: '/fix/table/finish/'+id,
+    url: '/fix/admin/finish/'+id,
     method: 'get'
   })
 }

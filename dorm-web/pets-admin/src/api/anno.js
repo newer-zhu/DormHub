@@ -1,8 +1,9 @@
 import request from '@/utils/request'
 
+const prefix = '/announcement'
 export function saveAnnouncement(data) {
   return request({
-    url: '/announcement/save',
+    url: prefix+'/admin/save',
     method: 'post',
     data: data
   })
@@ -10,7 +11,7 @@ export function saveAnnouncement(data) {
 
 export function updateAnnouncement(data) {
   return request({
-    url: '/announcement/update',
+    url: prefix+'/admin/update',
     method: 'post',
     data: data
   })
@@ -18,35 +19,35 @@ export function updateAnnouncement(data) {
 
 export function withdrewById(id) {
   return request({
-    url: '/announcement/withdrew/'+id,
+    url: prefix+'/admin/withdrew/'+id,
     method: 'get'
   })
 }
 
 export function disWithdrewById(id) {
   return request({
-    url: '/announcement/withdrew/dis/'+id,
+    url: prefix+'/admin/withdrew/dis/'+id,
     method: 'get'
   })
 }
 
 export function getById(id) {
   return request({
-    url: '/announcement/'+id,
+    url: prefix+'/'+id,
     method: 'get'
   })
 }
 
 export function deleteById(id) {
   return request({
-    url: '/announcement/del/hard/'+id,
+    url: prefix+'/admin/del/hard/'+id,
     method: 'get'
   })
 }
 
 export function getAnnouncements(cur) {
   return request({
-    url: '/announcement/list?cur='+cur,
+    url: prefix+'/list?cur='+cur,
     method: 'get'
   })
 }

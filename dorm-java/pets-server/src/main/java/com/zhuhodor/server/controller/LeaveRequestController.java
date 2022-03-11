@@ -4,6 +4,7 @@ package com.zhuhodor.server.controller;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.zhuhodor.server.common.domain.Result;
 import com.zhuhodor.server.model.pojo.LeaveRequest;
+import com.zhuhodor.server.security.component.MyUserDetails;
 import com.zhuhodor.server.service.ILeaveRequestService;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -11,6 +12,7 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
 import java.time.LocalDateTime;
 
 /**
@@ -57,7 +59,7 @@ public class LeaveRequestController {
     }
 
     @ApiOperation(value = "请假条通过")
-    @PostMapping("/proposer/pass")
+    @PostMapping("/admin/proposer/pass")
     public Result pass(@RequestBody LeaveRequest leaveRequest){
         leaveRequest.setApproveTime(LocalDateTime.now());
         leaveRequest.setStatus(1);
@@ -68,7 +70,7 @@ public class LeaveRequestController {
     }
 
     @ApiOperation(value = "请假条不通过")
-    @PostMapping("/proposer/fail")
+    @PostMapping("/admin/proposer/fail")
     public Result fail(@RequestBody LeaveRequest leaveRequest){
         leaveRequest.setApproveTime(LocalDateTime.now());
         leaveRequest.setStatus(-1);
@@ -110,7 +112,11 @@ public class LeaveRequestController {
 
     @ApiOperation(value = "删除假条")
     @DeleteMapping("/{id}")
-    public Result delete(@PathVariable("id") Integer id){
+    public Result delete(@PathVariable("id") Integer id, Principal principal){
+        MyUserDetails details = (MyUserDetails) principal;
+        if (!leaveRequestService.getById(id).getProposerUser().equals(details.getUser().getId())){
+            return Result.fail("暂无此权限");
+        }
         if (leaveRequestService.deleteById(id)){
             return Result.success("撤回成功");
         }
