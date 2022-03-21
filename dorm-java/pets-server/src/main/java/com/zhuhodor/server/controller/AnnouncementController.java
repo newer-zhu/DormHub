@@ -4,7 +4,9 @@ package com.zhuhodor.server.controller;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.zhuhodor.server.common.constant.RedisConstant;
 import com.zhuhodor.server.common.domain.Result;
+import com.zhuhodor.server.common.utils.RedisUtil;
 import com.zhuhodor.server.model.pojo.Announcement;
 import com.zhuhodor.server.security.component.MyUserDetails;
 import com.zhuhodor.server.service.IAnnouncementService;
@@ -14,6 +16,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -29,6 +32,8 @@ import java.util.List;
 public class AnnouncementController {
     @Autowired
     private IAnnouncementService announcementService;
+    @Autowired
+    private RedisUtil redisUtil;
 
     @ApiOperation(value = "获取公告")
     @GetMapping("/{id}")
@@ -43,6 +48,8 @@ public class AnnouncementController {
         announcement.setUserId(userDetails.getUser().getId());
         announcement.setNickName(userDetails.getUser().getNickName());
         if (announcementService.saveAnnouncement(announcement)){
+            //放进队列
+            redisUtil.rpush(RedisConstant.announcementList.getValue(), String.valueOf(announcement.getId()));
             return Result.success("发布成功！");
         }else {
             return Result.fail("发布失败！");
@@ -84,6 +91,7 @@ public class AnnouncementController {
     @GetMapping("/admin/del/hard/{id}")
     public Result hardDel(@PathVariable("id") Integer id){
         if (announcementService.hardDel(id)){
+            redisUtil.lrem(RedisConstant.announcementList.getValue(), id, 1);
             return Result.success("删除成功！");
         }
         return Result.fail("删除失败！");
@@ -105,4 +113,21 @@ public class AnnouncementController {
         return Result.success(list);
     }
 
+    @ApiOperation(value = "获取用户未读公告")
+    @GetMapping("/unConfirm/{userId}")
+    public Result getUnConfirmAnnouncements(@PathVariable("userId") Integer userId){
+        List<String> allAnnoId = redisUtil.lrange(RedisConstant.announcementList.getValue(), 0, -1);
+        String key = RedisConstant.unConfirm.getValue() + userId;
+        ArrayList<Integer> unConfirm = new ArrayList<>();
+        for (String id : allAnnoId){
+            if (redisUtil.hasKey(key)){
+                if (!redisUtil.getBit(key, Long.valueOf(id))){
+                    unConfirm.add(Integer.valueOf(id));
+                }
+            }else {
+                redisUtil.setBit(key, 0, false);
+            }
+        }
+        return Result.success(announcementService.listByIds(unConfirm));
+    }
 }

@@ -23,4 +23,6 @@ public interface UserMapper extends BaseMapper<User> {
 
     List<User> getAllUsersByCon(@Param("condition") UserSearchVo searchVo);
 
+    List<User> getAllUsers();
+
 }

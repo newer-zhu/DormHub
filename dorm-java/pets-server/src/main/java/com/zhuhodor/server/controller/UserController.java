@@ -139,4 +139,19 @@ public class UserController {
         }
     }
 
+    @ApiOperation(value = "给用户分配角色")
+    @PostMapping("/role/{userId}")
+    public Result assignRoleToUser(@RequestBody List<Integer> roleList, @PathVariable("userId") Integer userId){
+        if (userService.assignRoleToUser(roleList, userId)){
+            return Result.success("操作成功！");
+        }
+        return Result.fail("操作失败");
+    }
+
+    @ApiOperation(value = "获取全部用户角色信息")
+    @GetMapping("/role/info")
+    public Result getAllUserWithRole(){
+        return Result.success(userService.getAllUsers());
+    }
+
 }

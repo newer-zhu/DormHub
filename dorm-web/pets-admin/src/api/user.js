@@ -31,3 +31,18 @@ export function uploadExcel(param) {
     data: param
   })
 }
+
+export function getAllUserWithRole() {
+  return request({
+    url: '/user/role/info',
+    method: 'get'
+  })
+}
+
+export function allocateRole(userId, param) {
+  return request({
+    url: '/user/role/'+userId,
+    method: 'post',
+    data: param
+  })
+}

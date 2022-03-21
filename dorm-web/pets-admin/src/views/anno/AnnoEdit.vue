@@ -1,7 +1,7 @@
 <template>
-  <div class="app-container">
-    <el-row>
-      <el-col :span="20" style="margin-bottom: 20px" :offset="1">
+  <div class="main">
+    <el-row style="padding-top: 30px" type="flex" justify="center">
+      <el-col :span="16" style="margin-bottom: 20px" :offset="1">
         <el-input maxlength="25" placeholder="请输入标题" v-model="announcement.title">
           <template slot="prepend">标题：</template>
         </el-input>
@@ -9,11 +9,11 @@
     </el-row>
 
     <el-row type="flex" justify="center">
-      <el-col :span="22">
+      <el-col :span="18">
         <el-input placeholder="下方编辑正文内容" disabled>
           <template slot="prepend">正文：</template>
         </el-input>
-        <Editor @input="updateContent" @insertImg="imgAdd" :value="announcement.content"/>
+        <Editor style="background-color: #ffffff" @input="updateContent" @insertImg="imgAdd" :value="announcement.content"/>
       </el-col>
     </el-row>
     <el-row justify="center" type="flex">
@@ -113,6 +113,10 @@
 <style scoped>
   .line{
     text-align: center;
+  }
+  .main{
+    background-color: #f5f6f9;
+    height: 750px;
   }
 </style>
 

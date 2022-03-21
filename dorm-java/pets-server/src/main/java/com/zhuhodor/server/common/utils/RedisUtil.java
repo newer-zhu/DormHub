@@ -343,4 +343,27 @@ public class RedisUtil {
     public long rpush(String key, String value) {
         return redisTemplate.opsForList().rightPush(key, value);
     }
+
+
+    public long lrem(String key, Object value, long count) {
+        return redisTemplate.opsForList().remove(key, count, value);
+    }
+
+    public List<String> lrange(String key, long start, long end) {
+        return redisTemplate.opsForList().range(key, start, end);
+    }
+
+    //bitmap
+
+    public boolean setBit(String key, long offset, boolean bool){
+        return redisTemplate.opsForValue().setBit(key ,offset, bool);
+    }
+
+    public boolean getBit(String key, long offset){
+        return redisTemplate.opsForValue().getBit(key, offset);
+    }
+
+    public long bitCount(String key){
+        return redisTemplate.execute((RedisCallback<Long>) action -> action.bitCount(key.getBytes()));
+    }
 }

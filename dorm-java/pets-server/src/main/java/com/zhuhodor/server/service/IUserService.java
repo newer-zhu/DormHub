@@ -26,4 +26,8 @@ public interface IUserService extends IService<User> {
     Result getUserInfoByToken(String token);
 
     List<User> getAllUsersByCon(UserSearchVo searchVo);
+
+    Boolean assignRoleToUser(List<Integer> roleList, Integer userId);
+
+    List<User> getAllUsers();
 }

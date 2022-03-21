@@ -7,6 +7,8 @@ import com.zhuhodor.server.common.domain.Result;
 import com.zhuhodor.server.common.utils.JwtUtil;
 import com.zhuhodor.server.mapper.DormMapper;
 import com.zhuhodor.server.mapper.UserMapper;
+import com.zhuhodor.server.mapper.UserRoleMapper;
+import com.zhuhodor.server.model.dto.UserRole;
 import com.zhuhodor.server.model.pojo.User;
 import com.zhuhodor.server.model.vo.condition.UserSearchVo;
 import com.zhuhodor.server.security.component.MyUserDetails;
@@ -17,6 +19,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 import java.util.HashMap;
@@ -43,6 +46,8 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     private JwtUtil jwtUtil;
     @Autowired
     private DormMapper dormMapper;
+    @Autowired
+    private UserRoleMapper userRoleMapper;
 
     @Override
     public Result login(String username, String password) {
@@ -124,5 +129,20 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     @Override
     public List<User> getAllUsersByCon(UserSearchVo searchVo) {
         return userMapper.getAllUsersByCon(searchVo);
+    }
+
+    @Transactional
+    @Override
+    public Boolean assignRoleToUser(List<Integer> roleList, Integer userId) {
+        userRoleMapper.delete(new QueryWrapper<UserRole>().eq("u_id", userId));
+        for (int rId : roleList){
+            userRoleMapper.insert(new UserRole(userId, rId));
+        }
+        return true;
+    }
+
+    @Override
+    public List<User> getAllUsers() {
+        return userMapper.getAllUsers();
     }
 }

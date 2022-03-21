@@ -63,10 +63,12 @@ public class CheckLogServiceImpl extends ServiceImpl<CheckLogMapper, CheckLog> i
                 .eq("check_time", time).select("target_dorm"));
         int size = totalLogs.size();
         checkLogVo.setTotal(size);
-        for (int index = 0; index < size; index++){
-            if (id == totalLogs.get(index).getTargetDorm()){
-                checkLogVo.setRank(index+1);
-                break;
+        if (null == checkLogVo.getRank() || 0 >= checkLogVo.getRank()){
+            for (int index = 0; index < size; index++){
+                if (id == totalLogs.get(index).getTargetDorm()){
+                    checkLogVo.setRank(index+1);
+                    break;
+                }
             }
         }
         return checkLogVo;

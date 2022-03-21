@@ -10,6 +10,14 @@
         WHERE u.username = #{username} AND u.status = 1
     </select>
 
+    <select id="getAllUsers" resultMap="UserWithRole">
+        SELECT u.id, u.username, u.nick_name, r.id rid, r.name, r.role_name
+        FROM `p_user` u LEFT JOIN `p_user_role` ur
+        ON ur.u_id = u.id
+        LEFT JOIN `p_role` r
+        ON ur.r_id = r.id
+    </select>
+
     <select id="getAllUsersByCon" resultMap="UserWithDorm" parameterType="com.zhuhodor.server.model.vo.condition.UserSearchVo">
         SELECT pu.id, pu.nick_name, pu.username, pu.phone, pu.email, pu.avatar, pu.status, pu.create_date, pu.dorm_id
         FROM p_user pu

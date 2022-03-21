@@ -7,6 +7,7 @@ import com.zhuhodor.server.model.pojo.Role;
 import com.zhuhodor.server.service.IRoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -29,6 +30,7 @@ public class RoleServiceImpl extends ServiceImpl<RoleMapper, Role> implements IR
         return roleMapper.selectList(new QueryWrapper<Role>().eq("u_id", userId));
     }
 
+    @Transactional
     @Override
     public Boolean assignMenus(List<Integer> menuList, Integer id) {
         roleMapper.releaseMenusByRoleId(id);
