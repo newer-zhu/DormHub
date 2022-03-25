@@ -19,7 +19,18 @@
     <description>Demo project for pets</description>
     <properties>
         <java.version>11</java.version>
+        <aop>2.5.3</aop>
     </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-aop</artifactId>
+                <version>${aop}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <build>
         <plugins>

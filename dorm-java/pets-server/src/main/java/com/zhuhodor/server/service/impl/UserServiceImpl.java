@@ -142,7 +142,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     }
 
     @Override
-    public List<User> getAllUsers() {
-        return userMapper.getAllUsers();
+    public List<User> getAllUsers(String username) {
+        return userMapper.getAllUsers(username);
     }
 }

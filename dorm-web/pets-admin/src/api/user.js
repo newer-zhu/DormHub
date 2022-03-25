@@ -32,9 +32,9 @@ export function uploadExcel(param) {
   })
 }
 
-export function getAllUserWithRole() {
+export function getAllUserWithRole(name) {
   return request({
-    url: '/user/role/info',
+    url: '/user/role/info?username='+name,
     method: 'get'
   })
 }

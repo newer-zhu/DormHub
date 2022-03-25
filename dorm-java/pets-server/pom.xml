@@ -22,6 +22,11 @@
   </properties>
 
   <dependencies>
+<!--      AOP-->
+      <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-aop</artifactId>
+      </dependency>
 <!--    excel导入导出-->
       <dependency>
           <groupId>com.google.guava</groupId>

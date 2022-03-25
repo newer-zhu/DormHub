@@ -34,10 +34,10 @@ public class UserRole implements Serializable {
         this.rId = rId;
     }
 
-    @TableField("user Id")
+    @TableField("u_id")
     private Integer uId;
 
-    @TableField("role Id")
+    @TableField("r_id")
     private Integer rId;
 
 

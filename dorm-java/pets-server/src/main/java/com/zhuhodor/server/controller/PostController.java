@@ -11,8 +11,10 @@ import com.zhuhodor.server.common.utils.RedisUtil;
 import com.zhuhodor.server.model.pojo.Post;
 import com.zhuhodor.server.model.vo.PostVo;
 import com.zhuhodor.server.model.vo.condition.PostSearchVo;
+import com.zhuhodor.server.rabbitMq.producer.DelayMessageProducer;
 import com.zhuhodor.server.service.IPostService;
 import io.swagger.annotations.ApiOperation;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,6 +31,7 @@ import java.util.List;
  * @author zhuhodor
  * @since 2021-09-14
  */
+@Slf4j
 @RestController
 @RequestMapping("/post")
 public class PostController {
@@ -36,6 +39,8 @@ public class PostController {
     private IPostService postService;
     @Autowired
     private RedisUtil redisUtil;
+    @Autowired
+    private DelayMessageProducer messageProducer;
 
     @ApiOperation(value = "获取帖子信息")
     @GetMapping("/{id}")
@@ -56,13 +61,15 @@ public class PostController {
     @PostMapping("/save")
     public Result savePost(@RequestBody Post post){
         post.setTime(LocalDateTime.now());
-        if(post.getId() == null && postService.save(post)){
-            return Result.success("提交成功!",post);
-        }else if (post.getId() != null && postService.updateById(post)){
-            return Result.success("更新成功!", post);
-        }else {
-            return Result.fail("提交出错了!");
-        }
+        messageProducer.sendMsg(post.toString());
+        return null;
+//        if(post.getId() == null && postService.save(post)){
+//            return Result.success("提交成功!",post);
+//        }else if (post.getId() != null && postService.updateById(post)){
+//            return Result.success("更新成功!", post);
+//        }else {
+//            return Result.fail("提交出错了!");
+//        }
     }
 
     @ApiOperation(value = "删除帖子")

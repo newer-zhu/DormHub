@@ -150,8 +150,8 @@ public class UserController {
 
     @ApiOperation(value = "获取全部用户角色信息")
     @GetMapping("/role/info")
-    public Result getAllUserWithRole(){
-        return Result.success(userService.getAllUsers());
+    public Result getAllUserWithRole(@RequestParam("username") String username){
+        return Result.success(userService.getAllUsers(username));
     }
 
 }

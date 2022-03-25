@@ -1,6 +1,7 @@
 <template>
   <div>
-    <el-input style="width: 200px; margin-left: 10%" placeholder="输入学工号查找"></el-input>
+    <el-input style="width: 200px; margin-left: 5%; margin-top: 50px" v-model="filterUsername" placeholder="输入学工号查找"></el-input>
+    <el-button type="primary" icon="el-icon-search" style="margin-left: 15px" @click="getUserRole" circle></el-button>
     <el-row>
       <el-col :span="12" :offset="1">
         <el-table
@@ -24,8 +25,9 @@
         </el-table>
       </el-col>
       <el-col :span="9">
-        <el-transfer :titles="['已拥有', '未拥有']"
-          style="margin-top: 200px" v-model="roles" :data="roleSource"></el-transfer>
+        <el-transfer :titles="['未拥有', '已拥有']" :props="{key: 'id', label: 'name'}"
+          style="margin-top: 200px" v-model="roles" :data="allRoles"></el-transfer>
+        <el-button style="margin-left: 35%; margin-top: 50px;" type="primary" @click="confirm">确定</el-button>
       </el-col>
     </el-row>
   </div>
@@ -43,36 +45,37 @@
         allRoles: [],
         userInfo:[],
         roles: [],
-        selectUser: ''
+        selectUser: '',
+        filterUsername: ''
       }
     },
     methods:{
       allocate(user){
         this.selectUser = user
-        // allocateRole(user.id, this.roles).then(res => {
-        //
-        // })
-      }
-    },
-    computed:{
-      roleSource(){
+        this.roles = []
         if (this.selectUser.roles){
-          let res = []
           this.selectUser.roles.forEach(r => {
-            res.push({key:r.id, label: r.name})
+            this.roles.push(r.id)
           })
-          return res
         }
+      },
+      confirm(){
+        allocateRole(this.selectUser.id, this.roles).then(res => {
+          this.$message.success(res.msg)
+        })
+      },
+      getUserRole(){
+        getAllUserWithRole(this.filterUsername).then(res => {
+          // console.log(res.data)
+          this.userInfo = res.data
+        })
       }
     },
     mounted() {
       getAllRoles().then(res => {
         this.allRoles = res.data
       })
-      getAllUserWithRole().then(res => {
-        console.log(res.data)
-        this.userInfo = res.data
-      })
+      this.getUserRole()
     }
   }
 </script>

@@ -29,5 +29,5 @@ public interface IUserService extends IService<User> {
 
     Boolean assignRoleToUser(List<Integer> roleList, Integer userId);
 
-    List<User> getAllUsers();
+    List<User> getAllUsers(String username);
 }
