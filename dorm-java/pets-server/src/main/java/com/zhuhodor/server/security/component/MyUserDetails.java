@@ -1,6 +1,7 @@
 package com.zhuhodor.server.security.component;
 
 import com.zhuhodor.server.model.pojo.User;
+import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -8,6 +9,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
+@Data
 public class MyUserDetails implements UserDetails {
 
     private User user;

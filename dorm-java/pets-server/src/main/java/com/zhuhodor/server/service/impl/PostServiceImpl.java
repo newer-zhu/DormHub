@@ -95,4 +95,18 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements IP
         });
         return list;
     }
+
+    @Transactional
+    @Override
+    public boolean savePost(Post post) {
+        if (postMapper.insert(post) == 1){
+            post.getImages().forEach(l -> {
+                imageMapper.update(null, new UpdateWrapper<Image>()
+                        .eq("id", l.getId())
+                        .set("status", 1).set("post_id", post.getId()));
+            });
+            return true;
+        }
+        return false;
+    }
 }

@@ -15,11 +15,11 @@ export function uploadFixPic(fixId, pic) {
 }
 
 //上传反馈图片
-export function uploadPostPic(postId, pic) {
+export function uploadPostPic(pic) {
   let param = new FormData()
   param.append('postPic', pic, pic.name)
   return request({
-    url: '/post/'+postId,
+    url: '/image/post',
     method: 'post',
     config: {
       headers: {'Content-Type': 'multipart/form-data'}

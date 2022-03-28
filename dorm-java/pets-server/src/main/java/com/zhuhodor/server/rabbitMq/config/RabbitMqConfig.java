@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.*;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
@@ -40,6 +41,7 @@ public class RabbitMqConfig {
                 log.error("{}============消息发送失败", msgId);
             }
         }));
+        rabbitTemplate.setMessageConverter(new Jackson2JsonMessageConverter());
         /**
          * 消息失败回调，比如router不到queue时回调
          * message:消息主题

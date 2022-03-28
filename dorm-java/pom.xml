@@ -20,6 +20,7 @@
     <properties>
         <java.version>11</java.version>
         <aop>2.5.3</aop>
+        <spring-session-data-redis>2.5.1</spring-session-data-redis>
     </properties>
 
     <dependencyManagement>
@@ -28,6 +29,12 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-aop</artifactId>
                 <version>${aop}</version>
+            </dependency>
+            <!--Spring Session集成Redis分布式Session会话-->
+            <dependency>
+                <groupId>org.springframework.session</groupId>
+                <artifactId>spring-session-data-redis</artifactId>
+                <version>${spring-session-data-redis}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

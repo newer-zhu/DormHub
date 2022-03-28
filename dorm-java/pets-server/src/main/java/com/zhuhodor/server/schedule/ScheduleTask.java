@@ -32,12 +32,6 @@ public class ScheduleTask {
     @Autowired
     private ICheckLogService checkLogService;
 
-    //每天早上7点执行,自动通过审核post
-    @Scheduled(cron = "0 0 7 * * ?")
-    private void passPosts() {
-        postService.autoPassAt7Pm();
-    }
-
     //TODO 凌晨00：15持久化前一天评分排名
     @Scheduled(cron = "0 15 0 * * ?")
     private void persistRankData() {

@@ -1,5 +1,6 @@
 package com.zhuhodor.server.rabbitMq.producer;
 
+import com.zhuhodor.server.model.pojo.Post;
 import com.zhuhodor.server.rabbitMq.config.RabbitMqConstant;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +14,7 @@ public class DelayMessageProducer {
     @Autowired
     private RabbitTemplate rabbitTemplate;
 
-    public void sendMsg(String msg){
+    public void sendMsg(Post msg){
         rabbitTemplate.convertAndSend(RabbitMqConstant.DELAY_EXCHANGE_NAME, RabbitMqConstant.DELAY_QUEUEA_ROUTING_KEY, msg);
     }
 }

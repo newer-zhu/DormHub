@@ -29,6 +29,7 @@ public class ImageUtil {
                 image.setRequestId(id);
                 break;
             case "post/":
+                image.setStatus(0);
                 image.setPostId(id);
                 break;
             case "fix/":

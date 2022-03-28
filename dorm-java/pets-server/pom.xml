@@ -168,6 +168,11 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-security</artifactId>
     </dependency>
+  <!--Spring Session集成Redis分布式Session会话-->
+  <dependency>
+      <groupId>org.springframework.session</groupId>
+      <artifactId>spring-session-data-redis</artifactId>
+  </dependency>
     <!--        热更新-->
     <dependency>
       <groupId>org.springframework.boot</groupId>

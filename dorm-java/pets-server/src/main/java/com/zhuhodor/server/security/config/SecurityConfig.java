@@ -84,6 +84,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.exceptionHandling()
                 .accessDeniedHandler(restAccessDeniedHandler)
                 .authenticationEntryPoint(restAuthorizationEntryPoint);
+
+        http.sessionManagement()//Session管理器
+                .maximumSessions(1)
+                .expiredUrl("/user/login");
     }
 
     @Override

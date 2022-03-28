@@ -49,10 +49,10 @@ public class ImageController {
     }
 
     @ApiOperation(value = "保存帖子图片")
-    @PostMapping("/post/{postId}")
-    public Result savePostPic(@PathVariable("postId") Integer postId, @RequestParam("postPic") MultipartFile postPic){
+    @PostMapping("/post")
+    public Result savePostPic(@RequestParam("postPic") MultipartFile postPic){
         Map<String, String> map = tencentCos.uploadPic(postPic, CosConstant.POST);
-        Image image = ImageUtil.newImage(CosConstant.POST, postId, postPic, map);
+        Image image = ImageUtil.newImage(CosConstant.POST,-1, postPic, map);
         if (imageService.save(image)){
             map.put("imageId", String.valueOf(image.getId()));
             return Result.success("上传成功",map);

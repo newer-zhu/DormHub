@@ -7,7 +7,7 @@
 
     <van-notice-bar
       left-icon="volume-o"
-      text="帖子发布后通过审核才会展示，24小时后自动通过。"
+      text="帖子发布后通过审核才会展示，12小时后自动通过。"
     />
 
     <van-row style="margin-top: 10px">
@@ -68,6 +68,7 @@
           title: '',
           content: '',
           userId: this.$store.getters.user.id,
+          images: []
         },
         //附件列表
         fileList: [],
@@ -80,6 +81,9 @@
     },
     methods:{
       onSubmit(){
+        this.keyList.forEach(f => {
+          this.post.images.push({id: f})
+        })
         sendPost(this.post).then(res => {
           if (res.code == 200){
             this.post.status = 0
@@ -99,13 +103,7 @@
       //上传图片
       async afterRead(file, detail){
         file.status = 'uploading'
-        if (this.post.id == null){
-          await sendPost(this.post).then(res => {
-            this.post = res.data
-            this.post.status = -1
-          })
-        }
-        await uploadPostPic(this.post.id, file.file).then(res => {
+        await uploadPostPic(file.file).then(res => {
           if (res.code == 200){
             this.keyList.push(res.data.imageId)
             file.status = 'done'

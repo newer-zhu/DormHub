@@ -33,4 +33,6 @@ public interface IPostService extends IService<Post> {
     Boolean checkByBatchIds(List<Integer> ids);
 
     List<PostVo> getPostsByCon(Page<PostVo> page, PostSearchVo postSearchVo);
+
+    boolean savePost(Post post);
 }

@@ -84,7 +84,7 @@
         UPDATE `p_post`
         SET `status` = 1
         WHERE
-        statue = 0
+        status = 0
         AND
         NOW() >= DATE_ADD(time,INTERVAL 1 DAY)
     </update>

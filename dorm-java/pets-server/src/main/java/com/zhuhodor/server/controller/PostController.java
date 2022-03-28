@@ -61,15 +61,12 @@ public class PostController {
     @PostMapping("/save")
     public Result savePost(@RequestBody Post post){
         post.setTime(LocalDateTime.now());
-        messageProducer.sendMsg(post.toString());
-        return null;
-//        if(post.getId() == null && postService.save(post)){
-//            return Result.success("提交成功!",post);
-//        }else if (post.getId() != null && postService.updateById(post)){
-//            return Result.success("更新成功!", post);
-//        }else {
-//            return Result.fail("提交出错了!");
-//        }
+        if(postService.savePost(post)){
+            messageProducer.sendMsg(post);
+            return Result.success("提交成功!",post);
+        } else {
+            return Result.fail("提交出错了!");
+        }
     }
 
     @ApiOperation(value = "删除帖子")
@@ -84,7 +81,7 @@ public class PostController {
         return Result.fail("删除失败");
     }
 
-    @ApiOperation(value = "点赞动作")
+    @ApiOperation(value = "点赞")
     @GetMapping("/like/{isLike}")
     public Result likePost(@PathVariable("isLike") Boolean isLike,
                            @RequestParam("postId") Integer postId, @RequestParam("uId") Integer uId){

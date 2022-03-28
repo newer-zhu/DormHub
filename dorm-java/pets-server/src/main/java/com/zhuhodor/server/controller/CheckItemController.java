@@ -15,7 +15,6 @@ import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
-import java.util.concurrent.atomic.AtomicLong;
 
 /**
  * <p>
@@ -33,7 +32,7 @@ public class CheckItemController {
     @Autowired
     private RedisTemplate redisTemplate;
     //版本号,此种方案只能单机加锁
-    private volatile AtomicLong version = new AtomicLong(0L);
+//    private volatile AtomicLong version = new AtomicLong(0L);
 
     @GetMapping("/update")
     public Result getCheckItem(Authentication authentication){

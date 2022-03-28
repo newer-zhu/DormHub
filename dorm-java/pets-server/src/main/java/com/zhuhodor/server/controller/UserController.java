@@ -3,6 +3,7 @@ package com.zhuhodor.server.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.zhuhodor.server.common.domain.Result;
+import com.zhuhodor.server.common.domain.ResultCode;
 import com.zhuhodor.server.model.dto.LoginDto;
 import com.zhuhodor.server.common.utils.ExcelUtils;
 import com.zhuhodor.server.common.utils.TencentCos;
@@ -14,6 +15,7 @@ import io.swagger.annotations.ApiOperation;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
@@ -141,11 +143,16 @@ public class UserController {
 
     @ApiOperation(value = "给用户分配角色")
     @PostMapping("/role/{userId}")
-    public Result assignRoleToUser(@RequestBody List<Integer> roleList, @PathVariable("userId") Integer userId){
-        if (userService.assignRoleToUser(roleList, userId)){
+    public Result assignRoleToUser(Authentication authentication,
+                                   @RequestBody List<Integer> roleList, @PathVariable("userId") Integer userId){
+        MyUserDetails details =(MyUserDetails) authentication.getPrincipal();
+        if (details.getUser().getId().compareTo(userId) == 0){
+            return Result.fail(ResultCode.FORBIDDEN);
+        }else if(userService.assignRoleToUser(roleList, userId)){
             return Result.success("操作成功！");
+        } else {
+            return Result.fail("内部错误，操作失败");
         }
-        return Result.fail("操作失败");
     }
 
     @ApiOperation(value = "获取全部用户角色信息")

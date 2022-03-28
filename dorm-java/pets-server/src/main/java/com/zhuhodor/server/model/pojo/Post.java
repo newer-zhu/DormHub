@@ -17,6 +17,7 @@ import lombok.experimental.Accessors;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * <p>
@@ -63,4 +64,8 @@ public class Post implements Serializable {
 
     @ApiModelProperty(value = "审核不通过原因")
     private String reason;
+
+    @ApiModelProperty(value = "图片")
+    @TableField(exist = false)
+    private List<Image> images;
 }
