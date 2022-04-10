@@ -5,6 +5,7 @@ spring:
   # excel
   main:
     allow-bean-definition-overriding: true
+
   datasource:
     url: jdbc:mysql://localhost:3306/pets?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
     password: 20001030
@@ -20,7 +21,7 @@ spring:
       connection-test-query: SELECT 1
 
   redis:
-    host: 49.235.92.49
+    host: 127.0.0.1
     database: 0 # Redis数据库索引（默认为0）
     port: 6379 # Redis服务器连接端口
     password: 20001030
@@ -33,21 +34,26 @@ spring:
         min-idle: 0
         time-between-eviction-runs: 1000
 
-    rabbitmq:
-      host: 49.235.92.49
-      port: 5672
-      username: zhu
-      password: admin
-      virtual-host: /dorm
-      #    确认回调
-      publisher-confirm-type: correlated
-      #    失败回调
-      publisher-returns: true
-
   servlet:
     multipart:
       max-file-size: 100MB
       max-request-size: 100MB
+
+  rabbitmq:
+    host: 49.235.92.49
+    port: 5672
+    password: admin
+    username: zhu
+    listener:
+      type: simple
+      simple:
+        default-requeue-rejected: false
+        acknowledge-mode: manual
+    virtual-host: /dorm
+    #    确认回调
+    publisher-confirm-type: correlated
+    #    失败回调
+    publisher-returns: true
 
 mybatis-plus:
   configuration:

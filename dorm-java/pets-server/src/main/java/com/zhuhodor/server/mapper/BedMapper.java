@@ -7,6 +7,8 @@ import com.zhuhodor.server.model.vo.BedInfo;
 import org.apache.ibatis.annotations.CacheNamespace;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.List;
+
 /**
  * <p>
  *  Mapper 接口
@@ -19,4 +21,6 @@ import org.apache.ibatis.annotations.Param;
 public interface BedMapper extends BaseMapper<Bed> {
 
     BedInfo getBedInfoByUserId(@Param("userId") Integer userId);
+
+    List<Bed> getBedsByDormIdFromPc(@Param("dormId") Integer dormId);
 }

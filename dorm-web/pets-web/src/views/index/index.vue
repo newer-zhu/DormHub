@@ -84,6 +84,7 @@
     },
     mounted() {
       getIndexList().then(res => {
+        console.log(res.data);
         this.list = res.data
       })
     }

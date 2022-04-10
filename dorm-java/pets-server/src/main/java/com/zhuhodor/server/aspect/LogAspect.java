@@ -1,22 +1,31 @@
 package com.zhuhodor.server.aspect;
 
+import com.zhuhodor.server.common.constant.RedisConstant;
+import com.zhuhodor.server.common.domain.Result;
+import com.zhuhodor.server.common.utils.RedisUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.Arrays;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.concurrent.TimeUnit;
 
 @Component
 @Aspect
 @Slf4j
 public class LogAspect {
+    @Autowired
+    private RedisUtil redisUtil;
+
     /**
      * execution: 匹配连接点 execution(方法修饰符(可选)  返回类型  类路径 方法名  参数  异常模式(可选))
      *within: 某个类里面
@@ -28,25 +37,29 @@ public class LogAspect {
      *@args: 指定运行时传的参数带有指定的注解
      *@within: 匹配使用指定注解的类
      *@annotation:指定方法所应用的注解 */
-    @Pointcut("execution(public * com.zhuhodor.server.controller..*.*(..))")//切入点描述 这个是controller包的切入点
-    public void controllerLog(){}//签名，可以理解成这个切入点的一个名称
+    @Pointcut("execution(public * com.zhuhodor.server.service.impl.UserServiceImpl.login(..))")//切入点描述
+    public void LoginLog(){}//签名，可以理解成这个切入点的一个名称
 
-    @Before("controllerLog()") //在切入点的方法run之前要干的
-    public void logBeforeController(JoinPoint joinPoint) {
-        //这个RequestContextHolder是Springmvc提供来获得请求的东西
+    @AfterReturning(value = "LoginLog()", returning = "result") //在切入点的方法之后
+    public void logBeforeController(JoinPoint joinPoint, Result result) {
+        //这个RequestContextHolder是SpringMvc提供来获得请求的
         RequestAttributes requestAttributes = RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = ((ServletRequestAttributes)requestAttributes).getRequest();
+        String iPAddr = request.getRemoteAddr();
 
-        // 记录下请求内容
-        log.info("################URL : " + request.getRequestURL().toString());
-        log.info("################HTTP_METHOD : " + request.getMethod());
-        log.info("################IP : " + request.getRemoteAddr());
-        log.info("################THE ARGS OF THE CONTROLLER : " + Arrays.toString(joinPoint.getArgs()));
-
-        //下面这个getSignature().getDeclaringTypeName()是获取包+类名的   然后后面的joinPoint.getSignature.getName()获取了方法名
-        log.info("################CLASS_METHOD : " + joinPoint.getSignature().getDeclaringTypeName() + "." + joinPoint.getSignature().getName());
-        //log.info("################TARGET: " + joinPoint.getTarget());//返回的是需要加强的目标类的对象
-        //log.info("################THIS: " + joinPoint.getThis());//返回的是经过加强后的代理类的对象
-
+        if (result.getCode() == 200){
+            String key = RedisConstant.loginLog.getValue();
+            Object[] args = joinPoint.getArgs();
+            String time = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss").format(LocalDateTime.now());
+            String logInfo = "用户【"+args[0]+"】 IP【"+iPAddr+"】 时间【"+ time +"】";
+            if (redisUtil.hasKey(key)){
+                redisUtil.lpush(key, logInfo);
+            }else {
+                redisUtil.lpush(key, logInfo);
+                redisUtil.expire(key, 7, TimeUnit.DAYS);
+            }
+        }else {
+            log.info("IP地址【{}】登录失败", iPAddr);
+        }
     }
 }

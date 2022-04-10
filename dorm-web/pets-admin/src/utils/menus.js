@@ -37,6 +37,7 @@ export const formatRoutes = (routes) => {
       children,
       hidden
     } = router
+    console.log(router.component)
 
     const fmRouter = {
       path: path,
@@ -61,6 +62,8 @@ export const formatRoutes = (routes) => {
           require(['@/views/user/' + component + '.vue'], resolve)
         }else if (component.startsWith('Chat')){
           require(['@/views/chat/' + component + '.vue'], resolve)
+        }else if (component.startsWith('Dorm')){
+          require(['@/views/dorm/' + component + '.vue'], resolve)
         }
       }
     }

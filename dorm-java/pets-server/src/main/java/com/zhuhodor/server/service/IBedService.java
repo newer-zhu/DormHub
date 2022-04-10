@@ -5,6 +5,8 @@ import com.zhuhodor.server.model.pojo.Bed;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.zhuhodor.server.model.vo.BedInfo;
 
+import java.util.List;
+
 /**
  * <p>
  *  服务类
@@ -20,4 +22,8 @@ public interface IBedService extends IService<Bed> {
     BedInfo getBedInfoByUserId(Integer userId);
 
     boolean cancel(Integer userId, Integer bedId);
+
+    List<Bed> getBedsByDormIdFromPc(Integer dormId);
+
+    boolean allocateBed(Integer bedId, Integer uid);
 }

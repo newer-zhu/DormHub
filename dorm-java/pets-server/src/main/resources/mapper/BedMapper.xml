@@ -13,6 +13,24 @@
         <result column="floor" property="floor"></result>
     </resultMap>
 
+    <resultMap id="bedDetail" type="com.zhuhodor.server.model.pojo.Bed">
+        <id column="id" property="id"/>
+        <result column="bed_num" property="bedNum"></result>
+        <result column="status" property="status"></result>
+        <result column="dorm_id" property="dormId"></result>
+        <result column="is_bunk" property="isBunk"></result>
+        <result column="level" property="level"></result>
+        <result column="version" property="version"></result>
+        <result column="position" property="position"></result>
+        <result column="user_id" property="userId"></result>
+        <association property="user" javaType="com.zhuhodor.server.model.pojo.User">
+            <id column="uid" property="id"/>
+            <result column="username" property="username"/>
+            <result column="nick_name" property="nickName"/>
+            <result column="avatar" property="avatar"/>
+        </association>
+    </resultMap>
+
     <select id="getBedInfoByUserId" resultMap="userBedInfo" parameterType="Integer">
         SELECT
         b.id bid, b.bed_num, b.`status`,
@@ -21,5 +39,15 @@
         p_dorm d, p_bed b
         WHERE
         b.dorm_id = d.id AND b.user_id = #{userId}
+    </select>
+
+    <select id="getBedsByDormIdFromPc" resultMap="bedDetail">
+        SELECT b.id, b.bed_num, b.`status`, b.position ,
+        u.id uid, u.username, u.nick_name, u.avatar
+        FROM `p_bed` b
+        LEFT JOIN p_user u
+        ON
+        b.user_id = u.id
+        WHERE b.dorm_id = #{dormId}
     </select>
 </mapper>

@@ -41,6 +41,13 @@ public class RedisUtil {
     }
 
     /**
+     * 实现命令：expire 设置过期时间
+     */
+    public void expire(String key, long timeout, TimeUnit unit) {
+        redisTemplate.expire(key, timeout, unit);
+    }
+
+    /**
      * 实现命令：INCR key
      */
     public long incr(String key, long delta) {

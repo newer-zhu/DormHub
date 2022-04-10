@@ -4,9 +4,9 @@
 
     </div>
 
-    <div style="width: 800px;margin: 0 auto;">
+    <div style="width: 70%;margin: 0 auto;">
       <el-row>
-        <el-col :span="12">
+        <el-col :span="8">
           <div>
             <el-card style="height: 200px">
               <el-row>
@@ -25,12 +25,27 @@
               type="info">
             </el-alert>
           </div>
+
           <div style="width: 100px; margin: 0 auto;margin-top: 100px">
             <el-link  href="https://github.com/newer-zhu/DormHub" target="_blank">GitHub项目地址</el-link>
           </div>
         </el-col>
-        <el-col :span="11" :offset="1">
+
+        <el-col :span="4" :offset="1">
           <img style="width: 220px; height: 450px" src="../../assets/img/example.png" alt="">
+        </el-col>
+
+        <el-col :span="5" :offset="1">
+          <el-card class="box-card">
+            <div slot="header">
+              <span>近7天登录日志</span>
+            </div>
+            <div v-for="(log,i) in logs" :key="i" >
+              <el-link  :underline="false" class="text item">
+                {{log}}
+              </el-link>
+            </div>
+          </el-card>
         </el-col>
       </el-row>
 
@@ -42,9 +57,15 @@
 
 <script>
   import * as echarts from 'echarts';
+  import { getLoginLogs } from '../../api/log'
 
   export default {
     name: 'Home',
+    data(){
+      return{
+        logs: []
+      }
+    },
     methods:{
       draw(){
         var chartDom = document.getElementById('transCharts');
@@ -105,10 +126,34 @@
     },
     mounted() {
       this.draw()
+      getLoginLogs().then(res => {
+        this.logs = res.data
+      })
     }
   }
 </script>
 
 <style scoped>
+  .text {
+    font-size: 14px;
+  }
 
+  .item {
+    margin-bottom: 12px;
+    margin-right: 10px;
+  }
+
+  .clearfix:before,
+  .clearfix:after {
+    display: table;
+    content: "";
+  }
+  .clearfix:after {
+    clear: both
+  }
+
+  .box-card {
+    width: 450px;
+    height: 500px;
+  }
 </style>

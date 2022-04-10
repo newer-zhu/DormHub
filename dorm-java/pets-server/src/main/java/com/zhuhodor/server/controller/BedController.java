@@ -42,6 +42,16 @@ public class BedController {
         }
     }
 
+    @ApiOperation(value = "分配床位")
+    @GetMapping("/allocate")
+    public Result allocate(@RequestParam("uid") Integer uid, @RequestParam("bedId") Integer bedId){
+        if (bedService.allocateBed(bedId, uid)){
+            return Result.success("分配成功!");
+        }else {
+            return Result.fail("分配失败!");
+        }
+    }
+
     @ApiOperation(value = "根据userId获取床位信息")
     @GetMapping("/info/{userId}")
     public Result makeAppointment(@PathVariable("userId") Integer userId){
@@ -57,6 +67,12 @@ public class BedController {
             res.put(b.getPosition(), b);
         }
         return Result.success(res);
+    }
+
+    @ApiOperation(value = "获取寝室下的床位及用户")
+    @GetMapping("/dorm/PC/{dormId}")
+    public Result getBedsByDormIdFromPc(@PathVariable("dormId") Integer dormId){
+        return Result.success(bedService.getBedsByDormIdFromPc(dormId));
     }
 
 }

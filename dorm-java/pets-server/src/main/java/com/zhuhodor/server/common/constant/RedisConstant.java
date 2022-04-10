@@ -25,6 +25,9 @@ public enum RedisConstant {
     //修改CAS
     itemUpdateLock("item_update_lock"),
 
+    //登录用户Log
+    loginLog("login_log"),
+
     //未确认接收的公告，与用户Id构成key，bitmap
     unConfirm("un_confirm:");
 

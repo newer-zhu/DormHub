@@ -21,10 +21,16 @@
         <java.version>11</java.version>
         <aop>2.5.3</aop>
         <spring-session-data-redis>2.5.1</spring-session-data-redis>
+        <redission>3.6.5</redission>
     </properties>
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson</artifactId>
+                <version>${redission}</version>
+            </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-aop</artifactId>

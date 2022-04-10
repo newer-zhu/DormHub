@@ -15,6 +15,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 /**
  * <p>
  *  服务实现类
@@ -76,5 +78,19 @@ public class BedServiceImpl extends ServiceImpl<BedMapper, Bed> implements IBedS
             return true;
         }
         return false;
+    }
+
+    @Override
+    public List<Bed> getBedsByDormIdFromPc(Integer dormId) {
+        return bedMapper.getBedsByDormIdFromPc(dormId);
+    }
+
+    @Override
+    @Transactional
+    public boolean allocateBed(Integer bedId, Integer uid) {
+        Bed bed = new Bed();
+        bed.setId(bedId);
+        bed.setUserId(uid);
+        return bedMapper.updateById(bed) == 1;
     }
 }

@@ -1,9 +1,7 @@
 package com.zhuhodor.server.service.impl;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.zhuhodor.server.mapper.AnnouncementMapper;
 import com.zhuhodor.server.mapper.ImageMapper;
@@ -70,19 +68,6 @@ public class AnnouncementServiceImpl extends ServiceImpl<AnnouncementMapper, Ann
 
     @Override
     public List<Announcement> getFreshAnnouncements() {
-        List<Announcement> records = announcementMapper.selectPage(new Page<Announcement>(1, 3),
-                new QueryWrapper<Announcement>()
-                .select("id", "title", "publish_time", "nick_name").eq("del_flag", 0)
-                .orderByDesc("publish_time")).getRecords();
-
-        //设置封面
-        records.forEach(f -> {
-            List<Image> image = imageMapper.selectPage(new Page<Image>(1, 1),
-                    new QueryWrapper<Image>().eq("announce_id", f.getId())).getRecords();
-            if (image.size() > 0){
-                f.setCover(new ImageVo(null, image.get(0).getUrl()));
-            }
-        });
-        return records;
+        return announcementMapper.getFresh();
     }
 }

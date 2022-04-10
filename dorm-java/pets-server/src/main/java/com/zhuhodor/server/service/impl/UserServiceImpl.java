@@ -73,7 +73,6 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         userDetails.getUser().setDorm(dormMapper.selectById(userDetails.getUser().getDormId()));
         tokenMap.put("userInfo", userDetails.getUser());
         tokenMap.put("tokenHead",tokenHead);
-//        tokenMap.put("dormInfo",dormMapper.selectById(userDetails.getUser().getDormId()));
         return Result.success("登录成功",tokenMap);
     }
 

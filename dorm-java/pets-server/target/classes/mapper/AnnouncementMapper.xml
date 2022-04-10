@@ -4,12 +4,24 @@
 
     <resultMap id="Announcement" type="com.zhuhodor.server.model.pojo.Announcement">
         <association property="user" column="user_id" select="com.zhuhodor.server.mapper.UserMapper.getUserVoById"></association>
+        <association property="cover" column="id" select="getCoverByAnnoId"></association>
     </resultMap>
 
     <select id="getAnnouncements" resultMap="Announcement">
         SELECT pa.*
         FROM `p_announcement` pa
         ORDER BY pa.publish_time DESC
+    </select>
+
+    <select id="getFresh" resultMap="Announcement">
+        SELECT id, title, publish_time, nick_name
+        FROM p_announcement
+        WHERE del_flag = 0
+        ORDER BY publish_time DESC
+        LIMIT 3
+    </select>
+    <select id="getCoverByAnnoId" parameterType="int" resultType="com.zhuhodor.server.model.vo.ImageVo">
+        SELECT id, url FROM `p_image` WHERE announce_id = #{id}
     </select>
 
 </mapper>

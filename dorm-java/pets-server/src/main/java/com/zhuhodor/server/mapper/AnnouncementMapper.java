@@ -19,4 +19,6 @@ import java.util.List;
 @CacheNamespace(implementation= MybatisRedisCache.class,eviction=MybatisRedisCache.class)
 public interface AnnouncementMapper extends BaseMapper<Announcement> {
     List<Announcement> getAnnouncements(IPage<Announcement> page);
+
+    List<Announcement> getFresh();
 }

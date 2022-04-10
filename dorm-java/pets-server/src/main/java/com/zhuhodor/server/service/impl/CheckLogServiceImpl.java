@@ -60,7 +60,7 @@ public class CheckLogServiceImpl extends ServiceImpl<CheckLogMapper, CheckLog> i
             return null;
         }
         List<CheckLog> totalLogs = checkLogMapper.selectList(new QueryWrapper<CheckLog>()
-                .eq("check_time", time).select("target_dorm"));
+                .eq("check_time", time).select("target_dorm").orderByDesc("total_score"));
         int size = totalLogs.size();
         checkLogVo.setTotal(size);
         if (null == checkLogVo.getRank() || 0 >= checkLogVo.getRank()){
