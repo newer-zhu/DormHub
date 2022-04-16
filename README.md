@@ -30,9 +30,9 @@ dorm-web 前端代码
 - MySQL 8.0+
 - redis
 - easy-poi
-- 腾讯云对象储存COS
-- stomp | websocket
+- 腾讯云 对象储存COS
+- stomp & websocket
 - Vue全家桶
-- Vant UI
+- Vant UI & Element UI
 - vue-admin-template
 - ECharts

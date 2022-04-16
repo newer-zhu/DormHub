@@ -3,6 +3,15 @@
 <mapper namespace="com.zhuhodor.server.mapper.AnnouncementMapper">
 
     <resultMap id="Announcement" type="com.zhuhodor.server.model.pojo.Announcement">
+        <id property="id" column="id"/>
+        <result property="nickName" column="nick_name"/>
+        <result property="userId" column="user_id"/>
+        <result property="content" column="content"/>
+        <result property="confirm" column="confirm"/>
+        <result property="delFlag" column="del_flag"/>
+        <result property="delTime" column="del_time"/>
+        <result property="publishTime" column="publish_time"/>
+        <result property="title" column="title"/>
         <association property="user" column="user_id" select="com.zhuhodor.server.mapper.UserMapper.getUserVoById"></association>
         <association property="cover" column="id" select="getCoverByAnnoId"></association>
     </resultMap>
