@@ -2,174 +2,173 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3147259-398f-490b-a789-8d820e016f61" name="Default Changelist" comment="roles allocate">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_dataformat_jackson_dataformat_yaml_2_12_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_buffer_4_1_66_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_4_1_66_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_dns_4_1_66_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_common_4_1_66_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_handler_4_1_66_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_4_1_66_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_dns_4_1_66_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_4_1_66_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_projectreactor_reactor_core_3_4_8.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_cache_cache_api_1_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_9_7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jodd_jodd_bean_3_7_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jodd_jodd_core_3_7_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_reactivestreams_reactive_streams_1_0_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_redisson_redisson_3_6_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_aop_2_5_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_session_spring_session_core_2_5_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_session_spring_session_data_redis_2_5_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/PetsServerApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/PetsServerApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/aspect/LogAspect.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/aspect/LogAspect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/aspect/RedissionLockAspect.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/aspect/RedissionLockAspect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/chat/ChatMsg.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/chat/ChatMsg.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/chat/config/WebSocketConfig$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/chat/config/WebSocketConfig$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/chat/config/WebSocketConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/chat/config/WebSocketConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/chat/config/WebSocketCounter.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/chat/config/WebSocketCounter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/chat/controller/WebSocketController.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/chat/controller/WebSocketController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/chat/listener/WebSocketConnectListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/chat/listener/WebSocketConnectListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/chat/listener/WebSocketDisConnectEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/chat/listener/WebSocketDisConnectEvent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/constant/CosConstant.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/constant/CosConstant.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/constant/RedisConstant.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/constant/RedisConstant.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/domain/PageBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/domain/PageBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/domain/Result.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/domain/Result.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/domain/ResultCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/domain/ResultCode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/exceptions/ApiException.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/exceptions/ApiException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/exceptions/GlobalExceptionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/exceptions/GlobalExceptionHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/exceptions/IErrorCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/exceptions/IErrorCode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/utils/DateConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/utils/DateConverter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/utils/ExcelUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/utils/ExcelUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/utils/ImageUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/utils/ImageUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/utils/JwtUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/utils/JwtUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/utils/RedisUtil$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/utils/RedisUtil$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/utils/RedisUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/utils/RedisUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/utils/SpringUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/utils/SpringUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/utils/TencentCos.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/utils/TencentCos.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/utils/redissionLock/RedissionLock.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/utils/redissionLock/RedissionLock.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/utils/redissionLock/RedissionLockKey.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/utils/redissionLock/RedissionLockKey.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/config/GlobalCorsConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/config/GlobalCorsConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/config/MybatisPlusConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/config/MybatisPlusConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/config/MybatisRedisCache.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/config/MybatisRedisCache.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/config/RedisConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/config/RedisConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/config/RedissionConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/config/RedissionConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/config/Swagger2Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/config/Swagger2Config.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/config/TencentConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/config/TencentConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/AnnouncementController.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/AnnouncementController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/BedController.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/BedController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/ChatController.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/ChatController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/CheckItemController.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/CheckItemController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/CheckLogController.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/CheckLogController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/DormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/DormController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/EChartsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/EChartsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/FixCatController.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/FixCatController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/FixController.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/FixController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/ImageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/ImageController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/LeaveRequestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/LeaveRequestController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/LogController.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/LogController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/MenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/MenuController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/PostCommentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/PostCommentController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/PostController.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/PostController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/RoleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/RoleController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/UserRoleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/UserRoleController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/generator/MybatisPlusGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/generator/MybatisPlusGenerator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/AnnouncementMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/AnnouncementMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/BedMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/BedMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/CheckItemLogVoMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/CheckItemLogVoMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/CheckItemMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/CheckItemMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/CheckLogMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/CheckLogMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/DormMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/DormMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/EChartsMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/EChartsMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/FixCatMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/FixCatMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/FixMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/FixMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/ImageMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/ImageMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/LeaveRequestMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/LeaveRequestMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/MenuMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/MenuMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/PostCommentMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/PostCommentMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/PostMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/PostMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/RoleMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/RoleMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/UserMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/UserRoleMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/UserRoleMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/dto/CheckItemUpdateDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/dto/CheckItemUpdateDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/dto/UserRole.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/dto/UserRole.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/Announcement.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/Announcement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/Bed.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/Bed.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/CheckItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/CheckItem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/CheckLog.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/CheckLog.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/Dorm.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/Dorm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/Fix.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/Fix.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/FixCat.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/FixCat.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/Image.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/Image.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/LeaveRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/LeaveRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/Menu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/Post.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/Post.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/PostComment.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/PostComment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/Role.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/vo/BedInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/vo/BedInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/vo/CheckItemLogVo.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/vo/CheckItemLogVo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/vo/CheckLogAnalysisVo.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/vo/CheckLogAnalysisVo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/vo/CheckLogVo.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/vo/CheckLogVo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/vo/DormVo.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/vo/DormVo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/vo/GraphVo.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/vo/GraphVo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/vo/ImageVo.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/vo/ImageVo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/vo/PostCommentVo.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/vo/PostCommentVo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/vo/PostVo.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/vo/PostVo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/vo/UserVo.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/vo/UserVo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/vo/condition/LogSearchVo.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/vo/condition/LogSearchVo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/vo/condition/PostSearchVo.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/vo/condition/PostSearchVo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/vo/condition/UserSearchVo.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/vo/condition/UserSearchVo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/rabbitMq/config/RabbitMqConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/rabbitMq/config/RabbitMqConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/rabbitMq/config/RabbitMqConstant.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/rabbitMq/config/RabbitMqConstant.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/rabbitMq/consumer/DeadLetterConsumer.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/rabbitMq/consumer/DeadLetterConsumer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/rabbitMq/producer/DelayMessageProducer.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/rabbitMq/producer/DelayMessageProducer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/schedule/ScheduleTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/schedule/ScheduleTask.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/security/component/MyUserDetails.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/security/component/MyUserDetails.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/security/component/RestAccessDeniedHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/security/component/RestAccessDeniedHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/security/component/RestAuthorizationEntryPoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/security/component/RestAuthorizationEntryPoint.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/security/config/SecurityConfig$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/security/config/SecurityConfig$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/security/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/security/config/SecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/security/filter/CustomFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/security/filter/CustomFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/security/filter/CustomUrlDecisionManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/security/filter/CustomUrlDecisionManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/security/filter/JwtAuthenticationFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/security/filter/JwtAuthenticationFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/IAnnouncementService.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/IAnnouncementService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/IBedService.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/IBedService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/ICheckItemService.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/ICheckItemService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/ICheckLogService.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/ICheckLogService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/IDormService.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/IDormService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/IEChartsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/IEChartsService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/IFixCatService.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/IFixCatService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/IFixService.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/IFixService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/IImageService.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/IImageService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/ILeaveRequestService.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/ILeaveRequestService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/IMenuService.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/IMenuService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/IPostCommentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/IPostCommentService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/IPostService.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/IPostService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/IRoleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/IRoleService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/IUserRoleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/IUserRoleService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/IUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/IUserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/AnnouncementServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/AnnouncementServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/BedServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/BedServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/CheckItemServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/CheckItemServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/CheckLogServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/CheckLogServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/DormServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/DormServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/FixCatServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/FixCatServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/FixServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/FixServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/IEChartsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/IEChartsServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/ImageServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/ImageServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/LeaveRequestServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/LeaveRequestServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/MenuServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/MenuServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/PostCommentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/PostCommentServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/PostServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/PostServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/RoleServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/RoleServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/UserRoleServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/UserRoleServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/mapper/AnnouncementMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/classes/mapper/AnnouncementMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pets-server/target/test-classes/com/zhuhodor/TestApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/pets-server/target/test-classes/com/zhuhodor/TestApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/PetsServerApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/aspect/LogAspect.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/aspect/RedissionLockAspect.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/chat/ChatMsg.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/chat/config/WebSocketConfig$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/chat/config/WebSocketConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/chat/config/WebSocketCounter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/chat/controller/WebSocketController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/chat/listener/WebSocketConnectListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/chat/listener/WebSocketDisConnectEvent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/constant/CosConstant.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/constant/RedisConstant.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/domain/PageBean.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/domain/Result.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/domain/ResultCode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/exceptions/ApiException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/exceptions/GlobalExceptionHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/exceptions/IErrorCode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/utils/DateConverter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/utils/ExcelUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/utils/ImageUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/utils/JwtUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/utils/RedisUtil$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/utils/RedisUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/utils/SpringUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/utils/TencentCos.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/utils/redissionLock/RedissionLock.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/common/utils/redissionLock/RedissionLockKey.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/config/GlobalCorsConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/config/MybatisPlusConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/config/MybatisRedisCache.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/config/RedisConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/config/RedissionConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/config/Swagger2Config.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/config/TencentConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/AnnouncementController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/BedController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/ChatController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/CheckItemController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/CheckLogController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/DormController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/EChartsController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/FixCatController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/FixController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/ImageController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/LeaveRequestController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/LogController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/MenuController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/PostCommentController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/PostController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/RoleController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/controller/UserRoleController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/generator/MybatisPlusGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/AnnouncementMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/BedMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/CheckItemLogVoMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/CheckItemMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/CheckLogMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/DormMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/EChartsMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/FixCatMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/FixMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/ImageMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/LeaveRequestMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/MenuMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/PostCommentMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/PostMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/RoleMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/UserMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/mapper/UserRoleMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/dto/CheckItemUpdateDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/dto/UserRole.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/Announcement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/Bed.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/CheckItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/CheckLog.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/Dorm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/Fix.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/FixCat.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/Image.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/LeaveRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/Menu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/Post.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/PostComment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/Role.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/pojo/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/vo/BedInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/vo/CheckItemLogVo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/vo/CheckLogAnalysisVo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/vo/CheckLogVo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/vo/DormVo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/vo/GraphVo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/vo/ImageVo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/vo/PostCommentVo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/vo/PostVo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/vo/UserVo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/vo/condition/LogSearchVo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/vo/condition/PostSearchVo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/model/vo/condition/UserSearchVo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/rabbitMq/config/RabbitMqConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/rabbitMq/config/RabbitMqConstant.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/rabbitMq/consumer/DeadLetterConsumer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/rabbitMq/producer/DelayMessageProducer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/schedule/ScheduleTask.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/security/component/MyUserDetails.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/security/component/RestAccessDeniedHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/security/component/RestAuthorizationEntryPoint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/security/config/SecurityConfig$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/security/config/SecurityConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/security/filter/CustomFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/security/filter/CustomUrlDecisionManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/security/filter/JwtAuthenticationFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/IAnnouncementService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/IBedService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/ICheckItemService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/ICheckLogService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/IDormService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/IEChartsService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/IFixCatService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/IFixService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/IImageService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/ILeaveRequestService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/IMenuService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/IPostCommentService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/IPostService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/IRoleService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/IUserRoleService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/IUserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/AnnouncementServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/BedServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/CheckItemServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/CheckLogServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/DormServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/FixCatServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/FixServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/IEChartsServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/ImageServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/LeaveRequestServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/MenuServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/PostCommentServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/PostServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/RoleServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/UserRoleServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/com/zhuhodor/server/service/impl/UserServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/config/application-dev.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/config/application-own.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/config/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/mapper/AnnouncementMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/mapper/BedMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/mapper/CheckItemLogVoMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/mapper/CheckItemMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/mapper/CheckLogMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/mapper/DormMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/mapper/EChartsMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/mapper/FixCatMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/mapper/FixMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/mapper/ImageMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/mapper/LeaveRequestMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/mapper/MenuMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/mapper/PostCommentMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/mapper/PostMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/mapper/RoleMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/mapper/UserMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/mapper/UserRoleMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/classes/redis/redis_lock.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pets-server/target/test-classes/com/zhuhodor/TestApplication.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -489,7 +488,7 @@
       <workItem from="1649847950081" duration="786000" />
       <workItem from="1649864591542" duration="128000" />
       <workItem from="1649940883410" duration="1326000" />
-      <workItem from="1650011871182" duration="4719000" />
+      <workItem from="1650011871182" duration="4727000" />
     </task>
     <task id="LOCAL-00001" summary="daily completion">
       <created>1644243578631</created>
