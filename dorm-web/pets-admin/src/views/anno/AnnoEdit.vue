@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <el-row style="padding-top: 30px" type="flex" justify="center">
-      <el-col :span="16" style="margin-bottom: 20px" :offset="1">
+      <el-col :span="14" style="margin-bottom: 20px">
         <el-input maxlength="25" placeholder="请输入标题" v-model="announcement.title">
           <template slot="prepend">标题：</template>
         </el-input>
@@ -17,9 +17,9 @@
       </el-col>
     </el-row>
     <el-row justify="center" type="flex">
-      <el-col :span="4">
-        <el-button v-if="!isEdit" size="large" style="margin-top: 70px" @click="submit" type="primary">发布公告</el-button>
-        <el-button v-else size="large" style="margin-top: 70px" @click="update" type="primary">修改公告</el-button>
+      <el-col :span="5">
+        <el-button v-if="!isEdit" size="large" style="margin-top: 70px; width: 100%;" @click="submit" type="primary">发布公告</el-button>
+        <el-button v-else size="large" style="margin-top: 70px; width: 100%" @click="update" type="primary">修改公告</el-button>
       </el-col>
     </el-row>
   </div>

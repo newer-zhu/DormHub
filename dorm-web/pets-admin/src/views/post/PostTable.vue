@@ -50,7 +50,7 @@
       </el-col>
     </el-row>
 <!--    分页-->
-    <el-row style="margin-top: 40px" type="flex" justify="center">
+    <el-row style="margin: 40px 0px 100px 0px" type="flex" justify="center">
       <el-pagination
         :current-page="cur"
         background

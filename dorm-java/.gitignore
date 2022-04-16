@@ -1,4 +1,7 @@
 pets-server/src/main/resources/config/application-own.yml
+pets-server/src/main/resources/config/application-prod.yml
+application-own.yml
+application-prod.yml
 pets-server/target/classes/com/zhuhodor/server/mapper/ChecklogRankMapper.class
 pets-server/target/classes/com/zhuhodor/server/model/dto/LoginDto.class
 pets-server/target/classes/com/zhuhodor/server/model/pojo/ChecklogRank.class
@@ -10,4 +13,4 @@ pets-server/target/generated-test-sources/
 pets-server/target/maven-archiver/
 pets-server/target/maven-status/
 pets-server/target/pets-server-0.0.1-SNAPSHOT.jar
-application-own.yml
+

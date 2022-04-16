@@ -17,38 +17,38 @@
     <el-drawer
       title="宿舍床位"
       :visible.sync="drawer"
-      size="50%"
+      size="60%"
       direction="btt">
       <el-row>
         <el-col v-for="b in beds" :span="8">
-          <el-card style="margin: 10px 30px; height: 150px">
+          <el-card style="margin: 10px 10px; height: 150px">
             <el-row>
               <el-col :span="6">
                 <el-avatar style="height: 100px; width: 100px;" :src="b.user? b.user.avatar : ''"/>
               </el-col>
-              <el-col :span="6">
+              <el-col :span="7" :offset="1">
                 <div style="font-size: 22px;">{{'床号 '+b.bedNum}}</div>
                 <div style="font-size: 20px;color: #5a5e66;margin-top: 10px">{{b.user? '姓名 '+b.user.nickName:'空'}}</div>
                 <div style="font-size: 20px;color: #5a5e66">{{b.user? '学号 '+b.user.username : '空'}}</div>
               </el-col>
-              <el-col :span="12">
+              <el-col :span="10">
                 <el-collapse-transition>
                   <div v-show="isDisplay === b.id">
                     <el-input v-model="input"  placeholder="请输入学生学号"></el-input>
-                    <el-button @click="isDisplay = ''" style="margin-top: 20px;display: inline-block; margin-left: 80px">
+                    <el-button @click="isDisplay = ''" style="margin-top: 20px; margin-left: 1rem">
                       取 消
                     </el-button>
                     <el-popconfirm
                       @confirm="allocate(b.id)"
                       :title="targetUser? '确定把此床位分配给【'+targetUser.nickName+'】吗？' : '系统中没有此用户！'">
-                      <el-button type="warning" slot="reference" @click="change()" style="margin-top: 20px;margin-left: 30px ;display: inline-block">
+                      <el-button type="warning" slot="reference" @click="change()" style="margin-top: 20px;margin-left: 1rem ;">
                         分 配
                       </el-button>
                     </el-popconfirm>
                   </div>
                 </el-collapse-transition>
 
-                <el-button type="primary" v-show="isDisplay === ''" @click="isDisplay = b.id" style="margin-top: 20px; margin-left: 75%">
+                <el-button type="primary" v-show="isDisplay === ''" @click="isDisplay = b.id" style="margin-top: 2rem; margin-left: 7rem">
                   调 整
                 </el-button>
               </el-col>

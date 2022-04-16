@@ -4,9 +4,9 @@
 
     </div>
 
-    <div style="width: 70%;margin: 0 auto;">
+    <div style="width: 100%;margin: 0 auto;">
       <el-row>
-        <el-col :span="8">
+        <el-col :span="7" :offset="1">
           <div>
             <el-card style="height: 200px">
               <el-row>
@@ -32,10 +32,10 @@
         </el-col>
 
         <el-col :span="4" :offset="1">
-          <img style="width: 220px; height: 450px" src="../../assets/img/example.png" alt="">
+          <img style="width: 100%; height: 450px" src="../../assets/img/example.png">
         </el-col>
 
-        <el-col :span="5" :offset="1">
+        <el-col :span="9" :offset="1">
           <el-card class="box-card">
             <div slot="header">
               <span>近7天登录日志</span>
@@ -153,7 +153,7 @@
   }
 
   .box-card {
-    width: 450px;
+    width: 100%;
     height: 500px;
   }
 </style>

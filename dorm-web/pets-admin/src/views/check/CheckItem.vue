@@ -6,15 +6,15 @@
       effect="dark">
     </el-alert>
     <div style="margin-top: 25px">
-      <span style="font-size: 25px; margin-left: 15px; margin-top: 30px;">检查项配置</span>
+      <span class="title">检查项配置</span>
       <el-button size="mini" type="danger" style="margin-left: 40px" @click="prepareItems">撤销操作</el-button>
     </div>
 
     <el-row style="margin-top: 20px">
 <!--      树-->
-      <el-col :offset="1" :span="14">
+      <el-col :offset="1" :span="15">
         <el-alert
-          title="新增的检查项默认启用，不会出现在下方[配置开关中]"
+          title="新增的检查项默认启用，不会出现在下方[配置开关]中"
           type="success">
         </el-alert>
         <el-tree :data="items"
@@ -51,21 +51,25 @@
       </el-col>
     </el-row>
 
-    <div style="font-size: 25px; margin-left: 15px; margin-top: 15px">配置开关</div>
+    <div class="title">配置开关</div>
     <el-row style="margin-top: 20px">
-      <el-col :offset="1" :span="15">
+      <el-col :offset="1" :span="23">
         <el-transfer :titles="['已启用', '已停用']" style="width: 100%"
                      filterable :button-texts="['启用', '停用']"
                      v-model="disabledList" :data="data"></el-transfer>
       </el-col>
-      <el-col :span="3" style="margin-left: 25px">
-        <div style="font-size: 25px; margin-bottom: 15px; margin-bottom: 10px">目前总分</div>
-        <el-progress type="circle" :format="formatPer" :percentage="totalScore"></el-progress>
+    </el-row>
+
+    <div class="title">目前总分</div>
+    <el-row>
+      <el-col :span="23" :offset="1">
+        <el-progress type="circle" :format="formatPer" style="margin-top: 20px" :percentage="totalScore"></el-progress>
       </el-col>
     </el-row>
-    <el-row>
-      <el-col :offset="5">
-        <el-button @click="submit" style="margin-top: 100px; width: 20%" type="primary">提交</el-button>
+
+    <el-row type="flex" justify="center">
+      <el-col :span="4">
+        <el-button @click="submit" style="margin: 25px 0 100px 0; width: 100%; height: 50px" type="primary">提交</el-button>
       </el-col>
     </el-row>
   </div>
@@ -180,5 +184,8 @@
     justify-content: space-between;
     font-size: 14px;
     padding-right: 8px;
+  }
+  .title{
+    font-size: 25px; margin-left: 15px; margin-top: 15px
   }
 </style>

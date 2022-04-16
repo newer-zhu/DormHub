@@ -17,10 +17,11 @@
         <el-button type="success" :loading="downloading" icon="el-icon-download" @click="downloadExcel">下载用户Excel表</el-button>
       </el-col>
     </el-row>
+
     <el-row type="flex" justify="flex-start" style="margin-top: 20px;flex-wrap: wrap;">
-      <el-col v-for="(u,i) in list" :key="u.id" :span="5" :offset="1">
-        <el-card  style="width: 320px; margin-top: 15px" class="box-card">
-          <el-descriptions class="margin-top" :title="u.nickName" :column="2" direction="vertical">
+      <el-col v-for="(u,i) in list" :key="u.id" :span="5" style="margin-left: 2rem">
+        <el-card  class="box">
+          <el-descriptions :title="u.nickName" :column="2" direction="vertical">
             <el-descriptions-item label="学工号">{{u.username}}</el-descriptions-item>
             <el-descriptions-item label="手机号">{{u.phone}}</el-descriptions-item>
             <el-descriptions-item label="邮箱">{{u.email}}</el-descriptions-item>
@@ -121,5 +122,8 @@
 </script>
 
 <style scoped>
-
+  .box{
+    width: 100%;
+    margin-top: 2rem;
+  }
 </style>

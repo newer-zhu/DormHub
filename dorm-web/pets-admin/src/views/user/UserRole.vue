@@ -3,9 +3,9 @@
     <el-input style="width: 200px; margin-left: 5%; margin-top: 50px" v-model="filterUsername" placeholder="输入学工号查找"></el-input>
     <el-button type="primary" icon="el-icon-search" style="margin-left: 15px" @click="getUserRole" circle></el-button>
     <el-row>
-      <el-col :span="12" :offset="1">
+      <el-col :span="8" :offset="1" style="height: 100%">
         <el-table
-          style="width: 650px"
+          style="width: 100%"
           :data="userInfo">
           <el-table-column
             prop="nickName"
@@ -24,10 +24,13 @@
           </el-table-column>
         </el-table>
       </el-col>
-      <el-col :span="9">
-        <el-transfer :titles="['未拥有', '已拥有']" :props="{key: 'id', label: 'name'}"
-          style="margin-top: 200px" v-model="roles" :data="allRoles"></el-transfer>
-        <el-button style="margin-left: 35%; margin-top: 50px;" type="primary" @click="confirm">确定</el-button>
+      <el-col :offset="1" :span="13">
+        <div style="position: fixed" >
+          <el-transfer :titles="['未拥有', '已拥有']" :props="{key: 'id', label: 'name'}"
+                       style="margin-top: 2rem;" v-model="roles" :data="allRoles"></el-transfer>
+          <el-button style="margin-left: 40%; margin-top: 2rem;width: 100px" type="primary" @click="confirm">确定</el-button>
+        </div>
+
       </el-col>
     </el-row>
   </div>

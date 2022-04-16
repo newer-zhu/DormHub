@@ -1,21 +1,23 @@
 <template>
   <div>
-    <el-row>
-      <el-col :span="12">
-        <div id="lineChart" style="width: 100%; height: 400px; margin: 20px 0px 0px 50px"></div>
-      </el-col>
-      <el-col :span="12">
-        <div id="columnChart" style="width: 100%; height: 400px; margin: 20px 0px 0px 20px"></div>
-      </el-col>
-    </el-row>
-    <el-row>
-      <el-col :span="12">
-        <div id="pieChart" style="width: 100%; height: 400px; margin: 20px 0px 0px 50px"></div>
-      </el-col>
-      <el-col :span="12">
-        <div id="rankCharts" style="width: 100%; height: 400px; margin: 20px 0px 0px 50px"></div>
-      </el-col>
-    </el-row>
+    <div v-loading.fullscreen.lock="fullscreenLoading">
+      <el-row>
+        <el-col :span="12">
+          <div id="lineChart" style="width: 100%; height: 400px; margin: 20px 0px 0px 50px"></div>
+        </el-col>
+        <el-col :span="12">
+          <div id="columnChart" style="width: 100%; height: 400px; margin: 20px 0px 0px 20px"></div>
+        </el-col>
+      </el-row>
+      <el-row>
+        <el-col :span="12">
+          <div id="pieChart" style="width: 100%; height: 400px; margin: 20px 0px 0px 50px"></div>
+        </el-col>
+        <el-col :span="12">
+          <div id="rankCharts" style="width: 100%; height: 400px; margin: 20px 0px 0px 50px"></div>
+        </el-col>
+      </el-row>
+    </div>
   </div>
 </template>
 
@@ -26,14 +28,15 @@
     name: 'CheckDataPanel',
     data(){
       return{
+        fullscreenLoading: true
       }
     },
     methods:{
-      drawLine(){
+      async drawLine(){
         // 基于准备好的dom，初始化echarts实例
         let myChart = echarts.init(document.getElementById('lineChart'))
-        getLastTenAvgScores().then(res => {
-          console.log(res.data)
+        await getLastTenAvgScores().then(res => {
+          // console.log(res.data)
           myChart.setOption({
             title: { text: '近期检查平均分走势图' },
             xAxis: {
@@ -59,11 +62,10 @@
             ]
           });
         })
-
       },
-      drawColumn(){
+      async drawColumn(){
         let columnChart = echarts.init(document.getElementById('columnChart'))
-        getTenMaxScores().then(res => {
+        await getTenMaxScores().then(res => {
           columnChart.setOption({
             title: { text: '近期检查得分最高分' },
             xAxis: {
@@ -91,9 +93,9 @@
           });
         })
       },
-      drawRankedCol(){
-        var chartDom = echarts.init(document.getElementById('rankCharts'))
-        getRankedScores().then(res => {
+      async drawRankedCol(){
+        let chartDom = echarts.init(document.getElementById('rankCharts'))
+        await getRankedScores().then(res => {
           chartDom.setOption({
             title: {
               text: '寝室平均分排名'
@@ -147,9 +149,9 @@
           });
         })
       },
-      drawPie(){
+      async drawPie(){
         let columnChart = echarts.init(document.getElementById('pieChart'))
-        getScoresAccount().then(res => {
+        await getScoresAccount().then(res => {
           columnChart.setOption({
             title: {
               text: '检查结果分数占比',
@@ -180,13 +182,19 @@
             ]
           });
         })
+      },
+      init(){
+        this.drawLine()
+        setTimeout(() => {
+          this.drawColumn()
+        }, 500);
+        this.drawRankedCol()
+        this.drawPie()
       }
     },
     mounted() {
-      this.drawLine()
-      this.drawColumn()
-      this.drawPie()
-      this.drawRankedCol()
+      this.init()
+      this.fullscreenLoading = false
     }
   }
 </script>
