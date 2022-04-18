@@ -13,3 +13,10 @@ export function getAnnoById(id) {
     method: 'get',
   })
 }
+
+export function confirm(id) {
+  return request({
+    url: '/announcement/confirm/'+id,
+    method: 'get',
+  })
+}

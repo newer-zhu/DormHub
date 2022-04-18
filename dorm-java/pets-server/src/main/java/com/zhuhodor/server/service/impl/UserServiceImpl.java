@@ -4,6 +4,7 @@ import cn.hutool.core.lang.Assert;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.zhuhodor.server.common.domain.Result;
+import com.zhuhodor.server.common.utils.ExcelUtils;
 import com.zhuhodor.server.common.utils.JwtUtil;
 import com.zhuhodor.server.mapper.DormMapper;
 import com.zhuhodor.server.mapper.UserMapper;
@@ -20,11 +21,13 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.StringUtils;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.time.LocalDate;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * <p>
@@ -143,5 +146,40 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     @Override
     public List<User> getAllUsers(String username) {
         return userMapper.getAllUsers(username);
+    }
+
+    @Transactional
+    @Override
+    public boolean updateBatchByUsername(MultipartFile excelFile) {
+        List<User> existUser = userMapper.selectList(new QueryWrapper<User>().select("username"));
+        Set<String> existUsername = existUser.stream().map(User::getUsername).collect(Collectors.toSet());
+        List<User> updateList = new ArrayList<>();
+        List<User> saveList = new ArrayList<>();
+        try {
+            List<User> list = ExcelUtils.importExcel(excelFile, User.class);
+            for (User u : list){
+                String username = u.getUsername();
+                String password = u.getPassword();
+                if (StringUtils.hasLength(password)){
+                    u.setPassword(passwordEncoder.encode(u.getPassword()));
+                }
+                if (existUsername.contains(username)){
+                    updateList.add(u);
+                }else {
+                    saveList.add(u);
+                }
+            }
+            saveList.forEach( user -> userMapper.insert(user));
+            updateList.forEach(u -> {
+                if (StringUtils.hasLength(u.getPassword())){
+                    userMapper.update(u, new QueryWrapper<User>().eq("username", u.getUsername()));
+                }
+            });
+        } catch (IOException e) {
+            e.printStackTrace();
+            log.error("导入用户Excel表失败");
+            return false;
+        }
+        return true;
     }
 }

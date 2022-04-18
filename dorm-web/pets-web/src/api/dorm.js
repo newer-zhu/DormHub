@@ -9,9 +9,17 @@ export function getDormById(dormId) {
 }
 
 //获取所有宿舍信息
-export function getAllDorms(buildingID) {
+export function getDormsByBuildingId(buildingID) {
   return request({
-    url: '/dorm',
+    url: '/dorm/buildings/'+buildingID,
+    method: 'get'
+  })
+}
+
+//获取所有楼栋号
+export function getBuildingId() {
+  return request({
+    url: '/dorm/buildings',
     method: 'get'
   })
 }

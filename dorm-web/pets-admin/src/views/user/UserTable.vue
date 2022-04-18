@@ -105,7 +105,7 @@
           sheetName: '用户信息',
           fileName: '用户信息表',
         }).then(res => {
-          this.$message({type: 'secuess', message: res.data})
+          this.$message({type: 'success', message: res.data})
           this.downloading = false
         })
       },

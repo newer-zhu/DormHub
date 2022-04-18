@@ -47,7 +47,7 @@ public class DormController {
     @ApiOperation("根据楼号获取所有寝室")
     @GetMapping("/buildings/{building}")
     public Result getDormsByBuildingId(@PathVariable("building") String building){
-        List<Dorm> dorms = dormService.list(new QueryWrapper<Dorm>().select("id", "dorm_id").eq("building_id", building));
+        List<Dorm> dorms = dormService.list(new QueryWrapper<Dorm>().eq("building_id", building));
         return Result.success(dorms);
     }
 

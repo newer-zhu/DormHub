@@ -4,9 +4,9 @@ package com.zhuhodor.server.controller;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.zhuhodor.server.common.domain.Result;
 import com.zhuhodor.server.common.domain.ResultCode;
-import com.zhuhodor.server.model.dto.LoginDto;
 import com.zhuhodor.server.common.utils.ExcelUtils;
 import com.zhuhodor.server.common.utils.TencentCos;
+import com.zhuhodor.server.model.dto.LoginDto;
 import com.zhuhodor.server.model.pojo.User;
 import com.zhuhodor.server.model.vo.condition.UserSearchVo;
 import com.zhuhodor.server.security.component.MyUserDetails;
@@ -17,18 +17,14 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.security.Principal;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 /**
  * <p>
@@ -96,33 +92,11 @@ public class UserController {
         if (name.length() < 6 || !name.substring(name.length() - 5).equals(".xlsx")) {
             return Result.fail("文件格式错误");
         }
-        List<User> existUser = userService.list(new QueryWrapper<User>().select("username"));
-        Set<String> existUsername = existUser.stream().map(User::getUsername).collect(Collectors.toSet());
-        List<User> updateList = new ArrayList<>();
-        List<User> saveList = new ArrayList<>();
-        try {
-            List<User> list = ExcelUtils.importExcel(excelFile, User.class);
-            for (User u : list){
-                String username = u.getUsername();
-                String password = u.getPassword();
-                if (StringUtils.hasLength(password)){
-                    u.setPassword(passwordEncoder.encode(u.getPassword()));
-                }
-                if (existUsername.contains(username)){
-                    updateList.add(u);
-                }else {
-                    saveList.add(u);
-                }
-            }
-            userService.saveBatch(saveList);
-            //TODO 根据Excel更新用户表
-//            userService.updateBatchByUsername(updateList);
-        } catch (IOException e) {
-            e.printStackTrace();
-            log.error("导入用户Excel表失败");
-        }
         //TODO 业务逻辑，用rabbitmq使返回结果加快
-        return Result.success("上传成功");
+        if (userService.updateBatchByUsername(excelFile)){
+            return Result.success("上传成功");
+        }
+        return Result.fail("处理错误，请联系运维");
     }
 
     @ApiOperation(value = "导出用户excel")

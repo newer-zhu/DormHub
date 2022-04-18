@@ -5,6 +5,7 @@ import com.zhuhodor.server.common.domain.Result;
 import com.zhuhodor.server.model.pojo.User;
 import com.zhuhodor.server.model.vo.condition.UserSearchVo;
 import com.zhuhodor.server.security.component.MyUserDetails;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -30,4 +31,6 @@ public interface IUserService extends IService<User> {
     Boolean assignRoleToUser(List<Integer> roleList, Integer userId);
 
     List<User> getAllUsers(String username);
+
+    boolean updateBatchByUsername(MultipartFile excelFile);
 }

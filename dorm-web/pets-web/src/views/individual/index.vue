@@ -1,7 +1,7 @@
 <template>
   <div style="background-color: #f5f6f9; height: 100%;width: 100%; top: 0; bottom: 0; position: absolute">
     <van-nav-bar
-      title="个人"  right-text="切换账号">
+      title="个人" @click-right="changeUser"  right-text="切换账号">
     </van-nav-bar>
 
     <div style="padding: 10px;width: 100%; margin-top: 15px">
@@ -70,6 +70,11 @@
   export default {
     name: "Individual",
     methods: {
+      changeUser(){
+        this.$router.push({
+          name: 'Register'
+        })
+      }
     },
     computed:{
       ...mapState('user',['userInfo'])

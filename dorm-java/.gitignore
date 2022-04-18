@@ -1,7 +1,6 @@
 pets-server/src/main/resources/config/application-own.yml
 pets-server/src/main/resources/config/application-prod.yml
-application-own.yml
-application-prod.yml
+pets-server/target**
 pets-server/target/classes/com/zhuhodor/server/mapper/ChecklogRankMapper.class
 pets-server/target/classes/com/zhuhodor/server/model/dto/LoginDto.class
 pets-server/target/classes/com/zhuhodor/server/model/pojo/ChecklogRank.class

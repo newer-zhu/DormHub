@@ -53,12 +53,42 @@
       color: #f4f4f4;
       background-color: #2e3238;
       width: 220px;
-      overflow: hidden;
+      overflow: auto;
     }
     .main {
       position: relative;
       overflow: hidden;
       background-color: #eee;
+    }
+    ::-webkit-scrollbar{
+      width: 7px;
+    }
+    ::-webkit-scrollbar-track{
+
+      background-color: #f5f5f5;
+
+      -webkit-box-shadow:inset 0 0 3px rgba(0,0,0,0.1);
+
+      border-radius:5px;
+
+    }
+    ::-webkit-scrollbar-thumb{
+
+      background-color: rgba(0, 0, 0, 0.2);
+
+      border-radius: 5px;
+    }
+    ::-webkit-scrollbar-button{
+
+      background-color: #eee;
+
+      display: none;
+
+    }
+    ::-webkit-scrollbar-corner{
+
+      background-color: black;
+
     }
   }
 </style>

@@ -10,6 +10,7 @@ import com.zhuhodor.server.common.utils.RedisUtil;
 import com.zhuhodor.server.model.pojo.Announcement;
 import com.zhuhodor.server.security.component.MyUserDetails;
 import com.zhuhodor.server.service.IAnnouncementService;
+import com.zhuhodor.server.service.IUserService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -34,6 +35,8 @@ public class AnnouncementController {
     private IAnnouncementService announcementService;
     @Autowired
     private RedisUtil redisUtil;
+    @Autowired
+    private IUserService userService;
 
     @ApiOperation(value = "获取公告")
     @GetMapping("/{id}")
@@ -129,5 +132,18 @@ public class AnnouncementController {
             }
         }
         return Result.success(announcementService.listByIds(unConfirm));
+    }
+
+    @ApiOperation(value = "确认已公告")
+    @GetMapping("/confirm/{annoId}")
+    public Result confirmAnnouncementByUserId(@PathVariable("annoId") Integer annoId, Authentication authentication){
+        MyUserDetails userDetails = (MyUserDetails) authentication.getPrincipal();
+        String key = RedisConstant.unConfirm.getValue() + userDetails.getUser().getId();
+        if (redisUtil.getBit(key, annoId)){
+            return Result.success("你已经确认过");
+        }else {
+            redisUtil.setBit(key, annoId, true);
+            return Result.success("确认收到成功");
+        }
     }
 }
