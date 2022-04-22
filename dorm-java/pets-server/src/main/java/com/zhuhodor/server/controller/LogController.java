@@ -20,7 +20,8 @@ public class LogController {
     @ApiOperation(value = "获取登录日志")
     @GetMapping("/login")
     public Result loginLogs(){
-        List<String> logs = redisUtil.lrange(RedisConstant.loginLog.getValue(), 0, -1);
+        String key = RedisConstant.loginLog.getValue();
+        List<String> logs = redisUtil.lrange(key, 0, -1);
         return Result.success(logs);
     }
 }

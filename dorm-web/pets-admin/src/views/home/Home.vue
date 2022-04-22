@@ -38,12 +38,13 @@
         <el-col :span="9" :offset="1">
           <el-card class="box-card">
             <div slot="header">
-              <span>近7天登录日志</span>
+              <span>{{'历史登录日志 ('+logs.length+'条)'}}</span>
             </div>
             <div v-for="(log,i) in logs" :key="i" >
               <el-link  :underline="false" class="text item">
                 {{log}}
               </el-link>
+              <el-divider/>
             </div>
           </el-card>
         </el-col>
@@ -153,7 +154,45 @@
   }
 
   .box-card {
+    overflow: auto;
     width: 100%;
     height: 500px;
+  }
+
+  .el-divider--horizontal {
+    margin: 2px 0;
+  }
+</style>
+
+<style>
+  ::-webkit-scrollbar{
+    width: 7px;
+  }
+  ::-webkit-scrollbar-track{
+
+    background-color: #f5f5f5;
+
+    -webkit-box-shadow:inset 0 0 3px rgba(0,0,0,0.1);
+
+    border-radius:5px;
+
+  }
+  ::-webkit-scrollbar-thumb{
+
+    background-color: rgba(0, 0, 0, 0.2);
+
+    border-radius: 5px;
+  }
+  ::-webkit-scrollbar-button{
+
+    background-color: #eee;
+
+    display: none;
+
+  }
+  ::-webkit-scrollbar-corner{
+
+    background-color: black;
+
   }
 </style>

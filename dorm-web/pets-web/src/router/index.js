@@ -152,6 +152,11 @@ const routes = [
     component: () => import('../views/dorm/reserve/index'),
   },
   {
+    path: '/anno/list',
+    name: 'AnnoList',
+    component: () => import('../views/dorm/announcement/AnnoList'),
+  },
+  {
     path: '/anno/detail/:id',
     name: 'AnnoDetail',
     component: () => import('../views/dorm/announcement/AnnoDetail'),

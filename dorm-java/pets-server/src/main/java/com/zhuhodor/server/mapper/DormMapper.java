@@ -6,6 +6,8 @@ import com.zhuhodor.server.model.pojo.Dorm;
 import org.apache.ibatis.annotations.CacheNamespace;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.List;
+
 /**
  * <p>
  *  Mapper 接口
@@ -20,4 +22,8 @@ public interface DormMapper extends BaseMapper<Dorm> {
     Dorm getDormById(@Param("id") Integer id);
 
     void occupationIncr(@Param("dormId") Integer dormId, @Param("incr") Integer incr);
+
+    List<Dorm> getDormDetailByBuildingId(@Param("id") String building,@Param("floor") int floor);
+
+
 }

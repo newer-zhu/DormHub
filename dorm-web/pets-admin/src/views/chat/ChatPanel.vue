@@ -60,35 +60,38 @@
       overflow: hidden;
       background-color: #eee;
     }
-    ::-webkit-scrollbar{
-      width: 7px;
-    }
-    ::-webkit-scrollbar-track{
+  }
+</style>
+<!--美化拖动条-->
+<style>
+  ::-webkit-scrollbar{
+    width: 7px;
+  }
+  ::-webkit-scrollbar-track{
 
-      background-color: #f5f5f5;
+    background-color: #f5f5f5;
 
-      -webkit-box-shadow:inset 0 0 3px rgba(0,0,0,0.1);
+    -webkit-box-shadow:inset 0 0 3px rgba(0,0,0,0.1);
 
-      border-radius:5px;
+    border-radius:5px;
 
-    }
-    ::-webkit-scrollbar-thumb{
+  }
+  ::-webkit-scrollbar-thumb{
 
-      background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.2);
 
-      border-radius: 5px;
-    }
-    ::-webkit-scrollbar-button{
+    border-radius: 5px;
+  }
+  ::-webkit-scrollbar-button{
 
-      background-color: #eee;
+    background-color: #eee;
 
-      display: none;
+    display: none;
 
-    }
-    ::-webkit-scrollbar-corner{
+  }
+  ::-webkit-scrollbar-corner{
 
-      background-color: black;
+    background-color: black;
 
-    }
   }
 </style>

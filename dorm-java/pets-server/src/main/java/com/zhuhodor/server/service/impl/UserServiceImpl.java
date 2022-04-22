@@ -4,6 +4,7 @@ import cn.hutool.core.lang.Assert;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.zhuhodor.server.common.domain.Result;
+import com.zhuhodor.server.common.exceptions.ApiException;
 import com.zhuhodor.server.common.utils.ExcelUtils;
 import com.zhuhodor.server.common.utils.JwtUtil;
 import com.zhuhodor.server.mapper.DormMapper;
@@ -16,6 +17,7 @@ import com.zhuhodor.server.security.component.MyUserDetails;
 import com.zhuhodor.server.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -148,9 +150,15 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         return userMapper.getAllUsers(username);
     }
 
+    @Async
     @Transactional
     @Override
     public boolean updateBatchByUsername(MultipartFile excelFile) {
+        String name = excelFile.getOriginalFilename();
+        if (name.length() < 6 || !name.substring(name.length() - 5).equals(".xlsx")) {
+            throw new ApiException("文件格式错误");
+        }
+
         List<User> existUser = userMapper.selectList(new QueryWrapper<User>().select("username"));
         Set<String> existUsername = existUser.stream().map(User::getUsername).collect(Collectors.toSet());
         List<User> updateList = new ArrayList<>();
@@ -178,7 +186,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         } catch (IOException e) {
             e.printStackTrace();
             log.error("导入用户Excel表失败");
-            return false;
+            throw new ApiException("导入用户Excel表失败");
         }
         return true;
     }

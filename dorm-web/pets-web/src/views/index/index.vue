@@ -34,7 +34,7 @@
         <van-image class="menu-icon" :src="require('../../assets/img/index/post.png')"></van-image>
         <div class="menu-text">反馈</div>
       </van-grid-item>
-      <van-grid-item to="" text="反馈" >
+      <van-grid-item to="/anno/list" text="反馈" >
         <van-image class="menu-icon" :src="require('../../assets/img/index/announcement.png')"></van-image>
         <div class="menu-text">公告</div>
       </van-grid-item>

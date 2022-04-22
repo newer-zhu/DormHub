@@ -2,6 +2,7 @@ package com.zhuhodor.server.aspect;
 
 import com.zhuhodor.server.common.constant.RedisConstant;
 import com.zhuhodor.server.common.domain.Result;
+import com.zhuhodor.server.common.utils.IpUtil;
 import com.zhuhodor.server.common.utils.RedisUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
@@ -17,7 +18,6 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import javax.servlet.http.HttpServletRequest;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.concurrent.TimeUnit;
 
 @Component
 @Aspect
@@ -41,23 +41,19 @@ public class LogAspect {
     public void LoginLog(){}//签名，可以理解成这个切入点的一个名称
 
     @AfterReturning(value = "LoginLog()", returning = "result") //在切入点的方法之后
-    public void logBeforeController(JoinPoint joinPoint, Result result) {
+    public void afterLogController(JoinPoint joinPoint, Result result) {
         //这个RequestContextHolder是SpringMvc提供来获得请求的
         RequestAttributes requestAttributes = RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = ((ServletRequestAttributes)requestAttributes).getRequest();
-        String iPAddr = request.getRemoteAddr();
+        String iPAddr = IpUtil.getIp(request);
 
         if (result.getCode() == 200){
             String key = RedisConstant.loginLog.getValue();
+
             Object[] args = joinPoint.getArgs();
             String time = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss").format(LocalDateTime.now());
-            String logInfo = "用户【"+args[0]+"】 IP【"+iPAddr+"】 时间【"+ time +"】";
-            if (redisUtil.hasKey(key)){
-                redisUtil.lpush(key, logInfo);
-            }else {
-                redisUtil.lpush(key, logInfo);
-                redisUtil.expire(key, 7, TimeUnit.DAYS);
-            }
+            String log = "用户【"+args[0]+"】 IP【"+iPAddr+"】 时间【"+ time +"】";
+            redisUtil.lpush(key, log);
         }else {
             log.info("IP地址【{}】登录失败", iPAddr);
         }

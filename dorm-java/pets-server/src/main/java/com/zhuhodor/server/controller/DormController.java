@@ -2,16 +2,14 @@ package com.zhuhodor.server.controller;
 
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.zhuhodor.server.common.domain.Result;
 import com.zhuhodor.server.model.pojo.Dorm;
 import com.zhuhodor.server.service.IDormService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -49,6 +47,23 @@ public class DormController {
     public Result getDormsByBuildingId(@PathVariable("building") String building){
         List<Dorm> dorms = dormService.list(new QueryWrapper<Dorm>().eq("building_id", building));
         return Result.success(dorms);
+    }
+
+    @ApiOperation("根据楼号获取所有寝室及其下属人员")
+    @GetMapping("/buildings/detail")
+    public Result getDormsDetailsByBuildingId(@RequestParam("building") String building,
+                                              @RequestParam("floor") int floor){
+        return Result.success(dormService.getDormWithStuByBuildingId(building, floor));
+    }
+
+    @ApiOperation("分配寝室长")
+    @GetMapping("/buildings/detail/setAdmin")
+    public Result setDormAdmin(@RequestParam("dormId") String dormId,
+                                              @RequestParam("admin") int admin){
+        if (dormService.update(new UpdateWrapper<Dorm>().set("admin", admin).eq("id", dormId))){
+            return Result.success("设置成功");
+        }
+        return Result.fail("出错了");
     }
 
     @ApiOperation("获取寝室详情")

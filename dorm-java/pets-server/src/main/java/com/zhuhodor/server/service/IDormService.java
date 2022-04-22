@@ -1,7 +1,9 @@
 package com.zhuhodor.server.service;
 
-import com.zhuhodor.server.model.pojo.Dorm;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.zhuhodor.server.model.pojo.Dorm;
+
+import java.util.List;
 
 /**
  * <p>
@@ -13,4 +15,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IDormService extends IService<Dorm> {
     Dorm getDormById(Integer id);
+
+    List<Dorm> getDormWithStuByBuildingId(String building, int floor);
 }

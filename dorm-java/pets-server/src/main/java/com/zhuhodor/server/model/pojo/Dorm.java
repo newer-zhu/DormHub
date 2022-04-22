@@ -15,7 +15,7 @@ import java.util.List;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author zhuhodor
@@ -25,7 +25,7 @@ import java.util.List;
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
 @TableName("p_dorm")
-@ApiModel(value="Dorm对象", description="")
+@ApiModel(value="Dorm对象", description="寝室对象")
 public class Dorm implements Serializable {
 
     private static final long serialVersionUID = 1L;

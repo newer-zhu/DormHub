@@ -20,3 +20,10 @@ export function confirm(id) {
     method: 'get',
   })
 }
+
+export function getAnnoPage(cur) {
+  return request({
+    url: '/announcement/list?cur='+cur,
+    method: 'get',
+  })
+}

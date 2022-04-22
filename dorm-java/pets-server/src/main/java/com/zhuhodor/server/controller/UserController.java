@@ -88,11 +88,6 @@ public class UserController {
     @ApiOperation(value = "解析excel新增用户")
     @PostMapping(value = "/admin/excel/import")
     public Result parseExcel(@RequestParam("excelFile") MultipartFile excelFile){
-        String name = excelFile.getOriginalFilename();
-        if (name.length() < 6 || !name.substring(name.length() - 5).equals(".xlsx")) {
-            return Result.fail("文件格式错误");
-        }
-        //TODO 业务逻辑，用rabbitmq使返回结果加快
         if (userService.updateBatchByUsername(excelFile)){
             return Result.success("上传成功");
         }

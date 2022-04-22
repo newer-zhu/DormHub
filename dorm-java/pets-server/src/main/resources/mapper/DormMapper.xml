@@ -1,19 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zhuhodor.server.mapper.DormMapper">
-    <select id="getDormById" resultMap="DormDetail">
-        SELECT pd.*,
-        pu.id uid, pu.avatar, pu.nick_name, pu.username,
-        pb.bed_num, pb.position, pb.user_id b_uid
-        FROM p_dorm pd
-        LEFT JOIN
-        p_user pu
-        ON pu.dorm_id = pd.id
-        LEFT JOIN p_bed pb
-        ON
-        pu.id = pb.user_id
-        WHERE pd.id = #{id}
-    </select>
 
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.zhuhodor.server.model.pojo.Dorm">
@@ -48,6 +35,16 @@
         </collection>
     </resultMap>
 
+    <!--    宿舍及宿舍成员结果集-->
+    <resultMap id="DormWithStu" type="com.zhuhodor.server.model.pojo.Dorm" extends="BaseResultMap">
+        <collection property="members" ofType="com.zhuhodor.server.model.pojo.User">
+            <id column="uid" property="id"></id>
+            <result column="nick_name" property="nickName" ></result>
+            <result column="username" property="username" ></result>
+            <result column="avatar" property="avatar" ></result>
+        </collection>
+    </resultMap>
+
     <!--    更改宿舍实住人数-->
     <update id="occupationIncr" parameterType="Integer">
         UPDATE
@@ -57,4 +54,29 @@
         WHERE
         id = #{dormId}
     </update>
+
+    <select id="getDormById" resultMap="DormDetail">
+        SELECT pd.*,
+        pu.id uid, pu.avatar, pu.nick_name, pu.username,
+        pb.bed_num, pb.position, pb.user_id b_uid
+        FROM p_dorm pd
+        LEFT JOIN
+        p_user pu
+        ON pu.dorm_id = pd.id
+        LEFT JOIN p_bed pb
+        ON
+        pu.id = pb.user_id
+        WHERE pd.id = #{id}
+    </select>
+
+    <select id="getDormDetailByBuildingId" resultMap="DormWithStu">
+        SELECT pd.*,
+        pu.id uid, pu.nick_name, pu.username
+        FROM p_dorm pd
+        LEFT JOIN
+        p_user pu
+        ON pu.dorm_id = pd.id
+        WHERE pd.building_id = #{id}
+        AND pd.floor = #{floor}
+    </select>
 </mapper>
