@@ -11,11 +11,7 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.web.context.request.RequestAttributes;
-import org.springframework.web.context.request.RequestContextHolder;
-import org.springframework.web.context.request.ServletRequestAttributes;
 
-import javax.servlet.http.HttpServletRequest;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -42,10 +38,8 @@ public class LogAspect {
 
     @AfterReturning(value = "LoginLog()", returning = "result") //在切入点的方法之后
     public void afterLogController(JoinPoint joinPoint, Result result) {
-        //这个RequestContextHolder是SpringMvc提供来获得请求的
-        RequestAttributes requestAttributes = RequestContextHolder.getRequestAttributes();
-        HttpServletRequest request = ((ServletRequestAttributes)requestAttributes).getRequest();
-        String iPAddr = IpUtil.getIp(request);
+
+        String iPAddr = IpUtil.getIp();
 
         if (result.getCode() == 200){
             String key = RedisConstant.loginLog.getValue();

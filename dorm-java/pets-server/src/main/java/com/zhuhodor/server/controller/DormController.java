@@ -37,9 +37,7 @@ public class DormController {
     @ApiOperation("获取所有楼号")
     @GetMapping("/buildings")
     public Result getAllBuildings(){
-        List<Dorm> dorms = dormService.list(new QueryWrapper<Dorm>().select("building_id").groupBy("building_id"));
-        List<String> res = dorms.stream().map(m -> m.getBuildingId()).collect(Collectors.toList());
-        return Result.success(res);
+        return Result.success(dormService.getBuildingId());
     }
 
     @ApiOperation("根据楼号获取所有寝室")

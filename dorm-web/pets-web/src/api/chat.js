@@ -7,12 +7,6 @@ export function getUsers() {
   })
 }
 
-export function getAllUsers() {
-  return request({
-    url: '/chat/user',
-    method: 'get',
-  })
-}
 
 //搜索
 export function searchUsers(str) {

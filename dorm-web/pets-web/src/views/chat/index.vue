@@ -18,9 +18,9 @@
       </template>
     </van-search>
 
-    <van-cell-group style="margin-top: 5px">
+    <van-cell-group style="margin-top: 5px; margin-bottom: 2rem">
       <van-cell
-        v-for="user in displayUsers" :key="user.id"
+        v-for="user in admins" :key="user.id"
         @click="changeCurrentSession(user)"
       >
         <template #title>
@@ -56,11 +56,7 @@
       }
     },
     mounted() {
-      this.$store.dispatch('chat/initData');
-      getAllUsers().then(res => {
-        this.users = res.data
-        this.displayUsers = this.users
-      })
+
     },
     computed: {
       ...mapState('chat',['currentSession', 'admins']),

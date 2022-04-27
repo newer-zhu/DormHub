@@ -17,4 +17,6 @@ public interface IDormService extends IService<Dorm> {
     Dorm getDormById(Integer id);
 
     List<Dorm> getDormWithStuByBuildingId(String building, int floor);
+
+    List<String> getBuildingId();
 }

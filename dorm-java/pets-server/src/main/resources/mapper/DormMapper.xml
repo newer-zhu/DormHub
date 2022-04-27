@@ -79,4 +79,8 @@
         WHERE pd.building_id = #{id}
         AND pd.floor = #{floor}
     </select>
+
+    <select id="getBuildingId" resultType="string">
+        SELECT building_id FROM p_dorm GROUP BY building_id
+    </select>
 </mapper>

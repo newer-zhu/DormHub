@@ -4,6 +4,7 @@ import user from "./modules/user";
 import chat from "./modules/chat";
 import post from "./modules/post";
 import getters from "./getters";
+import router from "../router";
 Vue.use(Vuex)
 
 const store = new Vuex.Store({

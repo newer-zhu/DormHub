@@ -31,4 +31,9 @@ public class DormServiceImpl extends ServiceImpl<DormMapper, Dorm> implements ID
     public List<Dorm> getDormWithStuByBuildingId(String building, int floor) {
         return dormMapper.getDormDetailByBuildingId(building, floor);
     }
+
+    @Override
+    public List<String> getBuildingId() {
+       return dormMapper.getBuildingId();
+    }
 }

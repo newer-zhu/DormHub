@@ -58,6 +58,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     public Result login(String username, String password) {
         //登录
         MyUserDetails userDetails = loadUserByUserName(username);
+
         if (userDetails == null || !passwordEncoder.matches(password,userDetails.getPassword())){
             return Result.fail("用户名或密码不正确");
         }

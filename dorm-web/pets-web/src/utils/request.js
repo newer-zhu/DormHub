@@ -29,14 +29,8 @@ service.interceptors.response.use(
   */
     const res = response.data
     if (res.code !== 200) {
-      // 401:未登录;
-      if (res.code === 401) {
-        Toast.fail(res.msg)
-        router.replace({name: 'Login'})
-      }
-      if (res.code === 403) {
-        Toast.fail(res.msg)
-      }
+      Toast.fail(res.msg)
+      router.replace({name: 'Login'})
       return Promise.reject('error')
     } else {
       return res

@@ -26,4 +26,5 @@ public interface DormMapper extends BaseMapper<Dorm> {
     List<Dorm> getDormDetailByBuildingId(@Param("id") String building,@Param("floor") int floor);
 
 
+    List<String> getBuildingId();
 }

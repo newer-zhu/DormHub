@@ -15,6 +15,20 @@ Vue.config.productionTip = false
 // fastClick.attach(document.body)
 Vue.use(Vant);
 
+router.beforeEach(async (to, from, next) => {
+
+  if (store.getters.token){
+    //用户已登录且未连接websocket
+    if (store.state.chat.stomp == null){
+      await store.dispatch('chat/connect')
+    }
+    next()
+  }else {
+    await next({name:'Login'})
+  }
+
+})
+
 // 该指令的作用是dom渲染后触发，因为非vue的插件有的是dom必须存在的情况下才可以执行
 Vue.directive('loaded-callback', {
   inserted: function (el, binding, vnode) {
@@ -22,11 +36,8 @@ Vue.directive('loaded-callback', {
   }
 })
 
-//用户已登录且未连接websocket
-// if (store.state.user.token && store.state.chat.stomp == null){
-//   console.log('connect websocket ---- main.js');
-//   store.dispatch('chat/connect')
-// }
+
+
 
 new Vue({
   router,
