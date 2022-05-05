@@ -12,7 +12,7 @@
         center
         clearable>
         <template #button>
-          <van-button size="small" type="primary" @click="addMessage">发送</van-button>
+          <van-button size="small" type="primary" @click="addMsg">发送</van-button>
         </template>
       </van-field>
     </div>
@@ -20,7 +20,7 @@
 </template>
 
 <script>
-  import {mapState} from 'vuex'
+  import {mapState, mapMutations} from 'vuex'
   import MessageList from "./components/MessageList";
   import MessageHeader from "./components/MessageHeader";
   export default {
@@ -36,17 +36,19 @@
       ...mapState('chat', ['sessions', 'currentSession', 'stomp', 'admins'])
     },
     methods:{
-      addMessage(e) {
+      addMsg(e) {
         if (this.content.length) {
           let msgObj = new Object();
           msgObj.to = this.currentSession.username;
           msgObj.content = this.content;
           msgObj.self = true;
-          msgObj.date = new Date()
           this.$store.dispatch('chat/sendMessage', msgObj)
           this.content = '';
         }
       }
+    },
+    beforeRouteLeave(to, from, next){
+      next()
     }
   }
 </script>

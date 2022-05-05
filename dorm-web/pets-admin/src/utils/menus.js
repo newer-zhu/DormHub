@@ -64,6 +64,8 @@ export const formatRoutes = (routes) => {
           require(['@/views/chat/' + component + '.vue'], resolve)
         }else if (component.startsWith('Dorm')){
           require(['@/views/dorm/' + component + '.vue'], resolve)
+        }else if (component.startsWith('App')){
+          require(['@/views/app/' + component + '.vue'], resolve)
         }
       }
     }

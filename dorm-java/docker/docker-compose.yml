@@ -8,7 +8,7 @@ services:
     ports:
       - "8888:8888"
     volumes:
-      - /home/dorm_hub/server/docker_publish/data/appdata:/data
+      - ./data/appdata:/data
     networks:
       - dormhub_net
     depends_on:
@@ -21,8 +21,8 @@ services:
     ports:
       - "6379:6379"
     volumes:
-      - /home/dorm_hub/server/docker_publish/data/redis_data/data:/data
-      - /home/dorm_hub/server/docker_publish/data/redis_data/redis.conf:/etc/redis/redis.conf
+      - ./data/redis_data/data:/data
+      - ./data/redis_data/redis.conf:/etc/redis/redis.conf
     networks:
       - dormhub_net
     command: redis-server /etc/redis/redis.conf
@@ -38,9 +38,9 @@ services:
     ports:
     - "3306:3306"
     volumes:
-    - /home/dorm_hub/server/docker_publish/data/mysql_data/db:/var/lib/mysql
-    - /home/dorm_hub/server/docker_publish/data/mysql_data/conf/my.cnf:/etc/my.cnf
-    - /home/dorm_hub/server/docker_publish/data/mysql_data/init:/docker-entrypoint-initdb.d
+    - ./data/mysql_data/db:/var/lib/mysql
+    - ./data/mysql_data/conf/my.cnf:/etc/my.cnf
+    - ./data/mysql_data/init:/docker-entrypoint-initdb.d
     networks:
       - dormhub_net
     command: --default-authentication-plugin=mysql_native_password
@@ -53,7 +53,7 @@ services:
       - "15672:15672"
       - "5672:5672"
     volumes:
-    - /home/dorm_hub/server/docker_publish/data/rabbit_data/data:/var/lib/rabbitmq
+    - ./data/rabbit_data/data:/var/lib/rabbitmq
 
 
 networks:

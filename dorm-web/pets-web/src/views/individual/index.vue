@@ -72,7 +72,7 @@
     methods: {
       changeUser(){
         this.$router.push({
-          name: 'Register'
+          name: 'Login'
         })
       }
     },

@@ -30,7 +30,11 @@ service.interceptors.response.use(
     const res = response.data
     if (res.code !== 200) {
       Toast.fail(res.msg)
-      router.replace({name: 'Login'})
+      if (res.code == 403){
+        //没有权限
+      }else {
+        router.replace({name: 'Login'})
+      }
       return Promise.reject('error')
     } else {
       return res

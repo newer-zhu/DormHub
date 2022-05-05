@@ -1,9 +1,9 @@
 <template>
   <div>
     <van-nav-bar @click-left="$router.back()"
-                 title="个人" left-text="返回" left-arrow>
+                 title="用户注册" left-text="返回" left-arrow>
       <template #right>
-        <van-icon name="search" size="18" />
+
       </template>
     </van-nav-bar>
     <van-row>

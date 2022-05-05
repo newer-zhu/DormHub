@@ -16,7 +16,6 @@ import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -44,9 +43,6 @@ public class UserController {
 
     @Autowired
     private TencentCos tencentCos;
-
-    @Autowired
-    private PasswordEncoder passwordEncoder;
 
     @ApiOperation(value = "根据条件返回所有用户信息详情")
     @PostMapping("/filter")
@@ -130,4 +126,9 @@ public class UserController {
         return Result.success(userService.getAllUsers(username));
     }
 
+    @ApiOperation(value = "用户注册")
+    @PostMapping(value = "/register")
+    public Result registerUser(@RequestBody User user){
+        return userService.register(user);
+    }
 }

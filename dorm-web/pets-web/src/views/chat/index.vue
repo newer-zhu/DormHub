@@ -1,9 +1,9 @@
 <template>
   <div>
     <van-nav-bar @click-left="$router.back()"
-                 title="联系列表" >
+                 title="联系人列表" >
       <template #right>
-        <van-icon name="search" size="18" />
+        <van-button icon="search" hairline style="height: 30px; width: 50px;" type="primary" @click="search" />
       </template>
     </van-nav-bar>
 
@@ -20,7 +20,8 @@
 
     <van-cell-group style="margin-top: 5px; margin-bottom: 2rem">
       <van-cell
-        v-for="user in admins" :key="user.id"
+        v-show="self.id !== user.id"
+        v-for="user in displayUsers" :key="user.id"
         @click="changeCurrentSession(user)"
       >
         <template #title>
@@ -50,13 +51,13 @@
     name: "Chat",
     data(){
       return{
-        users: [],
         searchStr: '',
-        displayUsers: []
+        displayUsers: [],
+        self: this.$store.getters.user
       }
     },
     mounted() {
-
+      this.displayUsers = this.admins
     },
     computed: {
       ...mapState('chat',['currentSession', 'admins']),
@@ -64,7 +65,7 @@
     watch:{
       searchStr(val, oldVal){
         if (!val){
-          this.displayUsers = this.users
+          this.displayUsers = this.admins
         }
       }
     },
@@ -78,8 +79,8 @@
       search(){
         if (this.searchStr){
           searchUsers(this.searchStr).then(res => {
-            this.displayUsers = res.data
-            console.log(res.data);
+            this.displayUsers = res.data.users
+            console.log(this.displayUsers);
           })
         }
       }

@@ -77,8 +77,8 @@
     mounted() {
       getAllRoles().then(res => {
         this.allRoles = res.data
+        this.getUserRole()
       })
-      this.getUserRole()
     }
   }
 </script>

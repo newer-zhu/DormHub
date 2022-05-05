@@ -2,9 +2,8 @@
   <div>
     <van-sticky>
       <van-nav-bar
-        title="聊天"
+        :title="'聊天('+currentSession.nickName+')'"
         left-text="返回"
-        right-text="按钮"
         left-arrow
         @click-left="$router.back()"
       />
@@ -13,8 +12,13 @@
 </template>
 
 <script>
+  import {mapState} from "vuex";
+
   export default {
-    name: "MessageHeader"
+    name: "MessageHeader",
+    computed:{
+      ...mapState('chat',['currentSession'])
+    }
   }
 </script>
 

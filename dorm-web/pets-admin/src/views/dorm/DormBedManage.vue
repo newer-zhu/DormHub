@@ -2,7 +2,7 @@
   <div>
     <el-row style="margin-top: 20px; padding: 0px 30px" type="flex" >
       <el-col v-for="(b,i) in buildings" :span="4" :key="i">
-        <el-button icon="el-icon-school" @click="getDorms(b)" class="button" shadow="hover">
+        <el-button icon="el-icon-school" @click="getDorms(b)" class="button" :disabled="b == selectedBuilding">
           {{b}}
         </el-button>
       </el-col>
@@ -80,6 +80,7 @@
         input: '',
         isDisplay: '',
         targetUser: '',
+        selectedBuilding: ''
       }
     },
     methods:{
@@ -99,6 +100,7 @@
         }
       },
       getDorms(b){
+        this.selectedBuilding = b
         getDormsByBuildingId(b).then(res => {
           this.dorms = res.data
           // console.log(res.data)

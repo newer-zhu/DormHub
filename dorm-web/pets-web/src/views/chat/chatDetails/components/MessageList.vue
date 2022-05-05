@@ -2,6 +2,7 @@
   <div class="scroll-wrapper" ref="scroll">
     <div class="scroll-content">
       <Message
+        v-if="chatMessages"
         v-for="item in chatMessages"
         :key="item.message"
         :message="item.content"
@@ -62,5 +63,7 @@
 </script>
 
 <style lang="scss" scoped>
-
+  .scroll-content{
+    /*min-height: 80%;*/
+  }
 </style>

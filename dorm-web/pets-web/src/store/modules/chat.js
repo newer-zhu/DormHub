@@ -4,13 +4,14 @@ import { Notify } from 'vant';
 import Vue from "vue";
 import {getUsers} from "../../api/chat";
 import store from "../index";
+
 const chat = {
   namespaced: true,
   state: {
-    sessions: [],//会话，是一个map，储存KV键值对
+    sessions: [],//会话，是一个map，储存聊天信息
     currentAdmin: JSON.parse(window.localStorage.getItem('user')),//当前用户
     admins: [],//聊天对象
-    currentSession: null,
+    currentSession: null,//当前聊天对象
     sockJs: null,
     stomp: null,
     isDot: {}
@@ -19,11 +20,12 @@ const chat = {
     //改变当前聊天会话session
     changeCurrentSession(state, currentSession) {
       state.currentSession = currentSession;
+      console.log('当前聊天用户：' + state.currentSession.username)
       // Vue.set(state.isDot, state.currentAdmin.username+'#'+state.currentSession.username.to, false);
     },
     //添加消息进会话session
     addMessage(state, msg) {
-      //会话键的定义
+      //会话key的定义
       const sessionKey = state.currentAdmin.username + '#' + msg.to;
       //找到该会话，如果会话从未创建就初始化，然后把message push进去
       let mss = state.sessions[sessionKey];
@@ -38,13 +40,7 @@ const chat = {
       console.log(state.sessions)
     },
     //获取本地聊天记录
-    // INIT_DATA(state) {
-    //   // 浏览器本地的历史聊天记录可以在这里完成
-    //   let data = localStorage.getItem('vue-chat-session');
-    //   if (data) {
-    //     state.sessions = JSON.parse(data);
-    //   }
-    // },
+
     //初始化所有聊天用户
     INIT_ADMIN(state, data) {
       state.admins = data;

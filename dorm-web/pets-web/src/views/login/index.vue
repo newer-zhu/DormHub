@@ -3,7 +3,7 @@
     <van-nav-bar @click-left="$router.back()"
                  title="登录" left-text="返回" left-arrow>
       <template #right>
-        <van-icon name="search" size="18" />
+
       </template>
     </van-nav-bar>
 
@@ -28,6 +28,11 @@
           <van-button round block type="info" native-type="submit">登录</van-button>
         </div>
       </van-form>
+    </van-row>
+    <van-row>
+      <van-col :span="8" :offset="16">
+        <van-button icon="arrow" to="/register">注册</van-button>
+      </van-col>
     </van-row>
   </div>
 </template>

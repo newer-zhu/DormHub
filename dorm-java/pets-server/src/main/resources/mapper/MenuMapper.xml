@@ -89,4 +89,55 @@
             m1.id,
             m2.id
     </select>
+
+    <!--通过角色id获取菜单列表-->
+    <select id="getMenusByRoleId" resultMap="Menus">
+        select
+            distinct m1.*,
+            m2.id as id2,
+            m2.component as component2,
+            m2.enabled as enables2,
+            m2.iconCls as iconCls2,
+            m2.keepAlive as keepAlive2,
+            m2.name as name2,
+            m2.parentId as parentId2,
+            m2.requireAuth as requireAuth2,
+            m2.url as url2,
+            m2.path as path2,
+            m2.hidden as hidden2
+        from
+            p_menu m1,
+            p_menu m2,
+            p_menu_role mr
+        where
+            m1.id = m2.parentId and m2.id = mr.mid and mr.rid = #{roleId}
+        order by
+            m1.id,
+            m2.id
+    </select>
+
+<!--    获取所有菜单-->
+    <select id="getMenus" resultMap="Menus">
+        select
+            distinct m1.*,
+            m2.id as id2,
+            m2.component as component2,
+            m2.enabled as enables2,
+            m2.iconCls as iconCls2,
+            m2.keepAlive as keepAlive2,
+            m2.name as name2,
+            m2.parentId as parentId2,
+            m2.requireAuth as requireAuth2,
+            m2.url as url2,
+            m2.path as path2,
+            m2.hidden as hidden2
+        from
+            p_menu m1,
+            p_menu m2
+        where
+            m1.id = m2.parentId
+        order by
+            m1.id,
+            m2.id
+    </select>
 </mapper>
