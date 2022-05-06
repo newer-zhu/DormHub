@@ -10,9 +10,9 @@ import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
-import java.security.Principal;
 import java.time.LocalDateTime;
 
 /**
@@ -47,7 +47,7 @@ public class LeaveRequestController {
     public Result judgeCanRequest(@PathVariable("userId") Integer userId){
         return Result.success(leaveRequestService.count(
                 new QueryWrapper<LeaveRequest>().eq("proposer", userId)
-                        .eq("status", 0).or().eq("status", 1)) == 0);
+                        .and(i -> i.eq("status", 0).or().eq("status", 1))) == 0);
     }
 
     @ApiOperation(value = "申请人获取未审核的请假条列表")
@@ -112,14 +112,14 @@ public class LeaveRequestController {
 
     @ApiOperation(value = "删除假条")
     @DeleteMapping("/{id}")
-    public Result delete(@PathVariable("id") Integer id, Principal principal){
-        MyUserDetails details = (MyUserDetails) principal;
+    public Result delete(@PathVariable("id") Integer id, Authentication authentication){
+        MyUserDetails details = (MyUserDetails) authentication.getPrincipal();
         if (!leaveRequestService.getById(id).getProposerUser().equals(details.getUser().getId())){
             return Result.fail("暂无此权限");
         }
         if (leaveRequestService.deleteById(id)){
             return Result.success("撤回成功");
         }
-        return Result.fail("");
+        return Result.fail("服务器出错了");
     }
 }

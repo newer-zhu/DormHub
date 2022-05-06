@@ -2,6 +2,7 @@ package com.zhuhodor.server.security.component;
 
 import cn.hutool.json.JSONUtil;
 import com.zhuhodor.server.common.domain.Result;
+import com.zhuhodor.server.common.domain.ResultCode;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.stereotype.Component;
@@ -23,7 +24,7 @@ public class RestAccessDeniedHandler implements AccessDeniedHandler {
         response.setCharacterEncoding("UTF-8");
         response.setContentType("application/json");
         PrintWriter writer = response.getWriter();
-        Result result = Result.fail(403, "权限不足");
+        Result result = Result.fail(ResultCode.FORBIDDEN);
         writer.write(JSONUtil.toJsonStr(result));
         writer.flush();
         writer.close();

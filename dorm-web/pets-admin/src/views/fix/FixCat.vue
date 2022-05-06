@@ -75,14 +75,14 @@
       }
     },
     methods:{
-      getData(){
-        getAllCategories().then(res => {
+      async getData(){
+        await getAllCategories().then(res => {
           this.catsMap = res.data
           this.catsMap.forEach(f => {
             this.$set(f, 'edit', false)
             this.$set(f, 'number', 0)
           })
-          // console.log(this.catsMap)
+          this.drawLine();
         })
       },
       async save(){
@@ -98,10 +98,10 @@
           data.edit=false
         })
       },
-      drawLine(){
+      async drawLine(){
         // 基于准备好的dom，初始化echarts实例
         let myChart = echarts.init(document.getElementById('myChart'))
-        getPieData().then(res => {
+        await getPieData().then(res => {
           this.pie = res.data
           // 绘制图表
           myChart.setOption({
@@ -128,7 +128,6 @@
       }
     },
     mounted() {
-      this.drawLine();
       this.getData()
     }
   }

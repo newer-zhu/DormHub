@@ -80,7 +80,7 @@
       ...mapState('user',['userInfo'])
     },
     mounted() {
-      console.log(this.userInfo)
+      // console.log(this.userInfo)
     }
 
   }

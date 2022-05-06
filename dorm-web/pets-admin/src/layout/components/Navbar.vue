@@ -56,7 +56,7 @@ export default {
     //是否有新消息
     newMsg(){
       let map = this.$store.state.chat.isDot
-      console.log(map)
+      // console.log(map)
       for (let i in map) {
         if (map[i]){
           return 'new'

@@ -30,8 +30,14 @@ public class FixController {
     @Autowired
     private IFixService fixService;
 
+    @ApiOperation("根据Id获取报修单")
+    @GetMapping("/{id}")
+    public Result getFixReportById(@PathVariable("id") Integer id){
+        return Result.success(fixService.getFixReportById(id));
+    }
+
     @ApiOperation("保存报修单")
-    @PostMapping("/save")
+    @PostMapping()
     public Result saveFixReport(@RequestBody Fix report){
         report.setCreateTime(LocalDateTime.now());
         report.setStatus(0);
@@ -93,10 +99,6 @@ public class FixController {
         return Result.success(fixService.getFixReportsByDormId(dormId));
     }
 
-    @ApiOperation("根据Id获取报修单")
-    @GetMapping("/{id}")
-    public Result getFixReportById(@PathVariable("id") Integer id){
-        return Result.success(fixService.getFixReportById(id));
-    }
+
 
 }

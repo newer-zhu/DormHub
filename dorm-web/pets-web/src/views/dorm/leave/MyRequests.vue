@@ -34,7 +34,7 @@
       getRequests('?proposer='+this.$store.getters.user.id).then(res => {
         this.isAdmin = false;
         this.lists = res.data
-        console.log(res.data)
+        // console.log(res.data)
       })
       this.loading = false
     }

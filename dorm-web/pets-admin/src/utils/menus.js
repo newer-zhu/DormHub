@@ -15,7 +15,7 @@ export const initMenu = (router, store) => {
       // 404 page must be placed at the end !!!
       fmtRoutes.push({ path: '*', redirect: '/404', hidden: true })
       // 添加到router
-      console.log('添加进router')
+      // console.log('添加进router')
       // console.log(fmtRoutes)
       router.addRoutes(fmtRoutes)
       // 将数据存入vuex

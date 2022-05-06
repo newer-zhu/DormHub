@@ -146,6 +146,7 @@
         if (!this.fix.catId || !this.fix.phone || !this.fix.num || !this.fix.thing || !this.fix.expectTime){
           this.$notify({ type: 'warning', message: '请填写完整信息！', duration: 2500});
         } else {
+          this.fix.expectTime = new moment(this.fix.expectTime).format('YYYY-MM-DD hh:mm:ss').toString()
           sendFixReport(this.fix).then(res => {
             if (res.code == 200){
               this.fix.status = 0

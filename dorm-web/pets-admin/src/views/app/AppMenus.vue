@@ -50,30 +50,29 @@
         roles: [],
         menus: [],
         chooseRole: '',
-        checkedKey: []
       }
     },
     methods: {
       allocateMenus(roleId){
         this.chooseRole = roleId
-        this.checkedKey = []
+        let checkedKey = []
         getMenusByRoleId(roleId).then(res => {
           res.data.forEach(f => {
-            this.checkedKey.push(f)
             if (f.children){
               f.children.forEach(ff => {
-                this.checkedKey.push(ff)
+                checkedKey.push(ff.id)
               })
             }
           })
-          console.log(this.checkedKey)
-          this.$refs.tree.setCheckedNodes(this.checkedKey)
+          // console.log(checkedKey)
+          this.$refs.tree.setCheckedKeys(checkedKey, false)
         })
       },
       setMenus(){
         let param = []
-        let nodes = this.$refs.tree.getCheckedNodes()
-        nodes.forEach(n => {param.push(n.id)})
+        this.$refs.tree.getHalfCheckedKeys().forEach(p => param.push(p))
+        let nodes = this.$refs.tree.getCheckedKeys()
+        nodes.forEach(n => {param.push(n)})
         setMenusWithRoleId(this.chooseRole, param).then(res => {
           this.$message.success(res.msg)
         })

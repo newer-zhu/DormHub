@@ -18,7 +18,7 @@
           <el-table-column label="分配角色">
             <template slot-scope="scope">
               <el-button
-                size="mini" type="danger"
+                size="mini" type="danger" :type="selectUser.id === scope.row.id? 'danger':'warning'"
                 @click="allocate(scope.row)">分配</el-button>
             </template>
           </el-table-column>
@@ -65,6 +65,7 @@
       confirm(){
         allocateRole(this.selectUser.id, this.roles).then(res => {
           this.$message.success(res.msg)
+          this.getUserRole()
         })
       },
       getUserRole(){

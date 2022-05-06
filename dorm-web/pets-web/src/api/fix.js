@@ -3,7 +3,7 @@ import request from '../utils/request'
 //提交报修单
 export function sendFixReport(fix) {
   return request({
-    url: '/fix/save',
+    url: '/fix',
     method: 'post',
     data: fix
   })
@@ -12,7 +12,7 @@ export function sendFixReport(fix) {
 //软删除报修单
 export function softDelFixReport(id) {
   return request({
-    url: '/softDel/'+id,
+    url: '/fix/softDel/'+id,
     method: 'get'
   })
 }
@@ -20,7 +20,7 @@ export function softDelFixReport(id) {
 //硬删除报修单
 export function hardDelFixReport(id) {
   return request({
-    url: '/fix/admin'+id,
+    url: '/fix/admin/'+id,
     method: 'delete'
   })
 }

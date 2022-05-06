@@ -27,7 +27,8 @@
       return{
         finished: false,
         loading: true,
-        list: []
+        list: [],
+        current: 1,
       }
     },
     methods:{
@@ -35,21 +36,22 @@
         this.$router.push({name: 'AnnoDetail', params: {id: id}})
       },
       onLoad(){
-
+        this.load(this.current+1)
       },
       load(cur){
         getAnnoPage(cur).then(res => {
-          console.log(res.data);
+          // console.log(res.data);
           res.data.records.forEach(f => {
             this.list.push(f)
           })
           this.loading = false
-          this.finished = res.data.current == res.data.pages
+          this.current = res.data.current
+          this.finished = res.data.current === res.data.pages
         })
       }
     },
     mounted() {
-      this.load(1)
+      this.load(this.current)
     }
   }
 </script>

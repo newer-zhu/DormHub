@@ -98,7 +98,7 @@
       },
       getDorms(buildingId, floor){
         getDormsWithStu(buildingId, floor).then(res => {
-          console.log(res.data)
+          // console.log(res.data)
           this.tableData = res.data
           this.$message({type: 'info', message: '加载成功'})
         })

@@ -2,6 +2,7 @@ package com.zhuhodor.server.security.component;
 
 import cn.hutool.json.JSONUtil;
 import com.zhuhodor.server.common.domain.Result;
+import com.zhuhodor.server.common.domain.ResultCode;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.stereotype.Component;
@@ -22,7 +23,7 @@ public class RestAuthorizationEntryPoint implements AuthenticationEntryPoint {
         response.setCharacterEncoding("UTF-8");
         response.setContentType("application/json");
         PrintWriter writer = response.getWriter();
-        Result result = Result.fail(401,"未登录或失效");
+        Result result = Result.fail(ResultCode.UNAUTHORIZED);
         writer.write(JSONUtil.toJsonStr(result));
         writer.flush();
         writer.close();

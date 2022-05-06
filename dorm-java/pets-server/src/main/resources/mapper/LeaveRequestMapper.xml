@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zhuhodor.server.mapper.LeaveRequestMapper">
+
     <select id="getAuditorsByUserId" resultType="com.zhuhodor.server.model.pojo.User">
         SELECT
         u.id, u.username, u.nick_name
         FROM
-        p_user u, p_role r, user_role ur
+        p_user u, p_role r, p_user_role ur
         WHERE
         u.id= ur.u_id AND ur.r_id = r.id AND r.role_name = 'ROLE_INSTRUCTOR'
     </select>

@@ -54,7 +54,8 @@
              p_menu_role mr,
              p_role r
         where
-            m.id = mr.mid
+            m.enabled = 1
+            and m.id = mr.mid
             and mr.rid = r.id
         order by m.id;
     </select>

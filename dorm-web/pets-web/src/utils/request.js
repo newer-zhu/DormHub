@@ -32,7 +32,7 @@ service.interceptors.response.use(
       Toast.fail(res.msg)
       if (res.code == 403){
         //没有权限
-      }else {
+      }else if (res.code == 401) {
         router.replace({name: 'Login'})
       }
       return Promise.reject('error')
