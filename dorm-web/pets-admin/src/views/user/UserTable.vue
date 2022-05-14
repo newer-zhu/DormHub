@@ -98,16 +98,16 @@
         })
       },
 
-      downloadExcel(){
+      async downloadExcel(){
         this.downloading = true
-        downloadRequest('/user/admin/excel/export', {
+        await downloadRequest('/user/admin/excel/export', {
           title: '用户基本信息',
           sheetName: '用户信息',
           fileName: '用户信息表',
         }).then(res => {
           this.$message({type: 'success', message: res.data})
-          this.downloading = false
         })
+        this.downloading = false
       },
 
       refresh(){

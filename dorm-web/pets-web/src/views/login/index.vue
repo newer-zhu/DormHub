@@ -46,8 +46,8 @@
     data() {
       return {
         user: {
-          username: 'admin',
-          password: 'zhu123',
+          username: '',
+          password: '',
         }
       }
     },

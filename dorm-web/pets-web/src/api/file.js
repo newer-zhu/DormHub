@@ -63,3 +63,17 @@ export function deletePic(imageId) {
     method: 'delete',
   })
 }
+
+
+export function updateAvatar(userId, avatar) {
+  let param = new FormData()
+  param.append('avatar', avatar, avatar.name)
+  return request({
+    url: '/image/avatarUpdate/'+userId,
+    method: 'post',
+    config: {
+      headers: {'Content-Type': 'multipart/form-data'}
+    },
+    data: param
+  })
+}

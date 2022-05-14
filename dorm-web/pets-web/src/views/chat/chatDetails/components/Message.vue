@@ -4,7 +4,7 @@
 
     <div v-if="self" class="msg msg-right">
       <div class="img-wrapper">
-        <img class="img"
+        <van-image class="img"
              :src="currentAdmin.avatar" />
       </div>
       <div class="message-wrapper message-wrapper-right">

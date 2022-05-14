@@ -114,7 +114,7 @@ public class LeaveRequestController {
     @DeleteMapping("/{id}")
     public Result delete(@PathVariable("id") Integer id, Authentication authentication){
         MyUserDetails details = (MyUserDetails) authentication.getPrincipal();
-        if (!leaveRequestService.getById(id).getProposerUser().equals(details.getUser().getId())){
+        if (!leaveRequestService.getById(id).getProposer().equals(details.getUser().getId())){
             return Result.fail("暂无此权限");
         }
         if (leaveRequestService.deleteById(id)){

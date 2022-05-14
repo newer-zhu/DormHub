@@ -7,8 +7,10 @@ import com.zhuhodor.server.common.domain.Result;
 import com.zhuhodor.server.common.utils.ImageUtil;
 import com.zhuhodor.server.common.utils.TencentCos;
 import com.zhuhodor.server.model.pojo.Image;
+import com.zhuhodor.server.model.pojo.User;
 import com.zhuhodor.server.model.vo.ImageVo;
 import com.zhuhodor.server.service.IImageService;
+import com.zhuhodor.server.service.IUserService;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +35,8 @@ public class ImageController {
     private TencentCos tencentCos;
     @Autowired
     private IImageService imageService;
+    @Autowired
+    private IUserService userService;
 
     @ApiOperation(value = "保存报修图片")
     @PostMapping("/fix/{fixId}")
@@ -79,6 +83,15 @@ public class ImageController {
     @PostMapping("/avatar")
     public Result uploadAvatar(@RequestParam("avatar") MultipartFile avatar){
         return Result.success("上传成功",tencentCos.uploadPic(avatar, CosConstant.AVATAR));
+    }
+
+    @ApiOperation(value = "用户头像更新")
+    @PostMapping(value = "/avatarUpdate/{userId}")
+    public Result UpdateAvatar(@RequestParam("avatar") MultipartFile avatar, @PathVariable("userId") Integer userId){
+        Map<String, String> map = tencentCos.uploadPic(avatar, CosConstant.AVATAR);
+        String url = map.get("remoteAddr") + map.get("key");
+        userService.update(null, new UpdateWrapper<User>().eq("id", userId).set("avatar", url));
+        return Result.success(url);
     }
 
     @ApiOperation(value = "公告图片上传")

@@ -27,10 +27,17 @@
         <van-form @submit="registerUser">
           <van-field
             v-model="user.username"
-            name="用户名"
-            label="用户名"
-            placeholder="用户名"
-            :rules="[{ required: true, message: '请填写用户名' }]"
+            name="学号"
+            label="学号"
+            placeholder="学号"
+            :rules="[{ required: true, message: '请填写学号' }]"
+          />
+          <van-field
+            v-model="user.nickName"
+            name="姓名"
+            label="姓名"
+            placeholder="真实姓名"
+            :rules="[{ required: true, message: '请填写姓名' }]"
           />
           <van-field
             v-model="user.password"
@@ -46,6 +53,13 @@
             label="手机号"
             placeholder="手机号"
             :rules="[{pattern: rules.phone, required: true, message: '请填写手机号' }]"
+          />
+          <van-field
+            v-model="user.email"
+            name="邮箱"
+            label="邮箱"
+            placeholder="非必填"
+            :rules="[{ required: false}]"
           />
           <div style="margin: 16px;">
             <van-button round block type="info" native-type="submit">提交</van-button>
@@ -72,8 +86,10 @@
         user:{
           username: '',
           password: '',
+          email: '',
           avatar: this.avatarUrl,
-          phone: ''
+          phone: '',
+          nickName: ''
         },
         //图片地址前缀
         remoteAddr: '',
@@ -90,11 +106,10 @@
     methods:{
       ...mapActions('user', ['userRegister']),
       //注册提交
-      registerUser(){
-        this.userRegister(this.user).then(() => {
-          this.$router.replace({
-            path: '/individual'
-          })
+      async registerUser(){
+        await this.userRegister(this.user)
+        this.$router.replace({
+          path: '/login'
         })
       },
       //上传头像

@@ -17,7 +17,6 @@ import com.zhuhodor.server.security.component.MyUserDetails;
 import com.zhuhodor.server.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -151,7 +150,6 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         return userMapper.getAllUsers(username);
     }
 
-    @Async
     @Transactional
     @Override
     public boolean updateBatchByUsername(MultipartFile excelFile) {
@@ -160,9 +158,12 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
             throw new ApiException("文件格式错误");
         }
 
+        //已经存在的User
         List<User> existUser = userMapper.selectList(new QueryWrapper<User>().select("username"));
         Set<String> existUsername = existUser.stream().map(User::getUsername).collect(Collectors.toSet());
+        //更新的用户
         List<User> updateList = new ArrayList<>();
+        //新增的用户
         List<User> saveList = new ArrayList<>();
         try {
             List<User> list = ExcelUtils.importExcel(excelFile, User.class);
@@ -180,9 +181,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
             }
             saveList.forEach( user -> userMapper.insert(user));
             updateList.forEach(u -> {
-                if (StringUtils.hasLength(u.getPassword())){
-                    userMapper.update(u, new QueryWrapper<User>().eq("username", u.getUsername()));
-                }
+                userMapper.update(u, new QueryWrapper<User>().eq("username", u.getUsername()));
             });
         } catch (IOException e) {
             e.printStackTrace();

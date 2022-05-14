@@ -9,35 +9,37 @@
         <!--          头像-->
         <van-col span="4" style="margin-left: 15px">
           <van-image
-            round
+            round v-if="!showUpload"
             width="1.5rem"
             height="1.5rem"
-            :src="userInfo.avatar"
+            @click="changeAvatar()"
+            :src="url"
           >
             <template v-slot:loading>
               <van-loading type="spinner" size="20" />
             </template>
           </van-image>
+          <van-uploader :max-count="1"
+                        ref="avatar"
+                        v-else
+                        v-model="fileList"
+                        name="avatar"
+                        upload-text="头像上传"
+                        :after-read="afterRead"
+                        :max-size="10 * 1000 * 1024" @oversize="onOversize"
+                        style="display: flex; justify-content: center; align-items: center"
+          />
         </van-col>
+
         <van-col :span="15" :offset="2">
           <div style="text-align: center; font-size: 20px">
             {{userInfo.nickName}}
           </div>
           <div style="margin-top: 20px; color: #646566; text-align: center">
-            学号 {{this.userInfo.username}}
+            <div>学号 {{this.userInfo.username}}</div>
           </div>
         </van-col>
 
-<!--        <van-col span="8">-->
-<!--          <van-button round :block="true" :to="{path: '/login'}"-->
-<!--                      color="linear-gradient(to right, #ff6034, #ee0a24)">-->
-<!--            登录-->
-<!--          </van-button>-->
-<!--          <van-button round :block="true" :to="{path: '/register'}"-->
-<!--                      color="linear-gradient(to right, #ff6034, #ee0a24)">-->
-<!--            注册-->
-<!--          </van-button>-->
-<!--        </van-col>-->
       </van-row>
     </div>
 
@@ -67,14 +69,42 @@
 
 <script>
   import {mapState} from 'vuex'
+  import {updateAvatar} from "../../api/file";
+  import {Toast} from "vant";
+  import user from "../../store/modules/user";
   export default {
     name: "Individual",
+    data(){
+      return{
+        showUpload: false,
+        url: this.$store.getters.user.avatar,
+        fileList: [],
+      }
+    },
     methods: {
       changeUser(){
         this.$router.push({
           name: 'Login'
         })
-      }
+      },
+      changeAvatar(){
+        this.showUpload = true
+      },
+      //上传头像
+      async afterRead(file) {
+        file.status = 'uploading'
+        await updateAvatar(this.userInfo.id, file.file).then((res) => {
+          this.url  = res.data
+          file.status = 'done'
+        })
+        this.showUpload = false
+        let payload = this.userInfo
+        payload.avatar = this.url
+        this.$store.commit('user/SET_USERINFO', payload)
+      },
+      onOversize(file) {
+        Toast('文件大小不能超过 10Mb')
+      },
     },
     computed:{
       ...mapState('user',['userInfo'])

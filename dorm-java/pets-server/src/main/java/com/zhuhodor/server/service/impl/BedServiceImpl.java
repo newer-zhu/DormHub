@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.zhuhodor.server.common.domain.Result;
+import com.zhuhodor.server.common.exceptions.ApiException;
 import com.zhuhodor.server.mapper.BedMapper;
 import com.zhuhodor.server.mapper.DormMapper;
 import com.zhuhodor.server.model.pojo.Bed;
@@ -88,9 +89,35 @@ public class BedServiceImpl extends ServiceImpl<BedMapper, Bed> implements IBedS
     @Override
     @Transactional
     public boolean allocateBed(Integer bedId, Integer uid) {
-        Bed bed = new Bed();
-        bed.setId(bedId);
-        bed.setUserId(uid);
-        return bedMapper.updateById(bed) == 1;
+        //被分配用户之前拥有的床位
+        List<Bed> beds = bedMapper.selectList(new QueryWrapper<Bed>().eq("user_id", uid));
+        if (beds.size() > 1){
+            throw new ApiException("用户床位多于1张！");
+        }else if (beds.size() == 1){
+            Bed cancelBed = beds.get(0);
+            //取消用户之前占有的床位
+            cancelBed.setUserId(-1);
+            cancelBed.setStatus(0);
+            bedMapper.updateById(cancelBed);
+            dormMapper.occupationIncr(cancelBed.getDormId(), -1);
+        }
+        //分配床位
+        Bed allocatedBed = bedMapper.selectById(bedId);
+        //这张床的原有用户处理
+        if (allocatedBed.getUserId() != -1){
+            dormMapper.occupationIncr(allocatedBed.getDormId(), -1);
+            userService.update(new UpdateWrapper<User>().eq("id", allocatedBed.getUserId()).set("dorm_id", -1));
+        }
+        allocatedBed.setUserId(uid);
+        allocatedBed.setStatus(1);
+        if(bedMapper.updateById(allocatedBed) == 1){
+            dormMapper.occupationIncr(allocatedBed.getDormId(), 1);
+            //更新用户表的寝室信息
+            userService.update(new UpdateWrapper<User>()
+                    .eq("id", uid)
+                    .set("dorm_id", bedMapper.selectOne(new QueryWrapper<Bed>().eq("id", bedId).select("dorm_id")).getDormId()));
+            return true;
+        }
+        return false;
     }
 }

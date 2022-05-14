@@ -20,7 +20,6 @@ const chat = {
     //改变当前聊天会话session
     changeCurrentSession(state, currentSession) {
       state.currentSession = currentSession;
-      console.log('当前聊天用户：' + state.currentSession.username)
       // Vue.set(state.isDot, state.currentAdmin.username+'#'+state.currentSession.username.to, false);
     },
     //添加消息进会话session
