@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhuhodor.app.mapper.UserMapper">
+    <select id="getAllUsers" resultMap="UserWithRole">
+        SELECT u.id, u.username, u.nick_name, r.id rid, r.name, r.role_name
+        FROM `p_user` u LEFT JOIN `p_user_role` ur
+        ON ur.u_id = u.id
+        LEFT JOIN `p_role` r
+        ON ur.r_id = r.id
+        <if test="username != null and username != ''">
+            WHERE u.username LIKE CONCAT(#{username},'%')
+        </if>
+    </select>
+
+    <select id="getUserByUserName" resultMap="UserWithRole">
+        SELECT u.*, r.id rid, r.name, r.role_name
+        FROM `p_user` u LEFT JOIN `p_user_role` ur
+        ON ur.u_id = u.id
+        LEFT JOIN `p_role` r
+        ON ur.r_id = r.id
+        WHERE u.username = #{username} AND u.status = 1
+    </select>
+
+    <select id="getAllUsersByCon" resultMap="UserWithDorm" parameterType="com.zhuhodor.app.model.vo.condition.UserSearchVo">
+        SELECT pu.id, pu.nick_name, pu.username, pu.phone, pu.email, pu.avatar, pu.status, pu.create_date, pu.dorm_id
+        FROM p_user pu
+        <if test="condition.username != null and condition.username != ''">
+            WHERE pu.username = #{condition.username}
+        </if>
+        <if test="condition.nickName != null and condition.nickName != ''">
+            WHERE pu.nick_name = #{condition.nickName}
+        </if>
+        <if test="condition.id != null and condition.id >= 0 and condition.id != ''">
+            WHERE pu.id = #{condition.id}
+        </if>
+    </select>
+
+    <select id="getDorm" resultMap="com.zhuhodor.app.mapper.DormMapper.BaseResultMap">
+        SELECT pd.id, pd.building_id, pd.dorm_id FROM p_dorm pd WHERE pd.id = #{dorm_id}
+    </select>
+
+    <select id="getUserVoById" resultType="com.zhuhodor.app.model.vo.UserVo" parameterType="int">
+        select id, nick_name, username from p_user WHERE id = #{id}
+    </select>
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.zhuhodor.app.model.pojo.User">
+        <id column="id" property="id"/>
+        <result column="nick_name" property="nickName"/>
+        <result column="username" property="username"/>
+        <result property="sex" column="sex"></result>
+        <result column="phone" property="phone"/>
+        <result column="email" property="email"/>
+        <result column="password" property="password"/>
+        <result column="avatar" property="avatar"/>
+        <result column="status" property="status"/>
+        <result column="creat_date" property="createDate"/>
+        <result column="dorm_id" property="dormId"/>
+    </resultMap>
+<!--    User和其角色-->
+    <resultMap id="UserWithRole" type="com.zhuhodor.app.model.pojo.User" extends="BaseResultMap">
+        <collection property="roles" ofType="com.zhuhodor.app.model.pojo.Role">
+            <id column="rid" property="id"/>
+            <result column="name" property="name"/>
+            <result column="role_name" property="roleName"/>
+        </collection>
+    </resultMap>
+<!--    User和其寝室信息-->
+    <resultMap id="UserWithDorm" type="com.zhuhodor.app.model.pojo.User" extends="BaseResultMap">
+        <association property="dorm" column="dorm_id" select="getDorm" ></association>
+    </resultMap>
+    <!--    UserVo映射-->
+    <resultMap id="UserVo" type="com.zhuhodor.app.model.vo.UserVo">
+        <id property="id" column="u_id"/>
+        <result property="username" column="username"></result>
+        <result property="nickName" column="nick_name"></result>
+        <result property="sex" column="sex"></result>
+    </resultMap>
+</mapper>
