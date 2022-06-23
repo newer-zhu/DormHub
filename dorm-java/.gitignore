@@ -1,0 +1,17 @@
+pets-app/src/main/resources/config/application-own.yml
+pets-app/src/main/resources/config/application-prod.yml
+pets-app/src/main/resources/config/application-docker.yml
+pets-server/target**
+pets-server/target/classes/com/zhuhodor/server/mapper/ChecklogRankMapper.class
+pets-server/target/classes/com/zhuhodor/server/model/dto/LoginDto.class
+pets-server/target/classes/com/zhuhodor/server/model/pojo/ChecklogRank.class
+pets-server/target/classes/com/zhuhodor/server/model/vo/echarts/
+pets-server/target/classes/com/zhuhodor/server/service/IChecklogRankService.class
+pets-server/target/classes/mapper/ChecklogRankMapper.xml
+pets-server/target/generated-sources/
+pets-server/target/generated-test-sources/
+pets-server/target/maven-archiver/
+pets-server/target/maven-status/
+pets-server/target/pets-server-0.0.1-SNAPSHOT.jar
+.idea/*
+
