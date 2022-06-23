@@ -1,6 +1,6 @@
-pets-server/src/main/resources/config/application-own.yml
-pets-server/src/main/resources/config/application-prod.yml
-pets-server/src/main/resources/config/application-docker.yml
+pets-app/src/main/resources/config/application-own.yml
+pets-app/src/main/resources/config/application-prod.yml
+pets-app/src/main/resources/config/application-docker.yml
 pets-server/target**
 pets-server/target/classes/com/zhuhodor/server/mapper/ChecklogRankMapper.class
 pets-server/target/classes/com/zhuhodor/server/model/dto/LoginDto.class
