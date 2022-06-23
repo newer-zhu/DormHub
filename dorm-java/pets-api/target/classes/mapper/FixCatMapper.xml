@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhuhodor.app.mapper.FixCatMapper">
+    <resultMap id="FixPieVo" type="com.zhuhodor.app.model.vo.echarts.FixCatPieVo">
+        <id column="cat_id" property="catId"/>
+        <result column="name" property="name"></result>
+        <result column="value" property="value"></result>
+    </resultMap>
+
+    <select id="getPie" resultMap="FixPieVo">
+        SELECT pfc.id cat_id, pfc.category name, COUNT(pfc.id) value
+        FROM `p_fix_cat` pfc, p_fix pf
+        WHERE pfc.id = pf.cat_id
+        GROUP BY pfc.id
+    </select>
+</mapper>
