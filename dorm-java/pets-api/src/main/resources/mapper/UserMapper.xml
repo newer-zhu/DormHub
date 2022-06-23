@@ -74,6 +74,7 @@
         <id property="id" column="u_id"/>
         <result property="username" column="username"></result>
         <result property="nickName" column="nick_name"></result>
+        <result property="avatar" column="avatar"></result>
         <result property="sex" column="sex"></result>
     </resultMap>
 </mapper>

@@ -25,7 +25,7 @@ import java.util.List;
 @Setter
 @ToString
 @TableName("p_menu")
-@ApiModel(value = "Menu对象", description = "")
+@ApiModel(value = "Menu对象")
 public class Menu implements Serializable {
 
     private static final long serialVersionUID = 1L;

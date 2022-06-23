@@ -45,6 +45,7 @@ public class ChatController {
     }
 
     @GetMapping("/search/{searchStr}")
+    @ApiOperation(value = "根据学号或姓名模糊查询")
     public Result search(@PathVariable("searchStr") String str){
         List<User> userList = userService.list(new QueryWrapper<User>()
                 .like("nick_name", str).or().like("username", str)

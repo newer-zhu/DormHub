@@ -27,6 +27,12 @@
             <artifactId>pets-app</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>com.zhuhodor</groupId>
+            <artifactId>pets-api</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
         <!--websocket-->
         <dependency>
             <groupId>org.springframework.boot</groupId>

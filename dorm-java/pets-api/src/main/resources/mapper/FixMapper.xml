@@ -21,29 +21,14 @@
                     column="id" select="com.zhuhodor.app.mapper.ImageMapper.getImageVOByFixId"/>
     </resultMap>
 
-    <resultMap id="fixCatVo" type="com.zhuhodor.app.model.pojo.FixCat">
-        <id property="id" column="c_id"/>
-        <result property="category" column="category"/>
-        <result property="priority" column="c_priority"/>
-    </resultMap>
-    <resultMap id="userVo" type="com.zhuhodor.app.model.vo.UserVo">
-        <id column="u_id" property="id"/>
-        <result column="nick_name" property="nickName"/>
-        <result column="username" property="username"/>
-        <result column="avatar" property="avatar"/>
-    </resultMap>
-    <resultMap id="dormVo" type="com.zhuhodor.app.model.vo.DormVo">
-        <id column="d_id" property="id"/>
-        <result column="building_id" property="buildingId"/>
-        <result column="dorm_id" property="dormId"/>
-    </resultMap>
-    <select id="getUser" resultMap="userVo">
+
+    <select id="getUser" resultMap="com.zhuhodor.app.mapper.UserMapper.UserVo">
         SELECT id u_id, nick_name, username FROM p_user WHERE id = #{id}
     </select>
-    <select id="getCat" resultMap="fixCatVo">
+    <select id="getCat" resultMap="com.zhuhodor.app.mapper.FixCatMapper.fixCatVo">
         SELECT id c_id, category FROM p_fix_cat WHERE id = #{id}
     </select>
-    <select id="getDorm" resultMap="dormVo">
+    <select id="getDorm" resultMap="com.zhuhodor.app.mapper.DormMapper.DormVo">
         SELECT id d_id, building_id, dorm_id FROM p_dorm WHERE id = #{id}
     </select>
 

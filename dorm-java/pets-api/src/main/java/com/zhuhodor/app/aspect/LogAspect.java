@@ -4,6 +4,8 @@ import com.zhuhodor.app.common.constant.RedisConstant;
 import com.zhuhodor.app.common.domain.Result;
 import com.zhuhodor.app.common.utils.IpUtil;
 import com.zhuhodor.app.common.utils.RedisUtil;
+import com.zhuhodor.app.model.pojo.Ip2CityEntity;
+import com.zhuhodor.app.utils.GeoIpUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
@@ -41,12 +43,14 @@ public class LogAspect {
 
         String iPAddr = IpUtil.getIp();
 
+        Ip2CityEntity ipInfo = GeoIpUtil.getIpInfo(iPAddr);
+
         if (result.getCode() == 200){
             String key = RedisConstant.loginLog.getValue();
 
             Object[] args = joinPoint.getArgs();
             String time = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss").format(LocalDateTime.now());
-            String log = "用户【"+args[0]+"】 IP【"+iPAddr+"】 时间【"+ time +"】";
+            String log = "用户【"+args[0]+"】 IP【"+iPAddr+"】 时间【"+ time +"】地点 【"+ipInfo.getCity()+"】";
             redisUtil.lpush(key, log);
         }else {
             log.info("IP地址【{}】登录失败", iPAddr);

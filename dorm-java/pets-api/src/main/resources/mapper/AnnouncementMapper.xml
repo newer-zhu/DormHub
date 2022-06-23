@@ -29,6 +29,7 @@
         ORDER BY publish_time DESC
         LIMIT 3
     </select>
+
     <select id="getCoverByAnnoId" parameterType="int" resultType="com.zhuhodor.app.model.vo.ImageVo">
         SELECT id, url FROM `p_image` WHERE announce_id = #{id}
     </select>

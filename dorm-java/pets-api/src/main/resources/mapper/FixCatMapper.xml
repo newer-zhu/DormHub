@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zhuhodor.app.mapper.FixCatMapper">
+    <resultMap id="fixCatVo" type="com.zhuhodor.app.model.pojo.FixCat">
+        <id property="id" column="c_id"/>
+        <result property="category" column="category"/>
+        <result property="priority" column="c_priority"/>
+    </resultMap>
+
     <resultMap id="FixPieVo" type="com.zhuhodor.app.model.vo.echarts.FixCatPieVo">
         <id column="cat_id" property="catId"/>
         <result column="name" property="name"></result>
