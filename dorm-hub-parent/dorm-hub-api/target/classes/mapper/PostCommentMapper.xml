@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhuhodor.app.mapper.PostCommentMapper">
+    <select id="getCommentsByPostId" resultType="com.zhuhodor.app.model.vo.PostCommentVo">
+        SELECT pc.*, pu.avatar, pu.nick_name,  pd.building_id
+        FROM `p_post_comment` pc,
+        `p_user` pu, `p_dorm` pd
+        WHERE
+        pc.post_id = #{postId} AND
+        pu.id = pc.user_id AND pd.id = pu.dorm_id
+        ORDER BY pc.create_time DESC
+    </select>
+</mapper>

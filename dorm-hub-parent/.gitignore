@@ -1,0 +1,4 @@
+.idea/**
+
+**/application-docker.yml
+**/application-prod.yml

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhuhodor.app.mapper.EChartsMapper">
+    <select id="getLatestTimes" parameterType="int" resultType="String">
+        SELECT ANY_VALUE(check_time) AS check_time
+        FROM p_check_log
+        GROUP BY check_time
+        ORDER BY check_time DESC
+        LIMIT #{item}
+    </select>
+
+    <select id="getRankedAvgScores" resultType="com.zhuhodor.app.model.vo.CheckLogVo">
+        SELECT AVG(pcl.total_score) AS avg_score, pd.building_id, pd.dorm_id
+        FROM p_check_log pcl, p_dorm pd
+        WHERE pd.id = pcl.target_dorm
+        GROUP BY pcl.target_dorm
+        ORDER BY avg_score DESC
+        limit #{item}
+    </select>
+</mapper>
