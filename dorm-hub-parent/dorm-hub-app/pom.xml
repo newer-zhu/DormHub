@@ -19,22 +19,7 @@
     <dependencies>
         <dependency>
             <groupId>com.zhuhodor.app</groupId>
-            <artifactId>dorm-hub-model</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.zhuhodor.app</groupId>
-            <artifactId>dorm-hub-api</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.zhuhodor.app</groupId>
-            <artifactId>dorm-hub-security</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.zhuhodor.app</groupId>
-            <artifactId>dorm-hub-service</artifactId>
+            <artifactId>dorm-hub-core</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
@@ -42,7 +27,6 @@
             <artifactId>dorm-hub-chatIM</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
-
     </dependencies>
 
     <build>

@@ -37,12 +37,10 @@ public class RabbitMqConfig {
             String msgId = correlationData.getId();
             if (ack){
                 log.info("{}====================>消息发送成功", msgId);
-//                mailLogService.update(new UpdateWrapper<MailLog>().set("status", 1).eq("msgId", msgId));
             }else {
                 log.error("{}============消息发送失败", msgId);
             }
         }));
-        rabbitTemplate.setMessageConverter(new Jackson2JsonMessageConverter());
         /**
          * 消息失败回调，比如router不到queue时回调
          * message:消息主题
@@ -51,8 +49,13 @@ public class RabbitMqConfig {
          * * routingKey:路由键
          * */
         rabbitTemplate.setReturnsCallback((msg)->{
-            log.info("{}=======================>消息发送到queue时失败",msg.getMessage());
+            log.info("{}==消息发送到queue时失败,重试",msg.getMessage().getMessageProperties().getDeliveryTag());
+            //重试保证消息到broker这一步不会丢失
+            rabbitTemplate.convertAndSend(RabbitMqConstant.DELAY_EXCHANGE_NAME,
+                    RabbitMqConstant.DELAY_QUEUEA_ROUTING_KEY, msg.getMessage());
         });
+        rabbitTemplate.setMessageConverter(new Jackson2JsonMessageConverter());
+
         return rabbitTemplate;
     }
 
@@ -81,23 +84,24 @@ public class RabbitMqConfig {
         return new Queue(RabbitMqConstant.DEAD_LETTER_QUEUEA_NAME);
     }
 
-    // 声明延时队列B 不设置TTL
-    // 并绑定到对应的死信交换机
-//    @Bean
-//    public Queue delayQueueB(){
-//        Map<String, Object> args = new HashMap<>(3);
-//        // x-dead-letter-exchange    这里声明当前队列绑定的死信交换机
-//        args.put("x-dead-letter-exchange", RabbitMqConstant.DEAD_LETTER_EXCHANGE);
-//        // x-dead-letter-routing-key  这里声明当前队列的死信路由key
-//        args.put("x-dead-letter-routing-key", RabbitMqConstant.DEAD_LETTER_QUEUEB_ROUTING_KEY);
-//        return QueueBuilder.durable(RabbitMqConstant.DELAY_QUEUEB_NAME).withArguments(args).build();
-//    }
+    //抢到床位后进入此队列
+    @Bean
+    public Queue preserveBedQueue(){
+        return QueueBuilder.durable(RabbitMqConstant.PRESERVE_BED_QUEUE_NAME).lazy().build();
+    }
 
-    //业务交换机
+
+    //延时业务交换机
     @Bean
     public DirectExchange delayDirectExchange() {
         //autoDelete 没有任何消费者就自动删除
         return new DirectExchange(RabbitMqConstant.DELAY_EXCHANGE_NAME,true,false);
+    }
+
+    //预约床位业务交换机
+    @Bean
+    public DirectExchange preserveBedExchange() {
+        return new DirectExchange(RabbitMqConstant.PRESERVE_BED_EXCHANGE_NAME,true,false);
     }
 
     //死信交换机
@@ -121,11 +125,11 @@ public class RabbitMqConfig {
         return BindingBuilder.bind(queue).to(exchange).with(RabbitMqConstant.DEAD_LETTER_QUEUEA_ROUTING_KEY);
     }
 
-    // 声明延时列B绑定关系
-//    @Bean
-//    public Binding delayBindingB(@Qualifier("delayQueueB") Queue queue,
-//                                 @Qualifier("delayDirectExchange") DirectExchange exchange){
-//        return BindingBuilder.bind(queue).to(exchange).with(RabbitMqConstant.DELAY_QUEUEB_ROUTING_KEY);
-//    }
+    //声明预约功能的绑定关系
+    @Bean
+    public Binding preserveBinding(@Qualifier("preserveBedQueue") Queue queue,
+                                 @Qualifier("preserveBedExchange") DirectExchange exchange){
+        return BindingBuilder.bind(queue).to(exchange).with(RabbitMqConstant.PRESERVE_BED_ROUTING_KEY);
+    }
 
 }

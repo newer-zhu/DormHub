@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.zhuhodor.app.chat.config.WebSocketCounter;
 import com.zhuhodor.app.common.domain.Result;
 import com.zhuhodor.app.model.pojo.User;
-import com.zhuhodor.app.service.IUserService;
+import com.zhuhodor.app.service.*;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

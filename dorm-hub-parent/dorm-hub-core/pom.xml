@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>dorm-hub-model</artifactId>
+    <artifactId>dorm-hub-core</artifactId>
 
     <properties>
         <maven.compiler.source>13</maven.compiler.source>
@@ -18,9 +18,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.fasterxml.jackson.datatype</groupId>
-            <artifactId>jackson-datatype-jsr310</artifactId>
-            <version>2.13.3</version>
+            <groupId>com.zhuhodor.app</groupId>
+            <artifactId>dorm-hub-model</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
 

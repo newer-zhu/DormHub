@@ -3,6 +3,7 @@ package com.zhuhodor.app.security.filter;
 
 import com.zhuhodor.app.model.pojo.Menu;
 import com.zhuhodor.app.model.pojo.Role;
+
 import com.zhuhodor.app.service.IMenuService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,12 +31,14 @@ public class CustomFilter implements FilterInvocationSecurityMetadataSource {
 
     private AntPathMatcher antPathMatcher = new AntPathMatcher();
 
-    //返回访问此url所需的角色
+    /**
+     *返回访问此url所需的角色
+     */
     @Override
     public Collection<ConfigAttribute> getAttributes(Object o) throws IllegalArgumentException {
         //获取请求的url
         String requestUrl = ((FilterInvocation)o).getRequestUrl();
-//        log.info("当前访问的URL============={}", requestUrl);
+        log.info("当前访问的URL============={}", requestUrl);
         //获取菜单
         List<Menu> menus = menuService.getMenusWithRole();
         for (Menu menu : menus) {

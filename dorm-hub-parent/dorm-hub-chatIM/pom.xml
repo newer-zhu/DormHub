@@ -24,13 +24,14 @@
         </dependency>
         <dependency>
             <groupId>com.zhuhodor.app</groupId>
-            <artifactId>dorm-hub-service</artifactId>
+            <artifactId>dorm-hub-core</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
-        <!--websocket-->
+<!--        websocket-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-websocket</artifactId>
+            <version>2.7.0</version>
         </dependency>
     </dependencies>
 
