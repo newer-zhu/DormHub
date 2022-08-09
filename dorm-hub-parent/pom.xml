@@ -17,6 +17,7 @@
         <module>dorm-hub-plugins</module>
         <module>dorm-hub-chatIM</module>
         <module>dorm-hub-app</module>
+        <module>dorm-hub-oauth2</module>
     </modules>
 
     <parent>
@@ -27,7 +28,7 @@
     </parent>
 
     <properties>
-        <java.version>13</java.version>
+        <java.version>11</java.version>
         <aop>2.5.3</aop>
         <spring-session-data-redis>2.5.3</spring-session-data-redis>
         <redission>3.6.5</redission>
@@ -37,6 +38,29 @@
     </properties>
 
     <dependencyManagement>
+        <dependencies>
+<!--            <dependency>-->
+<!--                <groupId>org.springframework.boot</groupId>-->
+<!--                <artifactId>spring-boot-dependencies</artifactId>-->
+<!--                <version>2.0.8.RELEASE</version>-->
+<!--                <type>pom</type>-->
+<!--                <scope>import</scope>-->
+<!--            </dependency>-->
+<!--            <dependency>-->
+<!--                <groupId>io.spring.platform</groupId>-->
+<!--                <artifactId>platform-bom</artifactId>-->
+<!--                <version>Cario-RELEASE</version>-->
+<!--                <type>pom</type>-->
+<!--                <scope>import</scope>-->
+<!--            </dependency>-->
+<!--            <dependency>-->
+<!--                <groupId>org.springframework.cloud</groupId>-->
+<!--                <artifactId>spring-cloud-dependencies</artifactId>-->
+<!--                <version>Finchley.SR2</version>-->
+<!--                <type>pom</type>-->
+<!--                <scope>import</scope>-->
+<!--            </dependency>-->
+        </dependencies>
 
     </dependencyManagement>
 
@@ -67,7 +91,7 @@
             <artifactId>spring-session-data-redis</artifactId>
             <version>2.7.0</version>
         </dependency>
-        <!--        热更新-->
+        <!-- 热更新-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
@@ -254,27 +278,6 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-dependency-plugin</artifactId>
                     <version>3.2.0</version>
-                    <executions>
-                        <execution>
-                            <id>unpack-lombok-config</id>
-                            <phase>generate-resources</phase>
-                            <goals>
-                                <goal>unpack</goal>
-                            </goals>
-                            <configuration>
-                                <artifactItems>
-                                    <artifactItem>
-                                        <groupId>com.bim.marvel</groupId>
-                                        <artifactId>marvel-common-v2-logging</artifactId>
-                                    </artifactItem>
-                                </artifactItems>
-                                <includes>
-                                    **/lombok.config
-                                </includes>
-                                <outputDirectory>${project.build.sourceDirectory}/com</outputDirectory>
-                            </configuration>
-                        </execution>
-                    </executions>
                 </plugin>
             </plugins>
         </pluginManagement>

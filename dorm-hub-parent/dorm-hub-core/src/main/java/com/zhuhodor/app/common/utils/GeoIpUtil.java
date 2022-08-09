@@ -5,10 +5,12 @@ import com.maxmind.geoip2.DatabaseReader;
 import com.maxmind.geoip2.model.CityResponse;
 import com.maxmind.geoip2.record.Location;
 import com.zhuhodor.app.model.pojo.Ip2CityEntity;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.InetAddress;
+
 
 public class GeoIpUtil {
 

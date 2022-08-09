@@ -3,7 +3,6 @@ package com.zhuhodor.app.rabbitmq.producer;
 
 import com.zhuhodor.app.common.constant.RabbitMqConstant;
 import com.zhuhodor.app.model.pojo.Post;
-import org.springframework.amqp.core.ReturnedMessage;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

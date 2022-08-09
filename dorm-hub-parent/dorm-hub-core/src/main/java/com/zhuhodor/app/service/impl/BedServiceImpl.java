@@ -58,7 +58,6 @@ public class BedServiceImpl extends ServiceImpl<BedMapper, Bed> implements IBedS
                 if (1 == bedMapper.updateById(bed)){
                     MqTransferDTO<Bed> transferDTO = new MqTransferDTO<>();
                     transferDTO.setData(bed);
-                    transferDTO.setExtraInfo(Map.of("userId", String.valueOf(userId)));
                     preserveBedProducer.sendMsg(transferDTO);
                     return Result.success("预约成功!");
                 }

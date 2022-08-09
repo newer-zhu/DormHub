@@ -46,14 +46,13 @@ public class PreserveBedConsumer {
         channel.basicQos(1);
         MqTransferDTO<Bed> dto = (MqTransferDTO<Bed>)rabbitTemplate.getMessageConverter().fromMessage(message);
         Bed bed = dto.getData();
-        String userId = dto.getExtraInfo().get("userId");
 
         log.info("预约床位队列A收到消息：{}", bed.toString());
 
         if (1 == dormMapper.occupationIncr(bed.getDormId(), 1) &&
                 //更新用户表的寝室信息
                 1 == userMapper.update(null, new UpdateWrapper<User>()
-                .eq("id", userId)
+                .eq("id", bed.getUserId())
                 .set("dorm_id", bedMapper.selectOne(new QueryWrapper<Bed>()
                         .eq("id", bed.getId())
                         .select("dorm_id")).getDormId()))){
