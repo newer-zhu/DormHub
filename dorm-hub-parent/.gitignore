@@ -2,3 +2,5 @@
 
 **/application-docker.yml
 **/application-prod.yml
+application-docker.yml
+config-file\

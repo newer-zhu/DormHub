@@ -42,7 +42,6 @@ const mutations = {
       date: new Date(),
       self: !msg.notSelf
     })
-    console.log(state.sessions)
   },
   //切换正在聊天的用户
   changeCurrentSession(state, currentSession) {

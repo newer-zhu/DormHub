@@ -1,0 +1,15 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: dorm-hub-service-provider
+  cloud:
+    nacos:
+      config:
+        refresh-enabled: true
+        file-extension: yaml
+        group: DEFAULT_GROUP
+        namespace: 3f9a1b38-81ad-4ff1-aac5-4fdba6031ce6
+        server-addr: 127.0.0.1:8848
+      discovery:
+        server-addr: 127.0.0.1:8848

@@ -34,6 +34,11 @@ Vue.use(VueParticles)
 // 如果想要中文版 element-ui，按如下方式声明
 // Vue.use(ElementUI)
 
+
+import VideoPlayer from "vue-video-player/src";
+import "vue-video-player/src/custom-theme.css";
+import "video.js/dist/video-js.css";
+
 Vue.config.productionTip = false
 
 new Vue({

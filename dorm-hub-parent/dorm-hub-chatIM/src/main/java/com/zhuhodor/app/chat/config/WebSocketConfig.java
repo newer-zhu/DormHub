@@ -49,7 +49,7 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
          * 2.setAllowedOrigins("*")：允许跨域
          * 3.withSockJS():支持socketJS访问
          */
-        registry.addEndpoint("/ws/pets").setAllowedOriginPatterns("*").withSockJS();
+        registry.addEndpoint("/ws/pets").setAllowedOrigins("*").withSockJS();
     }
 
     /**

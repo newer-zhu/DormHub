@@ -4,4 +4,5 @@
 *.iml
 out
 gen
-!/src/main/resources/config/application-local.yml
+/src/main/resources/config-file/application-local.yml
+/src/main/resources/config-file
