@@ -2,15 +2,15 @@
 ## 高校宿舍交流信息管理平台
 [PC端在线演示地址](http://49.235.92.49/)
 ### 项目概述
-本科毕业设计，主要是供师生使用的以宿舍生活为主体的软件系统。还有很多地方未完善和优化。
+本科毕业设计，主要是供师生使用的以宿舍生活为主体的软件系统。还有很多地方需要完善和优化。
 项目由移动端网页，PC端网页，后端服务三个部分构成。
 
-#### 结构
-dorm-java 后端代码 [自行配置application]
+#### 目录结构
+/dorm-hub-parent 后端代码 [自行配置application-dev]
 
-dorm-web 前端代码
- + dorm-web 移动端项目 [npm install + npm run serve]
- + dorm-admin PC端项目 [npm install + npm run dev]
+/dorm-web 前端代码
+ + /dorm-web 移动端项目 [npm install + npm run serve]
+ + /dorm-admin PC端项目 [npm install + npm run dev]
 
 **包含功能**
 
