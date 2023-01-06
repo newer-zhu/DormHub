@@ -2,7 +2,6 @@ server:
   port: 8888
 
 spring:
-  # excel
   main:
     allow-bean-definition-overriding: true
   datasource:

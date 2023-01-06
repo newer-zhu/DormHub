@@ -17,7 +17,6 @@
         <module>dorm-hub-plugins</module>
         <module>dorm-hub-chatIM</module>
         <module>dorm-hub-app</module>
-        <module>dorm-hub-oauth2</module>
     </modules>
 
     <parent>

@@ -2,3 +2,4 @@
 
 **/application-docker.yml
 **/application-prod.yml
+./docker
