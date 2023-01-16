@@ -31,13 +31,13 @@ public class RoleServiceImpl extends ServiceImpl<RoleMapper, Role> implements IR
         return roleMapper.selectList(new QueryWrapper<Role>().eq("u_id", userId));
     }
 
-    @Transactional
+    @Transactional(rollbackFor = Exception.class)
     @Override
     public Boolean assignMenus(List<Integer> menuList, Integer id) {
         roleMapper.releaseMenusByRoleId(id);
         if (menuList.size() != 0){
            return roleMapper.acquireMenusWithRoleId(menuList, id) == menuList.size();
         }
-        return false;
+        return true;
     }
 }

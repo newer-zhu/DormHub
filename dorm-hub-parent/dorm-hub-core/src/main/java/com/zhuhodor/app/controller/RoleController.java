@@ -6,9 +6,13 @@ import com.zhuhodor.app.common.domain.Result;
 import com.zhuhodor.app.model.pojo.Role;
 import com.zhuhodor.app.service.IRoleService;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.Authorization;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.neo4j.Neo4jProperties;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
 import java.util.List;
 
 /**
@@ -42,16 +46,6 @@ public class RoleController {
             return Result.success("添加成功");
         }
         return null;
-    }
-
-    @ApiOperation(value = "为角色分配菜单")
-    @PostMapping("/admin/assignMenus/{roleId}")
-    public Result assignMenus(@RequestBody List<Integer> menuList, @PathVariable("roleId") Integer roleId){
-        if (roleService.assignMenus(menuList, roleId)){
-            return Result.success("分配成功");
-        }else {
-            return Result.fail("分配失败！");
-        }
     }
 
 

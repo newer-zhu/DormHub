@@ -2,11 +2,13 @@ package com.zhuhodor.app.controller;
 
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.zhuhodor.app.common.constant.RoleNameConstant;
 import com.zhuhodor.app.common.domain.Result;
 import com.zhuhodor.app.model.pojo.Menu;
 import com.zhuhodor.app.model.pojo.MenuRole;
 import com.zhuhodor.app.service.IMenuRoleService;
 import com.zhuhodor.app.service.IMenuService;
+import com.zhuhodor.app.service.IRoleService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
@@ -30,6 +32,8 @@ public class MenuController {
     private IMenuService menuService;
     @Autowired
     private IMenuRoleService menuRoleService;
+    @Autowired
+    private IRoleService roleService;
 
     @ApiOperation(value = "查询菜单列表")
     @GetMapping()
@@ -49,17 +53,17 @@ public class MenuController {
         return Result.success(menuService.getMenusByRoleId(roleId));
     }
 
-    @ApiOperation(value = "分配菜单列表给")
+    @ApiOperation(value = "分配菜单列表给角色")
     @PostMapping("/allocate/{roleId}")
-    @Transactional
     public Result<List<Menu>> allocateMenusToRoleId(@PathVariable("roleId") Integer roleId,
                                                     @RequestBody List<Integer> menuIds){
-        menuRoleService.remove(new QueryWrapper<MenuRole>().eq("rid", roleId));
-        ArrayList<MenuRole> insert = new ArrayList<>();
-        for (int menu : menuIds) {
-            insert.add(new MenuRole(menu, roleId));
+        if (roleService.getById(roleId).getRoleName().equals(RoleNameConstant.Admin)){
+            return Result.fail("非root用户不能修改超级管理员菜单！");
         }
-        menuRoleService.saveBatch(insert);
-        return Result.success("更新成功");
+        if (roleService.assignMenus(menuIds, roleId)){
+            return Result.success("分配成功");
+        }else {
+            return Result.fail("分配失败！");
+        }
     }
 }

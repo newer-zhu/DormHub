@@ -54,7 +54,8 @@ public class LogAspect {
             String time = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss").format(LocalDateTime.now());
             String log = "";
             if (ipInfo != null){
-                 log = "用户【"+args[0]+"】 IP【"+iPAddr+"】 时间【"+ time +"】地点【"+ipInfo.getCity()+"】";
+                 log = "用户【"+args[0]+"】 IP【"+iPAddr+"】" +
+                         " 时间【"+ time +"】地点【"+ipInfo.getCity() == null? "未知":ipInfo.getCity()+"】";
             }else {
                  log = "用户【"+args[0]+"】 IP【"+iPAddr+"】 时间【"+ time +"】";
             }
