@@ -1,9 +1,14 @@
 <template>
-  <div id="uesrtext">
-    <el-button @click="addMessage" style="float: right" type="primary">发送</el-button>
-    <el-input type="textarea"
-              :rows="6" v-model="content"
-              placeholder="请输入内容"></el-input>
+  <div id="usertext">
+<!--    <el-button @click="addMessage" style="float: right" type="primary">发送</el-button>-->
+<!--    <el-input type="textarea"-->
+<!--              :rows="5" v-model="content"-->
+<!--              placeholder="请输入内容"></el-input>-->
+    <el-input maxlength="100" minlength="1"
+              clearable placeholder="请输入内容"
+              v-model="content" class="input-with-select">
+      <el-button style="background-color: #3f9dfe; color: #FFFFFF" slot="append" @click="addMessage">发送</el-button>
+    </el-input>
 <!--  <textarea placeholder="发送" v-model="content"></textarea>-->
   </div>
 </template>
@@ -12,7 +17,7 @@
   import {mapState} from 'vuex'
 
   export default {
-    name: 'uesrtext',
+    name: 'usertext',
     data() {
       return {
         content: ''

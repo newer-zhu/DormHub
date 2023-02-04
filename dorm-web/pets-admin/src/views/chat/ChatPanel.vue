@@ -1,10 +1,12 @@
 <template>
-  <div style="width: 100%; height: 700px; background-color: #f5f6f9">
+  <div class="chat-page">
     <div id="friendChat">
+
       <div class="sidebar">
         <card></card>
         <list></list>
       </div>
+
       <div class="main">
         <message></message>
         <usertext></usertext>
@@ -23,7 +25,6 @@
     name: 'ChatPanel',
     data () {
       return {
-
       }
     },
     mounted() {
@@ -39,6 +40,11 @@
 </script>
 
 <style lang="scss" scope>
+  .chat-page{
+    width: 100%; height: 700px;
+    background-color: rgb(255 255 255);
+    margin-top: 10%
+  }
   #friendChat {
     margin: 20px auto;
     width: 800px;
@@ -56,6 +62,7 @@
       overflow: auto;
     }
     .main {
+      height: 100%;
       position: relative;
       overflow: hidden;
       background-color: #eee;

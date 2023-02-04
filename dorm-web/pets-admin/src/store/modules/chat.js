@@ -24,15 +24,22 @@ const mutations = {
     // Object.assign(state, getChatState())
     state = {}
   },
+  //设置聊天列表用户
   SET_USERS(state, data) {
     state.chatUsers = data.users;
-
     state.onlineUserMap = data.onlineUsers
-    console.log(data)
     state.onlineUserNum = state.onlineUserMap['size']
+    console.log(data)
   },
+  //发送消息
   addMessage(state, msg) {
-    const sessionKey = state.currentAdmin.username + '#' + msg.to
+    let sessionKey = "";
+    if (!state.currentAdmin){
+      sessionKey = getUserInfo().username+ '#' + msg.to
+    }else {
+      sessionKey = state.currentAdmin.username + '#' + msg.to
+    }
+    // console.log("会话名称--------->"+sessionKey)
     let mss = state.sessions[sessionKey];
     if (!mss) {
       Vue.set(state.sessions, sessionKey, []);
@@ -42,9 +49,9 @@ const mutations = {
       date: new Date(),
       self: !msg.notSelf
     })
-    console.log(state.sessions)
+    // console.log(state.sessions[sessionKey])
   },
-  //切换正在聊天的用户
+  //切换正在聊天的用户对象
   changeCurrentSession(state, currentSession) {
     state.currentSession = currentSession;
     Vue.set(state.isDot, currentSession.username+'#'+state.currentAdmin.username, false);

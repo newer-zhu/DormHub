@@ -11,6 +11,9 @@
         </div>
       </li>
     </ul>
+    <div v-else>
+      <el-empty description="请选择聊天对象"></el-empty>
+    </div>
   </div>
 </template>
 
@@ -56,7 +59,7 @@
 <style lang="scss" scoped>
   #message {
     padding: 15px;
-    max-height: 68%;
+    height: 550px;
     overflow-y: scroll;
 
     ul {
