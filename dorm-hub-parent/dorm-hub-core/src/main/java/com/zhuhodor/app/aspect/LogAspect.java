@@ -15,6 +15,7 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.util.StringUtils;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -52,16 +53,17 @@ public class LogAspect {
 
             Object[] args = joinPoint.getArgs();
             String time = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss").format(LocalDateTime.now());
-            String log = "";
+            String logStr = "";
             if (ipInfo != null){
-                 log = "用户【"+args[0]+"】 IP【"+iPAddr+"】" +
-                         " 时间【"+ time +"】地点【"+ipInfo.getCity() == null? "未知":ipInfo.getCity()+"】";
+                logStr = "用户【"+args[0]+"】 IP【"+iPAddr+"】" + " 时间【"+ time +"】地点【";
+                String location = StringUtils.hasLength(ipInfo.getCity())? ipInfo.getCity():"未知";
+                logStr = logStr.concat(location).concat("】");
             }else {
-                 log = "用户【"+args[0]+"】 IP【"+iPAddr+"】 时间【"+ time +"】";
+                logStr = "用户【"+args[0]+"】 IP【"+iPAddr+"】 时间【"+ time +"】";
             }
-            redisUtil.lpush(key, log);
+            redisUtil.lpush(key, logStr);
         }else {
-            log.info("IP地址【{}】登录失败", iPAddr);
+            log.warn("IP地址【{}】登录失败", iPAddr);
         }
     }
 }

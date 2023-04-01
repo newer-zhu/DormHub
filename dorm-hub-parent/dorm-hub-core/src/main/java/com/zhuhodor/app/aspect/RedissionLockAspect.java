@@ -18,7 +18,11 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
 import java.sql.SQLException;
 import java.util.concurrent.TimeUnit;
-
+/**
+ * @author hodor_zhu
+ * @description redission锁获取与释放切面
+ * @date 2023/2/1 21:39
+ */
 @Component
 @Aspect
 @Slf4j

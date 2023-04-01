@@ -64,3 +64,11 @@ cos:
   bucketName: xxx-1-130xxx1850
   #远程地址
   remoteAddr: https://mybase-xxxxxxxxx.ap-nanjing.myqcloud.com/
+
+#线程池配置参数
+task:
+  pool:
+    corePoolSize: 5 #设置核心线程数
+    maxPoolSize: 20  #设置最大线程数
+    keepAliveSeconds: 200 #设置线程活跃时间（秒）
+    queueCapacity: 50 #设置队列容量

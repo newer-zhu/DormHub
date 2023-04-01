@@ -88,7 +88,7 @@ public class UserController {
         if (userService.updateBatchByUsername(excelFile)){
             return Result.success("上传成功");
         }
-        return Result.fail("处理错误，请联系运维");
+        return Result.fail("处理错误，请联系管理员");
     }
 
     @ApiOperation(value = "导出用户excel")
